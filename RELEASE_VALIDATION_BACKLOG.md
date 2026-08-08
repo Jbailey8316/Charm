@@ -1,5 +1,9 @@
 # Release Validation Backlog
 
+Phase 7Q execution matrix: see `PHASE7Q_RUNTIME_VALIDATION.md`. Rows there are
+ordered by release severity and begin as NOT TESTED; this backlog remains the
+long-form reference for additional feature-specific cases.
+
 Interactive chest tests remain outstanding because GUI automation was unavailable during Phases 5B.2 and 5B.3.
 
 - Normal chests: Oak, Pale Oak, Crimson/Warped, Azalea, and Ebony placement, all facings, opening/lid/sounds, inventory and custom-name save/reload, break/drop, hopper input/output, comparator output.
