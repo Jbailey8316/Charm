@@ -1,0 +1,16 @@
+﻿{
+    "ingredients":  [
+                        {
+                            "item":  "charmony:warped_chest"
+                        },
+                        {
+                            "item":  "minecraft:tripwire_hook"
+                        }
+                    ],
+    "category":  "misc",
+    "result":  {
+                   "count":  1,
+                   "id":  "charmony:trapped_warped_chest"
+               },
+    "type":  "minecraft:crafting_shapeless"
+}

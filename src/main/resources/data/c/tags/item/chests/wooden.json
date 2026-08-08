@@ -14,6 +14,20 @@
                    "charmony:spruce_chest",
                    "charmony:warped_chest",
                    "charmony:azalea_chest",
-                   "charmony:ebony_chest"
+                   "charmony:ebony_chest",
+                   "charmony:trapped_acacia_chest",
+                   "charmony:trapped_bamboo_chest",
+                   "charmony:trapped_birch_chest",
+                   "charmony:trapped_cherry_chest",
+                   "charmony:trapped_crimson_chest",
+                   "charmony:trapped_dark_oak_chest",
+                   "charmony:trapped_jungle_chest",
+                   "charmony:trapped_mangrove_chest",
+                   "charmony:trapped_oak_chest",
+                   "charmony:trapped_pale_oak_chest",
+                   "charmony:trapped_spruce_chest",
+                   "charmony:trapped_warped_chest",
+                   "charmony:trapped_azalea_chest",
+                   "charmony:trapped_ebony_chest"
                ]
 }

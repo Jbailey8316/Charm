@@ -1,0 +1,16 @@
+﻿{
+    "ingredients":  [
+                        {
+                            "item":  "charmony:pale_oak_chest"
+                        },
+                        {
+                            "item":  "minecraft:tripwire_hook"
+                        }
+                    ],
+    "category":  "misc",
+    "result":  {
+                   "count":  1,
+                   "id":  "charmony:trapped_pale_oak_chest"
+               },
+    "type":  "minecraft:crafting_shapeless"
+}

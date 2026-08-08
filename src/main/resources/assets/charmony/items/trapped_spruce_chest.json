@@ -1,0 +1,10 @@
+﻿{
+    "model":  {
+                  "model":  {
+                                "type":  "minecraft:chest",
+                                "texture":  "minecraft:trapped"
+                            },
+                  "type":  "minecraft:special",
+                  "base":  "charmony:item/trapped_spruce_chest"
+              }
+}
