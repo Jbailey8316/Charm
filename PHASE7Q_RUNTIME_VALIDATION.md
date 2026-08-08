@@ -59,10 +59,17 @@ entity tick, so the unconditional cast raised a `ClassCastException` before
 the Horse/Wolf guard could run.
 
 The hook now pattern-matches the `LivingEntity` to Horse and Wolf first and
-returns only their native `getBodyArmorItem()` stack for `BODY`. Players,
+returns only their native BODY equipment for `BODY`. Players,
 generic living entities, and all non-Horse/Wolf entities retain vanilla slot
 lookup. The feature toggle still gates the hook; no supported enchantment set
 or equipment tags changed.
+
+Follow-up review found that `Mob#getBodyArmorItem()` itself delegates back to
+`LivingEntity#getItemBySlot(BODY)`. The final repair therefore reads the native
+`LivingEntity.equipment` container directly after the Horse/Wolf type check;
+the mixin no longer calls `getBodyArmorItem`, `getSlot`, or `getItemBySlot`.
+Horse and Wolf use the same native BODY equipment storage, independently
+verified by the type branches.
 
 Validation evidence:
 
@@ -70,6 +77,9 @@ Validation evidence:
 * Integrated-server quick-play world load: PASS; player joined and remained in
   the world for the observation window without the Animal Armor exception.
 * Player-tick crash: RESOLVED.
+* Save/load and extended ticking after the direct equipment access repair:
+  PASS; no recursive equipment call, null equipment field, or player-tick
+  exception appeared.
 * Full Animal Armor enchanting/effect, config-disabled, and multiplayer rows
   remain `NOT TESTED` and are not promoted by this blocker repair.
 * Existing unrelated data/resource parse errors remain in the dev log and are
