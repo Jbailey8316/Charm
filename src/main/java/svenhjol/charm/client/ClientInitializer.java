@@ -6,6 +6,7 @@ import svenhjol.charm.CharmMod;
 import svenhjol.charm.client.features.coral_squids.CoralSquids;
 import svenhjol.charm.client.features.kilns.KilnsClient;
 import svenhjol.charm.client.features.copper_pistons.CopperPistons;
+import svenhjol.charm.client.features.woodcutting.WoodcuttersClient;
 
 public final class ClientInitializer implements ClientModInitializer {
     @Override
@@ -15,6 +16,7 @@ public final class ClientInitializer implements ClientModInitializer {
         mod.addSidedFeature(CoralSquids.class);
         mod.addSidedFeature(KilnsClient.class);
         mod.addSidedFeature(CopperPistons.class);
+        mod.addSidedFeature(WoodcuttersClient.class);
         mod.run(Side.Client);
     }
 }

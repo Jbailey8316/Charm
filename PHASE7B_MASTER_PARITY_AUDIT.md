@@ -7,7 +7,7 @@ resource, registry, mixin, build, or configuration files were changed. The
 archived Charm feature index describes more than 70 user-facing features; the
 historical 1.21.1 source contains 78 feature directories. The current port
 contains a substantial, buildable subset, but compilation is not evidence of
-gameplay parity. Twenty-eight archived features are absent, three are only
+gameplay parity. Twenty-three archived features are absent, three are only
 partial, and the remaining present features require runtime validation unless
 an existing phase supplied sufficient evidence.
 
@@ -134,12 +134,12 @@ conservative: no feature is marked `PASS` solely because it compiles.
 | Villager Attracting | Villagers | Loved-tag item attracts villagers | `villager_attracting` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | AI matrix | P2 | Emerald Block tag behavior untested |
 | Waypoints | Navigation | Waypoint/position utility | `waypoints` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | Entire feature absent |
 | Wood | Building/storage | Variant wood blocks and families | `wood` | Charmony, Azalea, Ebony | PARTIAL | yes | present | PASS | PARTIAL | NEEDS VALIDATION | finish family audit | P2 | Pale Oak is intentional semantic addition |
-| Woodcutters | Villagers | Woodcutter villager/job behavior | `woodcutters` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | Entire feature absent |
-| Woodcutting | Utility | Woodcutting utility/recipes | `woodcutting` | Root Charm | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | validate recipe matrix | P1 | Custom recipe type restored; 277 concrete recipes including Pale Oak; Woodcutter menu remains Phase 7L.2 |
+| Woodcutters | Villagers | Woodcutter workstation/menu behavior | `woodcutters` | Root Charm | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | complete runtime matrix | P1 | Dedicated transient workstation/menu restored; Lumberjack profession remains separate |
+| Woodcutting | Utility | Woodcutting utility/recipes | `woodcutting` | Root Charm | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | validate recipe/menu matrix | P1 | Custom recipe type and dedicated Woodcutter menu restored; 277 concrete recipes including Pale Oak |
 
 ### Table totals
 
-Of 71 archived user-facing rows: **PRESENT 44**, **PARTIAL 1**, **MISSING 24**,
+Of 71 archived user-facing rows: **PRESENT 45**, **PARTIAL 1**, **MISSING 23**,
 **INTENTIONALLY OMITTED 1**, and **INTENTIONALLY MODIFIED 1**. Parity is
 **NEEDS VALIDATION 43**, **NEEDS RESTORATION 26**, **OMIT 1**,
 **INTENTIONAL MYTHAS DIVERGENCE 1**; no row is
@@ -151,10 +151,10 @@ present implementation is broken.
 
 ### A. Archive features missing from the current port
 
-The 24 `MISSING` rows above are confirmed by searching feature classes,
+The 23 `MISSING` rows above are confirmed by searching feature classes,
 registrations, resources, config, mixins, translations, recipes, loot, tags,
 and assets. Highest-risk missing systems are Arcane Purpur,
-Lumberjacks, Storage Blocks (remaining scope), and Woodcutters. Smaller but
+Lumberjacks and remaining high-impact storage scope. Smaller but
 still user-facing omissions include Atlases, Bat
 Buckets, Beacons Heal Mobs, Beekeepers, Colored Sea Lanterns, Doors Open
 Together, Echolocation, Endermite Powder, Firing, Item Hover Sorting, Item
@@ -349,7 +349,7 @@ of every feature marked NEEDS VALIDATION and closure of the P0 blocker.
 
 The port is **build-ready but not feature-parity-ready**. The aggregate build,
 resource processing, and several focused runtime smoke tests are clean. The
-24 missing archived features, three partial systems, one intentional omission,
+23 missing archived features, three partial systems, one intentional omission,
 broad untested gameplay
 matrix, and one explicit P0 persistence blocker prevent a release-complete
 claim. The next milestone is a safe, runtime-validated P0/P1 baseline rather

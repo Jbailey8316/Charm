@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["###", " X ", " X "],
+  "key": {
+    "#": {"tag": "minecraft:wooden_slabs"},
+    "X": {"item": "minecraft:stone"}
+  },
+  "result": {"id": "charm:woodcutter"}
+}

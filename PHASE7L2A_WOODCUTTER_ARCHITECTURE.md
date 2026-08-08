@@ -181,6 +181,16 @@ workstation, loot, translations, and creative-tab placement.
 
 No files in this plan are implemented by Phase 7L.2A.
 
+## 7L.2C implementation findings
+
+The approved isolated design was implemented in `WoodcutterMenu`,
+`WoodcutterNetworking`, and the client Woodcutter screen. The S2C recipe list
+contains only stable matching recipe IDs plus menu/generation metadata; C2S
+selection contains no result data. Server validation rechecks the current
+recipe manager and input before selection or consumption. The result slot and
+quick-move share one `onTake` consumption path. Static review passed; GUI and
+multiplayer transaction cases remain untested.
+
 ## Required proof before 7L.2B
 
 The implementation phase must compile a focused menu test path and perform

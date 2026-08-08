@@ -78,4 +78,22 @@ Interactive chest tests remain outstanding because GUI automation was unavailabl
 - Validate all 277 charm:woodcutting recipes in the Woodcutter menu, including Azalea, Ebony, and Pale Oak; confirm recipe-manager loading, selector behavior, output counts, input consumption, and no Stonecutter collisions.
 - Complete the Woodcutter menu safety matrix: server/client recipe synchronization, recipe changes, input replacement/removal, quick-move and shift-click, full-inventory output, close/reopen, block removal, disconnect/reconnect, save/reload, and component-bearing ItemStacks. No stale output, item loss, or duplication is acceptable.
 - Validate the Woodcutter block, orientation, loot, config-off behavior, and the absence of historical hopper/comparator automation.
+- Phase 7L.2C static payload/transaction review passed; the following remain manual UNTESTED: client recipe buttons and server selection, stale/hostile selection rejection, recipe reload, quick-move with full/partial inventories, close/disconnect/block removal, and duplicate/item-loss checks.
+
+### WOODCUTTER — RELEASE-CRITICAL TRANSACTION VALIDATION
+
+These cases are UNTESTED. Duplication, deletion, stale result extraction,
+retained input plus awarded output, and invalid-recipe crafting are release
+blockers:
+
+1. Normal craft with one input, stacked input, output count greater than one, and repeated crafting.
+2. Shift-click with one/stacked input, rapid repeats, partial destination, nearly full and full inventories.
+3. Change recipe before taking; remove input; replace with valid wood; replace with an invalid item.
+4. Close and disconnect with input remaining.
+5. Break the Woodcutter while open and attempt result extraction afterward.
+6. `/reload` while open and stale selection afterward.
+7. Pale Oak, Azalea, Ebony, Nether wood, and Bamboo recipes.
+8. Confirm vanilla Stonecutter and Kiln remain isolated.
+9. Confirm hoppers do not automate Woodcutter and comparators expose no inventory behavior.
+10. Check all cases for duplication or item loss.
 - Validate Lumberjack POI claiming, profession textures, all five trade tiers, restocking, job-site loss/reclaim, save/reload, and Azalea/Ebony/Pale Oak trade decisions after 7L.3 is implemented.

@@ -28,12 +28,34 @@ Validation:
 
 ## 7L.2 Woodcutter
 
-Not started. The first implementation attempt was stopped at the safety gate:
-the menu requires explicit client recipe synchronization and vanilla-equivalent
-result/quick-move transaction handling. An unsafe shortcut could create stale
-outputs, item loss, or duplication. It remains separated from the clean recipe
-backend until those semantics are migrated and tested against 1.21.10
-Stonecutter behavior.
+The workstation is now a dedicated Charm `StonecutterBlock` subclass with a
+transient one-slot input, derived result slot, custom menu type, and client
+screen. It does not create a block entity, persistent inventory, hopper path,
+or comparator signal. The server queries the current recipe manager for only
+`charm:woodcutting` recipes and owns the selected recipe, generation, result,
+and input consumption.
+
+`charm:woodcutter_recipes` is an isolated server-to-client payload containing
+the menu ID, generation, and matching stable recipe IDs. The client sends only
+the menu ID, generation, and selected recipe ID in
+`charm:woodcutter_select`; the server validates menu identity, workstation
+validity, generation, current recipe type, current input, and membership in
+the current matching set before selecting. Reload/input changes advance the
+generation and invalidate stale selections. Normal take and quick-move use
+the same result-slot `onTake` path, with destination-capacity checking before
+the server consumes one input.
+
+The screen provides a compact selector using the synchronized IDs and the
+vanilla Stonecutter background. Blockstate, item definition, crafting recipe,
+loot, translation, creative-tab placement, and orientation resources are
+present. Vanilla Stonecutter synchronization and `minecraft:stonecutting`
+remain untouched.
+
+Static transaction/mutation review: PASS. Compilation, aggregate build,
+startup, and payload registration are PASS. Interactive normal take,
+quick-move, full-inventory, close/disconnect, block-removal, stale-selection,
+reload, and duplication/item-loss tests are UNTESTED; the release-critical
+matrix remains in `RELEASE_VALIDATION_BACKLOG.md`.
 
 ## 7L.3 Lumberjack
 
