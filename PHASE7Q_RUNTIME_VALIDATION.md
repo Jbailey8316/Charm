@@ -23,6 +23,32 @@ teleportation, or persistence and attach the relevant `latest.log` excerpt.
 Result fields for execution: **Actual**, **Result** (`PASS`, `FAIL`,
 `BLOCKED`, `NOT TESTED`), **Log**, and **Release-blocking**.
 
+## Runtime blocker resolution — Aerial Affinity registry key
+
+During the first world-load attempt, registry decoding failed because the
+enchantment definition referenced `charm:player.aerial_mining_speed`, while
+Phase 7F had registered the attribute through `CommonRegistry`. That helper
+uses Charmony's `charmony` namespace for registry IDs, so no attribute existed
+under the `charm` key required by the Charm data resource.
+
+The fix registers the Aerial Affinity attribute with the existing
+constructor-time `Registerable` lifecycle under `charm:player.aerial_mining_speed`
+and creates the matching `charm:aerial_affinity` enchantment resource key. No
+mining-speed hook, feature toggle, or unrelated feature was changed.
+
+Validation evidence:
+
+* `compileJava`: PASS.
+* Dev client title-screen initialization: PASS.
+* Dev client quick-play world load reached server spawn preparation without the
+  previous unknown-attribute error: PASS for the registry-decoding blocker.
+* The same world load still reports pre-existing unrelated data errors (legacy
+  woodcutting/Chiseled Bookshelf resource issues) and later crashes in an
+  unrelated Villager Attracting path; those are not attributed to Aerial
+  Affinity and were not changed in this blocker fix.
+* Aerial Affinity gameplay row Q2-06 remains `NOT TESTED`; startup/world-load
+  success is not gameplay validation.
+
 ## P0 — data integrity and item persistence
 
 | ID | Feature | Setup and exact steps | Expected | Actual / Result / Log | Blocking |
