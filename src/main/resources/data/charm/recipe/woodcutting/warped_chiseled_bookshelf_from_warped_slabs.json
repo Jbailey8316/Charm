@@ -1,0 +1,10 @@
+{
+    "ingredient":  {
+                       "item":  "minecraft:warped_slab"
+                   },
+    "result":  {
+                   "id":  "charmony:warped_chiseled_bookshelf",
+                   "count":  1
+               },
+    "type":  "charm:woodcutting"
+}

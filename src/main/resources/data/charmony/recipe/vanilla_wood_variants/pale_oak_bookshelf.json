@@ -1,0 +1,19 @@
+{
+    "key":  {
+                "#":  {
+                          "item":  "charmony:pale_oak_planks"
+                      },
+                "X":  {
+                          "item":  "minecraft:book"
+                      }
+            },
+    "pattern":  [
+                    "###",
+                    "XXX",
+                    "###"
+                ],
+    "result":  {
+                   "id":  "charmony:pale_oak_bookshelf"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

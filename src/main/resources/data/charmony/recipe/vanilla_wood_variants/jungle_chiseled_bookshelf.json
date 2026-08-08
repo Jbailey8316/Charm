@@ -1,0 +1,19 @@
+{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:jungle_planks"
+                      },
+                "X":  {
+                          "item":  "minecraft:jungle_slab"
+                      }
+            },
+    "pattern":  [
+                    "###",
+                    "XXX",
+                    "###"
+                ],
+    "result":  {
+                   "id":  "charmony:jungle_chiseled_bookshelf"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

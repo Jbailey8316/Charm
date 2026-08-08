@@ -1,0 +1,19 @@
+{
+    "key":  {
+                "#":  {
+                          "item":  "charmony:ebony_planks"
+                      },
+                "X":  {
+                          "item":  "charmony:ebony_slab"
+                      }
+            },
+    "pattern":  [
+                    "###",
+                    "XXX",
+                    "###"
+                ],
+    "result":  {
+                   "id":  "charmony:ebony_chiseled_bookshelf"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

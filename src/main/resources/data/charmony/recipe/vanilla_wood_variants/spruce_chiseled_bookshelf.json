@@ -1,0 +1,19 @@
+{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:spruce_planks"
+                      },
+                "X":  {
+                          "item":  "minecraft:spruce_slab"
+                      }
+            },
+    "pattern":  [
+                    "###",
+                    "XXX",
+                    "###"
+                ],
+    "result":  {
+                   "id":  "charmony:spruce_chiseled_bookshelf"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

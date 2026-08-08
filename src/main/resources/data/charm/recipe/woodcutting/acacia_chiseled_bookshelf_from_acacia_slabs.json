@@ -1,0 +1,10 @@
+{
+    "ingredient":  {
+                       "item":  "minecraft:acacia_slab"
+                   },
+    "result":  {
+                   "id":  "charmony:acacia_chiseled_bookshelf",
+                   "count":  1
+               },
+    "type":  "charm:woodcutting"
+}

@@ -1,0 +1,10 @@
+{
+    "ingredient":  {
+                       "item":  "minecraft:oak_planks"
+                   },
+    "result":  {
+                   "id":  "charmony:oak_bookshelf",
+                   "count":  1
+               },
+    "type":  "charm:woodcutting"
+}

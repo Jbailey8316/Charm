@@ -1,0 +1,10 @@
+{
+    "ingredient":  {
+                       "item":  "charmony:ebony_slab"
+                   },
+    "result":  {
+                   "id":  "charmony:ebony_chiseled_bookshelf",
+                   "count":  1
+               },
+    "type":  "charm:woodcutting"
+}

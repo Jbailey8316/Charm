@@ -1,0 +1,19 @@
+{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:acacia_planks"
+                      },
+                "X":  {
+                          "item":  "minecraft:acacia_slab"
+                      }
+            },
+    "pattern":  [
+                    "###",
+                    "XXX",
+                    "###"
+                ],
+    "result":  {
+                   "id":  "charmony:acacia_chiseled_bookshelf"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

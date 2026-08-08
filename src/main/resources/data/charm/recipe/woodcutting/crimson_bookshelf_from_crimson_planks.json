@@ -1,0 +1,10 @@
+{
+    "ingredient":  {
+                       "item":  "minecraft:crimson_planks"
+                   },
+    "result":  {
+                   "id":  "charmony:crimson_bookshelf",
+                   "count":  1
+               },
+    "type":  "charm:woodcutting"
+}

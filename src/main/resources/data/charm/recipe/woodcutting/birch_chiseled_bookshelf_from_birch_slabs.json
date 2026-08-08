@@ -1,0 +1,10 @@
+{
+    "ingredient":  {
+                       "item":  "minecraft:birch_slab"
+                   },
+    "result":  {
+                   "id":  "charmony:birch_chiseled_bookshelf",
+                   "count":  1
+               },
+    "type":  "charm:woodcutting"
+}

@@ -1,0 +1,10 @@
+{
+    "ingredient":  {
+                       "item":  "minecraft:dark_oak_planks"
+                   },
+    "result":  {
+                   "id":  "charmony:dark_oak_bookshelf",
+                   "count":  1
+               },
+    "type":  "charm:woodcutting"
+}

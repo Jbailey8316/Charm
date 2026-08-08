@@ -1,0 +1,19 @@
+{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:acacia_planks"
+                      },
+                "X":  {
+                          "item":  "minecraft:book"
+                      }
+            },
+    "pattern":  [
+                    "###",
+                    "XXX",
+                    "###"
+                ],
+    "result":  {
+                   "id":  "charmony:acacia_bookshelf"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

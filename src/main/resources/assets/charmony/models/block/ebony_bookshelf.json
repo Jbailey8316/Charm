@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+      "end": "charmony:block/ebony_planks",
+      "side": "charmony:block/ebony_bookshelf"
+    }
+  }

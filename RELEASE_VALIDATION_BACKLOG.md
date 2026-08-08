@@ -97,3 +97,10 @@ blockers:
 9. Confirm hoppers do not automate Woodcutter and comparators expose no inventory behavior.
 10. Check all cases for duplication or item loss.
 - Validate Lumberjack POI claiming, profession textures, all five trade tiers, restocking, job-site loss/reclaim, save/reload, and Azalea/Ebony/Pale Oak trade decisions after 7L.3 is implemented.
+
+### Phase 7L.3B Bookshelves / Chiseled Bookshelves (UNTESTED)
+
+- Place, craft, break, and save/reload representative Oak, Pale Oak, Azalea, Ebony, Crimson, and Warped Bookshelves; verify vanilla enchanting-table power, fuel time, flammability, drops, and Silk Touch behavior.
+- Place each representative Chiseled Bookshelf; insert/remove books in all six slots, reject invalid items, verify comparator output and last-interacted-slot behavior, hopper behavior, save/reload, break-with-contents, and component preservation.
+- Verify all 14 Bookshelf and 14 Chiseled Bookshelf variants appear in the creative tab and render without missing textures; verify the 28 targeted Woodcutting recipes and no Stonecutter collision.
+- Confirm vanilla Bookshelf, Chiseled Bookshelf, and Enchanting Table behavior remains unchanged; confirm custom Nether variants remain nonflammable where material semantics require it.

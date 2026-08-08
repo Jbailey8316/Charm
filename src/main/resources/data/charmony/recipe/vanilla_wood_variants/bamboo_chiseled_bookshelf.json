@@ -1,0 +1,19 @@
+{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:bamboo_planks"
+                      },
+                "X":  {
+                          "item":  "minecraft:bamboo_slab"
+                      }
+            },
+    "pattern":  [
+                    "###",
+                    "XXX",
+                    "###"
+                ],
+    "result":  {
+                   "id":  "charmony:bamboo_chiseled_bookshelf"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

@@ -1,0 +1,19 @@
+{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:crimson_planks"
+                      },
+                "X":  {
+                          "item":  "minecraft:book"
+                      }
+            },
+    "pattern":  [
+                    "###",
+                    "XXX",
+                    "###"
+                ],
+    "result":  {
+                   "id":  "charmony:crimson_bookshelf"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

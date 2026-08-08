@@ -1,0 +1,10 @@
+{
+    "ingredient":  {
+                       "item":  "minecraft:oak_slab"
+                   },
+    "result":  {
+                   "id":  "charmony:oak_chiseled_bookshelf",
+                   "count":  1
+               },
+    "type":  "charm:woodcutting"
+}

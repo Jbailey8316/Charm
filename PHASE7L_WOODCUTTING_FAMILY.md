@@ -67,3 +67,34 @@ bookshelf, and ladder outputs. No tree-felling mechanic was found.
 
 Interactive tests for all three subphases remain unperformed and are listed in
 `RELEASE_VALIDATION_BACKLOG.md`.
+
+## 7L.3B Bookshelves and Chiseled Bookshelves
+
+Historical Charm supplied 13 Bookshelf and 13 Chiseled Bookshelf variants over
+11 vanilla wood families plus Azalea and Ebony. The port adds Pale Oak by the
+approved categorical wood-family semantic-parity rule, for 14 of each. The
+Ladder family remains intentionally out of scope for this subphase.
+
+Charmony's reusable `WoodRegistry` now registers material-specific blocks and
+items. Bookshelves retain vanilla block properties and enchanting power through
+the `minecraft:enchantment_power_provider` tag; chiseled bookshelves subclass
+the current 1.21.10 `ChiseledBookShelfBlock` and are added to the vanilla
+`CHISELED_BOOKSHELF` block-entity type, preserving six-slot storage, slot
+selection, comparator behavior, persistence, and vanilla interaction logic.
+No custom block entity or hopper implementation was introduced.
+
+Historical bookshelf/chiseled-bookcase recipes and loot behavior were restored
+for all 14 families. Twenty-eight targeted `charm:woodcutting` recipes repair
+the previously orphaned bookshelf outputs (14 Bookshelves and 14 Chiseled
+Bookshelves); the existing 277 recipe files were otherwise left untouched.
+The `charmony:chiseled_bookshelves` block tag contains all 14 variants for the
+future Lumberjack trade implementation. Pale Oak uses dedicated generated
+pixel-art textures; the 13 historical families use recovered Charm assets.
+
+Static validation: Charmony, Azalea Wood, Ebony Wood, aggregate build, and
+resource JSON parsing passed. Client startup was attempted and timed out in the
+available environment; no bookshelf-specific error was observed in the latest
+log snapshot. Interactive placement, enchanting-power, fuel/fire, six-slot
+insertion/removal, comparator, hopper, save/reload, break-with-contents, and
+component-preservation tests are UNTESTED and remain release-backlog items.
+Lumberjacks remain unimplemented.

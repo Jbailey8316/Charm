@@ -1,0 +1,19 @@
+{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:warped_planks"
+                      },
+                "X":  {
+                          "item":  "minecraft:warped_slab"
+                      }
+            },
+    "pattern":  [
+                    "###",
+                    "XXX",
+                    "###"
+                ],
+    "result":  {
+                   "id":  "charmony:warped_chiseled_bookshelf"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

@@ -1,0 +1,10 @@
+{
+    "ingredient":  {
+                       "item":  "charmony:pale_oak_planks"
+                   },
+    "result":  {
+                   "id":  "charmony:pale_oak_bookshelf",
+                   "count":  1
+               },
+    "type":  "charm:woodcutting"
+}

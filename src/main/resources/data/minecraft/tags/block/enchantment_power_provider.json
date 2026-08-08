@@ -1,0 +1,19 @@
+{
+    "replace":  false,
+    "values":  [
+                   "charmony:oak_bookshelf",
+                   "charmony:spruce_bookshelf",
+                   "charmony:birch_bookshelf",
+                   "charmony:jungle_bookshelf",
+                   "charmony:acacia_bookshelf",
+                   "charmony:dark_oak_bookshelf",
+                   "charmony:mangrove_bookshelf",
+                   "charmony:cherry_bookshelf",
+                   "charmony:bamboo_bookshelf",
+                   "charmony:crimson_bookshelf",
+                   "charmony:warped_bookshelf",
+                   "charmony:pale_oak_bookshelf",
+                   "charmony:azalea_bookshelf",
+                   "charmony:ebony_bookshelf"
+               ]
+}

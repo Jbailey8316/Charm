@@ -1,0 +1,10 @@
+{
+    "ingredient":  {
+                       "item":  "minecraft:jungle_planks"
+                   },
+    "result":  {
+                   "id":  "charmony:jungle_bookshelf",
+                   "count":  1
+               },
+    "type":  "charm:woodcutting"
+}

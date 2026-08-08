@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+      "end": "charmony:block/azalea_planks",
+      "side": "charmony:block/azalea_bookshelf"
+    }
+  }

@@ -1,0 +1,10 @@
+{
+    "ingredient":  {
+                       "item":  "minecraft:cherry_planks"
+                   },
+    "result":  {
+                   "id":  "charmony:cherry_bookshelf",
+                   "count":  1
+               },
+    "type":  "charm:woodcutting"
+}

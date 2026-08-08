@@ -1,0 +1,19 @@
+{
+    "key":  {
+                "#":  {
+                          "item":  "charmony:azalea_planks"
+                      },
+                "X":  {
+                          "item":  "charmony:azalea_slab"
+                      }
+            },
+    "pattern":  [
+                    "###",
+                    "XXX",
+                    "###"
+                ],
+    "result":  {
+                   "id":  "charmony:azalea_chiseled_bookshelf"
+               },
+    "type":  "minecraft:crafting_shaped"
+}
