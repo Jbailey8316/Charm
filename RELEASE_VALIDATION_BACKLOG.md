@@ -120,10 +120,13 @@ blockers:
 
 ### Phase 7M audit findings
 
-- Resolve and validate the 14 Chiseled Bookshelf base-model references before
-  visual release testing; current startup reports missing
-  `charmony:block/chiseled_<family>_bookshelf` models while the files use the
-  `<family>_chiseled_bookshelf` naming.
+- Phase 7N repaired the 14 Chiseled Bookshelf base-model references. Confirm
+  during client release testing that all base and occupancy models render for
+  every family; this resource repair is statically validated, but gameplay and
+  visual validation remain UNTESTED.
+- Place each Chiseled Bookshelf, insert/remove books in all six slots, reject
+  invalid items, verify comparator and last-interacted-slot behavior, hopper
+  behavior, save/reload, break-with-contents, and component preservation.
 - Add the eventual Test-JAR matrix for Endermite Powder and Arcane Purpur only
   after their source-backed implementation phases; include End-only use,
   structure lookup, cooldown/consumption, nearest-target selection, obstruction,

@@ -2,7 +2,7 @@
     "multipart": [
       {
         "apply": {
-          "model": "charmony:block/chiseled_jungle_bookshelf",
+          "model": "charmony:block/jungle_chiseled_bookshelf",
           "uvlock": true,
           "y": 270
         },
@@ -204,7 +204,7 @@
       },
       {
         "apply": {
-          "model": "charmony:block/chiseled_jungle_bookshelf",
+          "model": "charmony:block/jungle_chiseled_bookshelf",
           "uvlock": true,
           "y": 0
         },
@@ -406,7 +406,7 @@
       },
       {
         "apply": {
-          "model": "charmony:block/chiseled_jungle_bookshelf",
+          "model": "charmony:block/jungle_chiseled_bookshelf",
           "uvlock": true,
           "y": 90
         },
@@ -608,7 +608,7 @@
       },
       {
         "apply": {
-          "model": "charmony:block/chiseled_jungle_bookshelf",
+          "model": "charmony:block/jungle_chiseled_bookshelf",
           "uvlock": true,
           "y": 180
         },

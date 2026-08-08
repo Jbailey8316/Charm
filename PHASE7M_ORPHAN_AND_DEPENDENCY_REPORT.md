@@ -30,8 +30,10 @@ Endermite Powder -----------> Arcane Purpur recipe and locator mechanic
 
 ### Confirmed
 
-- Fourteen Chiseled Bookshelf base model references are unresolved because the
-  blockstate naming convention and model filenames disagree.
+- Resolved in Phase 7N: all fourteen Chiseled Bookshelf blockstates now point
+  to the existing `<family>_chiseled_bookshelf.json` base models. The six empty
+  and six occupied slot model sets remain valid. Interactive visual and
+  inventory validation is still pending.
 - The 21 top-level missing features have no current production registration;
   their historical resources are therefore intentionally absent rather than
   accidentally orphaned.
