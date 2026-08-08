@@ -1,0 +1,11 @@
+{
+  "type": "charm:firing",
+  "ingredient": {
+    "item": "minecraft:clay"
+  },
+  "result": {
+    "id": "minecraft:terracotta"
+  },
+  "experience": 0.35,
+  "cooking_time": 100
+}

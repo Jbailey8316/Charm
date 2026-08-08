@@ -1,0 +1,8 @@
+{
+  "type": "charm:firing",
+  "ingredient": { "item": "minecraft:quartz_block" },
+  "result": { "id": "minecraft:smooth_quartz" },
+  "experience": 0.1,
+  "cooking_time": 100
+}
++

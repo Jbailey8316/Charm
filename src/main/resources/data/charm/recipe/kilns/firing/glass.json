@@ -1,0 +1,11 @@
+{
+  "type": "charm:firing",
+  "ingredient": {
+    "tag": "minecraft:sand"
+  },
+  "result": {
+    "id": "minecraft:glass"
+  },
+  "experience": 0.1,
+  "cooking_time": 100
+}

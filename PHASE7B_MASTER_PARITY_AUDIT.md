@@ -97,7 +97,7 @@ conservative: no feature is marked `PASS` solely because it compiles.
 | Item Restocking | Inventory/QoL | Restock depleted hotbar items | `item_restocking` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | gameplay/exploit test | P2 | Duplication-sensitive |
 | Item Stacking | Inventory/QoL | Stack selected books, potions, and stews | `item_stacking` | — | INTENTIONALLY OMITTED | no (omitted) | historical only | n/a | n/a | OMIT | retain vanilla behavior | P1 | Mythas automation/world-safety decision: comparator, hopper, filter, storage, and unsafe oversized-stack disable risks; see `PHASE7I_ITEM_STACKING_AUDIT.md` |
 | Item Tidying | Inventory/QoL | Tidy inventory stacks | `item_tidying` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | gameplay/exploit test | P2 | Inventory semantics |
-| Kilns | Blocks/food | Kiln processing block | `kilns` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | Entire feature absent |
+| Kilns | Blocks/food | Kiln processing block | `kilns` | Root Charm + Firing | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | validate processing/automation | Historical custom firing recipe type; 100-tick cooking recipes restored |
 | Lumberjacks | Villagers | Lumberjack villager/job behavior | `lumberjacks` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | Entire feature absent |
 | Mineshaft Improvements | Worldgen | Improve mineshaft generation | `mineshaft_improvements` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | worldgen test | P2 | Generation evidence pending |
 | Mob Drops | Mob drops | Extra drops and configured mob rules | `mob_drops` | Tweaks | PRESENT | yes | present | PASS | PARTIAL | NEEDS VALIDATION | deterministic drop matrix | P2 | 19 native heads added; gameplay pending |
@@ -139,9 +139,9 @@ conservative: no feature is marked `PASS` solely because it compiles.
 
 ### Table totals
 
-Of 71 archived user-facing rows: **PRESENT 41**, **PARTIAL 1**, **MISSING 27**,
+Of 71 archived user-facing rows: **PRESENT 42**, **PARTIAL 1**, **MISSING 26**,
 **INTENTIONALLY OMITTED 1**, and **INTENTIONALLY MODIFIED 1**. Parity is
-**NEEDS VALIDATION 41**, **NEEDS RESTORATION 28**, **OMIT 1**,
+**NEEDS VALIDATION 42**, **NEEDS RESTORATION 27**, **OMIT 1**,
 **INTENTIONAL MYTHAS DIVERGENCE 1**; no row is
 marked `NEEDS FIX`, `PASS`, `OMIT`, or `UNKNOWN` at this audit gate. This is
 deliberately conservative: the absence of a `PASS` is not a claim that every
@@ -151,10 +151,10 @@ present implementation is broken.
 
 ### A. Archive features missing from the current port
 
-The 27 `MISSING` rows above are confirmed by searching feature classes,
+The 26 `MISSING` rows above are confirmed by searching feature classes,
 registrations, resources, config, mixins, translations, recipes, loot, tags,
 and assets. Highest-risk missing systems are Animal Armor Enchanting,
-Arcane Purpur, Copper Pistons, Kilns,
+Arcane Purpur and Copper Pistons,
 Lumberjacks, Storage Blocks (remaining scope), Woodcutters,
 and Woodcutting. Smaller but still user-facing omissions include Atlases, Bat
 Buckets, Beacons Heal Mobs, Beekeepers, Colored Sea Lanterns, Doors Open
@@ -317,7 +317,7 @@ drop matrix still UNTESTED**. No production rates were changed in Phase 7B.
 | Priority | Count | Issues |
 |---|---:|---|
 | P0 | 1 | Suspicious Block Falling Item Persistence |
-| P1 | 11 | High-impact systems (Arcane Purpur, Copper Pistons, Kilns, Lumberjacks, Storage scope, Woodcutters, Woodcutting) plus Aerial Affinity, Animal Armor Enchanting, Anvils Last Longer, and Recipe Improvements validation; Item Stacking is intentionally omitted |
+| P1 | 11 | High-impact systems (Arcane Purpur and Copper Pistons, Lumberjacks, Storage scope, Woodcutters, Woodcutting) plus Aerial Affinity, Animal Armor Enchanting, Anvils Last Longer, and Recipe Improvements validation; Item Stacking is intentionally omitted |
 | P2 | 23 | Remaining missing features and present-but-unvalidated gameplay/content parity |
 | P3 | 3 | Client/audio/polish discrepancies and renamed/reorganized feature validation |
 
@@ -330,7 +330,7 @@ one issue can cover several tightly related rows.
    Persistence, then run the full death/inventory/storage exploit matrix.
 2. **P1 missing foundations:** validate Recipe Improvements and restore Storage remaining
    scope and the high-impact item/block systems (Anvils Last Longer is now
-   restored and requires runtime validation; next are Copper Pistons, Kilns,
+   restored and requires runtime validation; next is Copper Pistons,
    Item Stacking is intentionally omitted for server safety; next are
    Lumberjacks/Woodcutters/Woodcutting). Keep each large system in a focused
    phase with parity audit first.
@@ -350,7 +350,7 @@ of every feature marked NEEDS VALIDATION and closure of the P0 blocker.
 
 The port is **build-ready but not feature-parity-ready**. The aggregate build,
 resource processing, and several focused runtime smoke tests are clean. The
-27 missing archived features, three partial systems, one intentional omission,
+26 missing archived features, three partial systems, one intentional omission,
 broad untested gameplay
 matrix, and one explicit P0 persistence blocker prevent a release-complete
 claim. The next milestone is a safe, runtime-validated P0/P1 baseline rather
