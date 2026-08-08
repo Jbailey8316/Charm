@@ -18,9 +18,9 @@ therefore the 75-row table, not the stale “71” summary.
 
 | Status | Count |
 |---|---:|
-| PRESENT | 52 |
+| PRESENT | 53 |
 | PARTIAL | 1 (`Wood`) |
-| MISSING | 21 |
+| MISSING | 20 |
 | SUPERSEDED BY VANILLA | 0 |
 | INTENTIONALLY OMITTED | 1 (`Item Stacking`) |
 | MYTHAS DIVERGENCE | 1 (`Totem of Preserving` Grave Mode) |
@@ -28,9 +28,9 @@ therefore the 75-row table, not the stale “71” summary.
 | UNKNOWN | 0 |
 | **Audited rows** | **75** |
 
-The 21 missing rows are: Arcane Purpur, Atlases, Bat Buckets, Beacons Heal
+The 20 missing rows are: Arcane Purpur, Atlases, Bat Buckets, Beacons Heal
 Mobs, Beekeepers, Colored Sea Lanterns, Doors Open Together, Echolocation,
-Endermite Powder, Item Hover Sorting, Note Block Lower Pitch, Noteblocks,
+Item Hover Sorting, Note Block Lower Pitch, Noteblocks,
 Player Pressure Plates, Potion of Radiance, Raid Horns, Redstone Sand, Silence,
 Smooth Glowstone, Suspicious Effect Improvements, Tooltip Improvements, and
 Waypoints. Firing was reclassified PRESENT because its current recipe type and
@@ -120,6 +120,16 @@ Historical configuration options were cross-checked in the companion config
 report. Item Stacking remains intentionally omitted; Totem of Preserving remains
 the approved Mythas Grave Mode divergence; Pale Oak is only a categorical
 semantic extension.
+
+## Endermite Powder implementation status
+
+The independent Endermite Powder gameplay system is now registered and built:
+the item, exact Endermite-kill drop callback, End-only 1,500-block End City
+locator use, server-owned locator entity, portal particles, launch sound, and
+rare Wandering Trader offer are present. The two historical advancements remain
+deferred because their parent `charm:block_of_ender_pearls/convert_silverfish`
+is not present in the current content set. Interactive drops, locator lifecycle,
+and trader tests remain in the release backlog.
 
 ## Endermite Powder deep audit
 

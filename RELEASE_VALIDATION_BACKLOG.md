@@ -19,6 +19,7 @@ Interactive chest tests remain outstanding because GUI automation was unavailabl
 - Villager Attracting: main-hand Emerald Block attraction, stop/removal, offhand versus inventory-only behavior, range, obstacles, multiple villagers/players, work/sleep/panic priority, baby/nitwit/employed/unemployed eligibility, feature-disabled behavior, and dedicated-server synchronization.
 - Coral Squids: summon/rendering, swimming/flee/ink behavior, bucket pickup and variant persistence, natural warm-ocean/coral spawning plus negative cases, save/reload, dedicated-server synchronization, normal coral drops, five head icons/placement/break persistence, player-kill head drops, Looting scaling, and Mob Drops toggle-off behavior.
 - Kilns: craft/place/orientation, GUI and recipe-book behavior, clay/glass/brick/terracotta/stone processing, 100-tick cook time, fuel use, XP, hopper input/fuel/output, comparator fullness, save/reload, break-with-inventory, config disable, and dedicated-server synchronization.
+- Endermite Powder — RELEASE-CRITICAL: Endermite player/non-player/environmental drops, Looting 0–3 distribution, normal End-only use, Overworld/Nether rejection, survival/creative consumption, 40-tick cooldown, failed search consumption, tagged End City search, locator direction/portal particles/expiry, save/reload, chunk unload/reload, multiplayer observation, rare Wandering Trader offer, and invalid-target cleanup. Historical advancements remain deferred pending the Block of Ender Pearls parent.
 
 ## Phase 7B audit follow-up
 

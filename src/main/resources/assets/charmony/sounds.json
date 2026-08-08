@@ -15,5 +15,14 @@
       "charmony:lumberjack4"
     ],
     "subtitle": "subtitles.charmony.entity.villager.work_lumberjack"
+  },
+  "endermite_powder_launch": {
+    "sounds": [
+      {
+        "name": "charmony:endermite_powder",
+        "volume": 1.0
+      }
+    ],
+    "subtitle": "subtitles.charmony.item.endermite_powder.launch"
   }
 }

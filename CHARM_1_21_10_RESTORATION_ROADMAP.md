@@ -3,7 +3,7 @@
 ## Milestone A — Test JAR
 
 Mandatory scope: retain the current restored baseline, resolve the P0 static
-and runtime test gate, and restore Endermite Powder plus Arcane Purpur after
+and runtime test gate, and validate the restored Endermite Powder plus Arcane Purpur after
 their source audits. The Chiseled Bookshelf model-reference gap must be fixed
 before visual testing. Build gate: aggregate build, dev-client initialization,
 dedicated-server startup, and resource/tag validation. Manual gate: all
@@ -34,7 +34,7 @@ and the approved Totem of Preserving Mythas divergence remain excluded.
 | Phase | Scope | Dependencies | Risk | Test JAR? | Production Candidate? |
 |---|---|---|---|---|---|
 | 7N | Resolve Chiseled Bookshelf resource gap | current Wood content | Medium | Yes | Yes |
-| 7O | Endermite Powder | source audit complete; End structures | High | Yes | Yes |
+| 7O | Endermite Powder | source audit complete; End structures | High | Implemented; manual tests pending | Yes |
 | 7P | Arcane Purpur | Endermite Powder | High | Yes | Yes |
 | 7Q | P0 Suspicious Blocks validation closure | dedicated/runtime harness | Critical | Yes | Yes |
 | 7R | Release-critical restored-system matrix | 7Q, current backlog | Critical | Yes | Yes |

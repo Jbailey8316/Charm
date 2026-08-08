@@ -228,6 +228,48 @@ identified deferred resource dependency.
 Phase 7O.2 should have compile/build gates after steps 1–4, 5–8, and the final
 resource/advancement pass.
 
+## Phase 7O.2 — Implementation
+
+The independent gameplay slice is implemented in small compile-gated steps.
+`EndermitePowder` registers the Charmony item and exact configurable maximum
+drop count (default 2). `Registers` installs the existing server-side
+`EntityKilledDropCallback`; it preserves normal Endermite loot and applies the
+recovered formula `nextInt(max(1, looting + 1))` plus one when
+`nextFloat() < 0.3 * maxDrops`. There is no player-kill gate, matching the
+historical callback.
+
+The `charmony:endermite_powder_located` structure tag contains only
+`minecraft:end_city`. `EndermitePowderItem.use` preserves historical ordering:
+invalid dimensions return PASS without changes; in the End, cooldown 40 and
+survival consumption happen before the synchronous 1,500-block tagged search.
+Search failure therefore retains the historical consumed-item/cooldown result.
+Successful search creates one server-owned locator at the historical launch
+offset and never lets the client choose a target.
+
+`EndermitePowderEntity` is registered as MISC with dimensions 2×2, tracking
+range 80, and update interval 10. Target X/Z are synchronized entity data and
+saved as `targetX`/`targetZ`; age is intentionally transient, as in historical
+Charm. Its tick movement, 18 portal-particle emissions per tick, and >1000-tick
+discard follow the recovered implementation. The client uses the current
+1.21.10 render-state `EntityRenderer` path with the historical no-texture
+renderer architecture.
+
+The rare Wandering Trader offer is a custom listing with 20 Emeralds for 3
+powder, max uses 1, XP 1, and multiplier 1.0, inserted only into the rare
+pool. Launch sound and the recovered item texture/model are present. The two
+historical advancements are intentionally **DEFERRED**: both depend on the
+missing `charm:block_of_ender_pearls/convert_silverfish` parent, and no broken
+or invented parent was introduced. Arcane Purpur recipes remain deferred to
+Phase 7P.
+
+Static validation: Java compile, aggregate build, resource processing, entity
+renderer registration, tag registration, and client initialization passed.
+Interactive drop, use, locator, persistence, trader, and advancement cases are
+UNTESTED and remain release-critical backlog entries. The dev client reached
+feature initialization; its only observed errors were external authentication/
+Realms TLS failures and pre-existing Moobloom resource warnings, with no
+Endermite Powder registry, renderer, tag, sound, or advancement errors.
+
 ## Phase 7O.1 status
 
 Endermite Powder remains `MISSING`. No production files were modified in this

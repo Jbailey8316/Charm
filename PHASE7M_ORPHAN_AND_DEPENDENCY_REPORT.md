@@ -13,7 +13,7 @@ Custom Barrels -------------> Lumberjack categorical trade
 Custom Chiseled Bookshelves -> Lumberjack categorical trade
 
 Firing recipe type ---------> Kiln block entity/menu/recipes
-Endermite Powder -----------> Arcane Purpur recipe and locator mechanic
+Endermite Powder -----------> Arcane Purpur recipe (7P); locator is independent
 ```
 
 ## Dependency classifications
@@ -24,7 +24,7 @@ Endermite Powder -----------> Arcane Purpur recipe and locator mechanic
 | Woodcutter -> Lumberjack | PRESENT | Native POI/profession registration; villager tests pending |
 | Custom wood tags -> Lumberjack | PRESENT | Ladder, Chiseled Bookshelf, and merged barrel tags resolve |
 | Firing -> Kiln | PRESENT | `charm:firing` is registered and consumed by Kiln |
-| Endermite Powder -> Arcane Purpur | MISSING prerequisite | Both production systems remain absent |
+| Endermite Powder -> Arcane Purpur | DEFERRED | Endermite locator is present; Arcane Purpur recipes remain 7P |
 
 ## Orphan report
 
@@ -43,6 +43,10 @@ Endermite Powder -----------> Arcane Purpur recipe and locator mechanic
 - No orphaned Lumberjack trade tag was found.
 - No orphaned Woodcutting output was found after the Bookshelf/Ladder phases.
 - No orphaned Firing/Kiln recipe type was found.
+- Resolved in Phase 7O: Endermite Powder item, structure tag, locator entity,
+  drop hook, sound, and rare trader offer are registered. The historical
+  advancement parent `charm:block_of_ender_pearls/convert_silverfish` remains
+  a documented deferred dependency; no dangling advancement JSON was added.
 
 ## Cross-feature risks
 
