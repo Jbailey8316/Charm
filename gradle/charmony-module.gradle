@@ -12,5 +12,9 @@ dependencies {
     } else if (project.name != 'charmony-api') {
         implementation project(':charmony-api')
         implementation project(':charmony')
+
+        if (project.name == 'charmony-tweaks') {
+            implementation project(':charmony-mooblooms')
+        }
     }
 }
