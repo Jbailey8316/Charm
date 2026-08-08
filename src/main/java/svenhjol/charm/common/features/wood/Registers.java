@@ -14,6 +14,7 @@ public final class Registers extends Setup<VanillaWoodVariants> {
         // Creative-tab insertion is anchored after the vanilla barrel. Register in reverse
         // so repeated addAfter calls produce the declared material order in the final tab.
         for (var i = materials.length - 1; i >= 0; i--) {
+            woodRegistry.chest(materials[i]);
             woodRegistry.barrel(materials[i]);
         }
     }

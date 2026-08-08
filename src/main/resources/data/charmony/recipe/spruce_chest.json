@@ -1,0 +1,18 @@
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:spruce_planks"
+                      }
+            },
+    "category":  "misc",
+    "pattern":  [
+                    "###",
+                    "# #",
+                    "###"
+                ],
+    "result":  {
+                   "count":  1,
+                   "id":  "charmony:spruce_chest"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

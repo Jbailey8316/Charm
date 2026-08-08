@@ -1,0 +1,10 @@
+﻿{
+    "model":  {
+                  "model":  {
+                                "type":  "minecraft:chest",
+                                "texture":  "minecraft:normal"
+                            },
+                  "type":  "minecraft:special",
+                  "base":  "charmony:item/mangrove_chest"
+              }
+}

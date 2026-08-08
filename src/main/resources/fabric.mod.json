@@ -19,6 +19,9 @@
   "entrypoints": {
     "main": [
       "svenhjol.charm.common.CommonInitializer"
+    ],
+    "client": [
+      "svenhjol.charm.client.ClientInitializer"
     ]
   },
 

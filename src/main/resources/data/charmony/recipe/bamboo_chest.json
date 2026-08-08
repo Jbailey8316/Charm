@@ -1,0 +1,18 @@
+﻿{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:bamboo_planks"
+                      }
+            },
+    "category":  "misc",
+    "pattern":  [
+                    "###",
+                    "# #",
+                    "###"
+                ],
+    "result":  {
+                   "count":  1,
+                   "id":  "charmony:bamboo_chest"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

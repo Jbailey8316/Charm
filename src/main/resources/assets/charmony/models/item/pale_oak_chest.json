@@ -1,0 +1,6 @@
+﻿{
+    "textures":  {
+                     "particle":  "minecraft:block/pale_oak_planks"
+                 },
+    "parent":  "builtin/entity"
+}
