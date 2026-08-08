@@ -49,6 +49,32 @@ Validation evidence:
 * Aerial Affinity gameplay row Q2-06 remains `NOT TESTED`; startup/world-load
   success is not gameplay validation.
 
+## Runtime blocker resolution — Animal Armor player-tick crash
+
+The first world-load attempt after the Aerial fix crashed while ticking an
+ordinary `ServerPlayer`. The Phase 7G `LivingEntity#getItemBySlot` mixin cast
+every living entity to `Mob` before checking its type. Minecraft 1.21.10
+enchantment effect iteration queries `EquipmentSlot.BODY` during each living
+entity tick, so the unconditional cast raised a `ClassCastException` before
+the Horse/Wolf guard could run.
+
+The hook now pattern-matches the `LivingEntity` to Horse and Wolf first and
+returns only their native `getBodyArmorItem()` stack for `BODY`. Players,
+generic living entities, and all non-Horse/Wolf entities retain vanilla slot
+lookup. The feature toggle still gates the hook; no supported enchantment set
+or equipment tags changed.
+
+Validation evidence:
+
+* `compileJava`: PASS.
+* Integrated-server quick-play world load: PASS; player joined and remained in
+  the world for the observation window without the Animal Armor exception.
+* Player-tick crash: RESOLVED.
+* Full Animal Armor enchanting/effect, config-disabled, and multiplayer rows
+  remain `NOT TESTED` and are not promoted by this blocker repair.
+* Existing unrelated data/resource parse errors remain in the dev log and are
+  tracked outside this isolated fix.
+
 ## P0 — data integrity and item persistence
 
 | ID | Feature | Setup and exact steps | Expected | Actual / Result / Log | Blocking |

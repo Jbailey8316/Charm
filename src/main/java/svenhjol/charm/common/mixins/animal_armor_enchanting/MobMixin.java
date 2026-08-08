@@ -2,7 +2,6 @@ package svenhjol.charm.common.mixins.animal_armor_enchanting;
 
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.entity.animal.wolf.Wolf;
 import net.minecraft.world.item.ItemStack;
@@ -20,9 +19,11 @@ public abstract class MobMixin {
         var feature = Mod.tryGetSidedFeature(AnimalArmorEnchanting.class).orElse(null);
         if (feature == null || !feature.enabled() || slot != EquipmentSlot.BODY) return;
 
-        var mob = (Mob)(Object)this;
-        if (mob instanceof Horse || mob instanceof Wolf) {
-            cir.setReturnValue(mob.getBodyArmorItem());
+        var entity = (LivingEntity)(Object)this;
+        if (entity instanceof Horse horse) {
+            cir.setReturnValue(horse.getBodyArmorItem());
+        } else if (entity instanceof Wolf wolf) {
+            cir.setReturnValue(wolf.getBodyArmorItem());
         }
     }
 }

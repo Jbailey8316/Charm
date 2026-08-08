@@ -54,6 +54,10 @@ Interactive chest tests remain outstanding because GUI automation was unavailabl
 
 ## Phase 7G Animal Armor Enchanting
 
+The Phase 7Q.1 player-tick crash in the body-equipment compatibility hook is
+fixed and world-load stability is verified. The gameplay cases below remain
+release-critical `NOT TESTED` until actual horse/wolf interaction is exercised.
+
 - Enchant leather, iron, golden, diamond, and copper Horse Armor and Wolf Armor using the intended enchanting-table/book/anvil paths; verify only the historical nine-enchantment set is accepted.
 - Equip enchanted armor on horses and wolves; verify protection, fire/blast/projectile protection, thorns, Frost Walker, Feather Falling, Respiration, and Soul Speed behavior where applicable rather than tooltip-only enchantment storage.
 - Test durability, damage, save/reload, and server synchronization. Confirm Mending and Unbreaking behavior matches the current animal-equipment implementation and that curses/unsupported enchantments remain rejected.
