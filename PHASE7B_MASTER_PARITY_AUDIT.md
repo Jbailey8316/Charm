@@ -60,7 +60,7 @@ conservative: no feature is marked `PASS` solely because it compiles.
 | Feature | Archived category | Original behavior summary | Historical source | Current module | Current status | Config toggle? | Assets/resources | Build | Runtime | Parity | Recommended action | Priority | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Aerial Affinity | Enchanting | Restore full mining speed while airborne | `feature/aerial_affinity` | Root Charm | PRESENT | yes | present | UNTESTED | UNTESTED | NEEDS VALIDATION | runtime enchantment matrix | P1 | Boots enchantment, level I; historical airborne speed hook restored |
-| Animal Armor Enchanting | Enchanting | Enchant animal armor | `animal_armor_enchanting` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | P1 | Entire feature absent |
+| Animal Armor Enchanting | Enchanting | Enchant horse and wolf armor with the historical armor set | `animal_armor_enchanting` | Root Charm | PRESENT | yes | present | UNTESTED | UNTESTED | NEEDS VALIDATION | runtime animal-armor matrix | P1 | Horse, copper-horse, and wolf armor support restored |
 | Animal Armor Grinding | Enchanting | Grind animal armor | `animal_armor_grinding` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | gameplay test | P2 | Runtime evidence absent |
 | Animal Damage Immunity | Mobs | Prevent configured animal damage | `animal_damage_immunity` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | gameplay test | P2 | Verify exact exclusions |
 | Animal Reviving | Mobs | Revive animals with the Charm mechanic | `animal_reviving` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | gameplay test | P2 | Verify death/event edge cases |
@@ -139,9 +139,9 @@ conservative: no feature is marked `PASS` solely because it compiles.
 
 ### Table totals
 
-Of 71 archived user-facing rows: **PRESENT 39**, **PARTIAL 1**, **MISSING 30**,
-and **INTENTIONALLY MODIFIED 1**. Parity is **NEEDS VALIDATION 39**,
-**NEEDS RESTORATION 31**, **INTENTIONAL MYTHAS DIVERGENCE 1**; no row is
+Of 71 archived user-facing rows: **PRESENT 40**, **PARTIAL 1**, **MISSING 29**,
+and **INTENTIONALLY MODIFIED 1**. Parity is **NEEDS VALIDATION 40**,
+**NEEDS RESTORATION 30**, **INTENTIONAL MYTHAS DIVERGENCE 1**; no row is
 marked `NEEDS FIX`, `PASS`, `OMIT`, or `UNKNOWN` at this audit gate. This is
 deliberately conservative: the absence of a `PASS` is not a claim that every
 present implementation is broken.
@@ -150,7 +150,7 @@ present implementation is broken.
 
 ### A. Archive features missing from the current port
 
-The 30 `MISSING` rows above are confirmed by searching feature classes,
+The 29 `MISSING` rows above are confirmed by searching feature classes,
 registrations, resources, config, mixins, translations, recipes, loot, tags,
 and assets. Highest-risk missing systems are Animal Armor Enchanting,
 Anvils Last Longer, Arcane Purpur, Copper Pistons, Kilns,
@@ -318,8 +318,8 @@ one issue can cover several tightly related rows.
 1. **P0 runtime safety:** manually validate/fix Suspicious Block Falling Item
    Persistence, then run the full death/inventory/storage exploit matrix.
 2. **P1 missing foundations:** validate Recipe Improvements and restore Storage remaining
-   scope and the high-impact item/block systems (Animal Armor Enchanting, Anvils Last
-   Longer, Animal Armor Enchanting, Copper Pistons, Kilns, Item Stacking,
+   scope and the high-impact item/block systems (Anvils Last Longer,
+   Copper Pistons, Kilns, Item Stacking,
    Lumberjacks/Woodcutters/Woodcutting). Keep each large system in a focused
    phase with parity audit first.
 3. **P2 gameplay matrix:** validate existing modules and entities (storage,

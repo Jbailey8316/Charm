@@ -78,6 +78,8 @@
   ,"enchantment.charm.aerial_affinity": "Aerial Affinity"
   ,"enchantment.charm.aerial_affinity.desc": "Increases mining rate when not on the ground"
   ,"attribute.name.player.charm.aerial_mining_speed": "Aerial mining speed"
+  ,"advancements.charmony.added_enchantment_to_animal_armor.title": "Animal Enchanter"
+  ,"advancements.charmony.added_enchantment_to_animal_armor.description": "Enchant horse or wolf armor"
   ,"advancements.charmony.used_aerial_affinity.title": "Acrobatics"
   ,"advancements.charmony.used_aerial_affinity.description": "Break blocks at full speed when not touching the ground using Aerial Affinity"
 }
