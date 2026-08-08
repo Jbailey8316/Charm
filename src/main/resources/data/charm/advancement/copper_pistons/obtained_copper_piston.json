@@ -1,5 +1,5 @@
 {
-  "parent": "charm:core/automation",
+  "parent": "charmony:root",
   "display": {
     "icon": {
       "id": "charm:copper_piston"

@@ -85,6 +85,45 @@ Validation evidence:
 * Existing unrelated data/resource parse errors remain in the dev log and are
   tracked outside this isolated fix.
 
+## Phase 7Q.3 — known resource-loading cleanup
+
+Baseline: `d0b4dcc Fix Animal Armor equipment recursion`.
+
+### Kiln Firing recipes
+
+All 33 `charm:firing` recipe resources were audited with strict JSON parsing.
+27 were invalid and 6 were initially valid. The shared defect was a literal
+trailing `+` token after the closing JSON object (the runtime reported the
+failure near line 8). Removing that token from the 27 affected resources was
+the complete repair; recipe type, ingredients, results, counts, experience,
+and cooking times were not changed. Final result: 33/33 strict parses PASS.
+
+The custom Firing serializer/schema was unchanged. Kiln processing, GUI,
+automation, fuel, comparator, persistence, and transaction behavior remain
+gameplay `NOT TESTED`.
+
+### Copper Piston advancement
+
+`charm:copper_pistons/obtained_copper_piston` was valid JSON but referenced the
+missing historical parent `charm:core/automation`. The narrow namespace
+migration changes only its parent to the existing `charmony:root`; criteria,
+icon, and item IDs are unchanged. The advancement now has a resolvable parent.
+Copper Piston gameplay remains `NOT TESTED`.
+
+### Runtime gate
+
+After the resource repairs, a fresh client resource reload/world-load must be
+checked for the two targeted failures (`charm:kilns/firing/*` parse errors and
+the Copper Piston advancement load error). Other pre-existing Charm resource
+warnings are outside this focused phase and remain backlog items; they do not
+promote Kiln or Copper Piston gameplay to PASS.
+
+Static validation completed: 33/33 Firing files parse strictly and the
+advancement parent resolves. The attempted compile/build/client gates were
+blocked by a transient Loom dependency-resolution failure (`fabric-loom:1.11.8`
+could not be downloaded after retries); the prior client log therefore remains
+historical evidence only and is not counted as a post-repair runtime PASS.
+
 ## P0 — data integrity and item persistence
 
 | ID | Feature | Setup and exact steps | Expected | Actual / Result / Log | Blocking |

@@ -22,7 +22,7 @@ Interactive chest tests remain outstanding because GUI automation was unavailabl
 - RELEASE BLOCKER — Suspicious Block Falling Item Persistence (Phase 7C fix implemented; still OPEN pending runtime proof): create item-filled Suspicious Sand and Suspicious Gravel, allow each to fall, save/reload, then brush and verify the exact stored ItemStack/components survive without duplication.
 - Villager Attracting: main-hand Emerald Block attraction, stop/removal, offhand versus inventory-only behavior, range, obstacles, multiple villagers/players, work/sleep/panic priority, baby/nitwit/employed/unemployed eligibility, feature-disabled behavior, and dedicated-server synchronization.
 - Coral Squids: summon/rendering, swimming/flee/ink behavior, bucket pickup and variant persistence, natural warm-ocean/coral spawning plus negative cases, save/reload, dedicated-server synchronization, normal coral drops, five head icons/placement/break persistence, player-kill head drops, Looting scaling, and Mob Drops toggle-off behavior.
-- Kilns: craft/place/orientation, GUI and recipe-book behavior, clay/glass/brick/terracotta/stone processing, 100-tick cook time, fuel use, XP, hopper input/fuel/output, comparator fullness, save/reload, break-with-inventory, config disable, and dedicated-server synchronization.
+- Kilns: resource loading is repaired (all 33 `charm:firing` JSON files now parse; gameplay remains release-critical UNTESTED). Craft/place/orientation, GUI and recipe-book behavior, clay/glass/brick/terracotta/stone processing, 100-tick cook time, fuel use, XP, hopper input/fuel/output, comparator fullness, save/reload, break-with-inventory, config disable, and dedicated-server synchronization.
 - Endermite Powder — RELEASE-CRITICAL: Endermite player/non-player/environmental drops, Looting 0–3 distribution, normal End-only use, Overworld/Nether rejection, survival/creative consumption, 40-tick cooldown, failed search consumption, tagged End City search, locator direction/portal particles/expiry, save/reload, chunk unload/reload, multiplayer observation, rare Wandering Trader offer, and invalid-target cleanup. Historical advancements remain deferred pending the Block of Ender Pearls parent.
 - Arcane Purpur — RELEASE-CRITICAL: place all six blocks, craft all shaped/stonecutting recipes, verify Endermite Powder cost, Chorus Fruit with feature disabled/no target/valid target/multiple targets/obstructed targets, 12-block boundary and beyond, nearest selection, fallback behavior, 20-tick cooldown, survival/creative consumption, particles/sounds, save/reload, and multiplayer authority. Historical advancement remains deferred with its parent dependency.
 
@@ -76,6 +76,10 @@ release-critical `NOT TESTED` until actual horse/wolf interaction is exercised.
 - Test component-rich enchanted books and potion/stew variants for correct merge separation, anvil one-at-a-time processing, eating remainders, crafting remainders, death drops, disconnect/reconnect, and server/client configuration mismatch.
 
 ## Phase 7K Copper Pistons
+
+The `charm:copper_pistons/obtained_copper_piston` advancement parent
+namespace defect is repaired; Copper Piston gameplay validation remains
+UNTESTED.
 
 - Craft and place Copper Piston and Sticky Copper Piston; verify inventory models, all six orientations, and normal/sticky textures.
 - Verify direct redstone, side power, observers, repeaters, torches, quasi-connectivity absence, rapid pulses, extension/retraction timing, and piston-vs-piston interaction.
