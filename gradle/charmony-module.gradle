@@ -1,0 +1,16 @@
+plugins {
+    id 'fabric-loom'
+    id 'maven-publish'
+}
+
+apply from: rootProject.file('gradle/charmony-common.gradle')
+
+dependencies {
+    if (project.name == 'charmony') {
+        implementation project(':charmony-api')
+        modCompileOnly "com.terraformersmc:modmenu:${rootProject.modmenu_version}"
+    } else if (project.name != 'charmony-api') {
+        implementation project(':charmony-api')
+        implementation project(':charmony')
+    }
+}

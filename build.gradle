@@ -1,22 +1,33 @@
 plugins {
-    id 'fabric-loom' version '1.11-SNAPSHOT'
+    id 'fabric-loom' version '1.11.8'
     id 'maven-publish'
 }
 
-def javaDir = "${projectDir}/../../java"
-def buildFile = new File("${javaDir}/build.gradle")
-def buildUrl = "https://charmony.dev/files/main/build.gradle"
+apply from: rootProject.file('gradle/charmony-common.gradle')
 
-apply from: buildFile.exists() ? buildFile : buildUrl
+def bundledProjects = [
+    ':charmony-api',
+    ':charmony',
+    ':charmony-azalea-wood',
+    ':charmony-brew-and-stew',
+    ':charmony-collection',
+    ':charmony-decor',
+    ':charmony-ebony-wood',
+    ':charmony-glint-colors',
+    ':charmony-mooblooms',
+    ':charmony-totem-of-preserving',
+    ':charmony-tweaks'
+]
 
 dependencies {
-    embedMod "charmony-azalea-wood", "azalea_wood"
-    embedMod "charmony-brew-and-stew", "brew_and_stew"
-    embedMod "charmony-collection", "collection"
-    embedMod "charmony-decor", "decor"
-    embedMod "charmony-ebony-wood", "ebony_wood"
-    embedMod "charmony-glint-colors", "glint_colors"
-    embedMod "charmony-mooblooms", "mooblooms"
-    embedMod "charmony-totem-of-preserving", "totem_of_preserving"
-    embedMod "charmony-tweaks", "tweaks"
+    bundledProjects.each { path ->
+        implementation project(path)
+        include project(path)
+    }
+
+    include implementation("com.electronwill.night-config:core:${night_config_version}")
+    include implementation("com.electronwill.night-config:toml:${night_config_version}")
+    include implementation("com.moandjiezana.toml:toml4j:${toml4j_version}")
+    include implementation("org.apache.commons:commons-lang3:${commons_lang_version}")
+    include modImplementation("io.github.llamalad7:mixinextras-fabric:${mixinextras_version}")
 }

@@ -1,0 +1,93 @@
+def sourceProperties = new Properties()
+def sourcePropertiesFile = file('gradle.properties')
+if (sourcePropertiesFile.exists()) {
+    sourcePropertiesFile.withInputStream { sourceProperties.load(it) }
+}
+
+def sourceModId = sourceProperties.getProperty('mod_id', project.name)
+def sourceShortId = sourceProperties.getProperty('short_id', sourceModId.replace('-', '_'))
+def sourceModVersion = sourceProperties.getProperty('mod_version', rootProject.mod_version)
+
+group = 'svenhjol.charmony'
+version = sourceModVersion
+
+base {
+    archivesName = sourceModId
+}
+
+repositories {
+    maven {
+        name = 'Fabric'
+        url = 'https://maven.fabricmc.net/'
+    }
+    maven {
+        name = 'Terraformers'
+        url = 'https://maven.terraformersmc.com/releases/'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
+
+    implementation "com.electronwill.night-config:core:${rootProject.night_config_version}"
+    implementation "com.electronwill.night-config:toml:${rootProject.night_config_version}"
+    implementation "com.moandjiezana.toml:toml4j:${rootProject.toml4j_version}"
+    implementation "org.apache.commons:commons-lang3:${rootProject.commons_lang_version}"
+    compileOnly "com.google.code.findbugs:jsr305:${rootProject.jsr305_version}"
+
+    modImplementation "io.github.llamalad7:mixinextras-fabric:${rootProject.mixinextras_version}"
+    annotationProcessor "io.github.llamalad7:mixinextras-common:${rootProject.mixinextras_version}"
+}
+
+loom {
+    def accessWidener = file("src/main/resources/${sourceModId}.accesswidener")
+    if (accessWidener.exists()) {
+        accessWidenerPath = accessWidener
+    }
+
+    mixin {
+        defaultRefmapName = "${sourceShortId}.refmap.json"
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(rootProject.java_version as int)
+    }
+    withSourcesJar()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = rootProject.java_version as int
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xmaxerrs', '10000']
+}
+
+tasks.named('processResources', ProcessResources).configure {
+    def replacements = [
+        mod_id: sourceModId,
+        mod_version: sourceModVersion,
+        loader_version: rootProject.loader_version,
+        java_version: rootProject.java_version,
+        charmony_version: rootProject.charmony_version,
+        api_version: rootProject.api_version,
+        pack_version: rootProject.resource_pack_version,
+        refmap_file: "${sourceShortId}.refmap.json",
+        homepage_link: 'https://github.com/svenhjol/Charm',
+        discord_link: 'https://github.com/svenhjol/Charm'
+    ]
+
+    inputs.properties(replacements)
+    filesMatching(['fabric.mod.json', 'pack.mcmeta', '**/*.mixins.json']) {
+        expand(replacements)
+    }
+}
+
+tasks.withType(AbstractArchiveTask).configureEach {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+}

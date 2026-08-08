@@ -1,13 +1,33 @@
 pluginManagement {
     repositories {
         maven {
-            url "https://maven.fabricmc.net"
+            name = 'Fabric'
+            url = 'https://maven.fabricmc.net/'
         }
-        maven {
-            name = "Terraformers"
-            url = "https://maven.terraformersmc.com/"
-        }
-        mavenCentral()
         gradlePluginPortal()
+        mavenCentral()
     }
+}
+
+rootProject.name = 'charm'
+
+def modules = [
+    'charmony-api',
+    'charmony',
+    'charmony-azalea-wood',
+    'charmony-brew-and-stew',
+    'charmony-collection',
+    'charmony-decor',
+    'charmony-ebony-wood',
+    'charmony-glint-colors',
+    'charmony-mooblooms',
+    'charmony-totem-of-preserving',
+    'charmony-tweaks'
+]
+
+modules.each { moduleName ->
+    include(":${moduleName}")
+    def descriptor = project(":${moduleName}")
+    descriptor.projectDir = file("modules/${moduleName}")
+    descriptor.buildFileName = '../../gradle/charmony-module.gradle'
 }
