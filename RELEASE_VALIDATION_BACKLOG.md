@@ -30,3 +30,10 @@ Interactive chest tests remain outstanding because GUI automation was unavailabl
 - Ender Pearl Block: portal particles, Silverfish-to-Endermite conversion, config toggle, and dedicated-server behavior.
 - Gunpowder Block: falling, lava dissolution, TNT recipe/config toggle, and explosion/Silk Touch behavior.
 - Sugar Block: falling, water dissolution, config behavior, and Silk Touch/explosion behavior.
+
+## Phase 7E Recipe Improvements
+
+- Craft each restored recipe and verify ingredients, output count, consumption, remainders, and recipe-book discovery: raw copper/gold/iron block blasting, Gilded Blackstone, Cyan Dye from warped roots, Green Dye from yellow plus blue dye, Snowballs from Snow Block, Quartz from Quartz Block, Clay Balls from Clay Block, the historical two-input Soul Torch recipe, shapeless Bread, and shapeless Paper.
+- Verify the vanilla 1.21.10 Bundle recipe remains authoritative (the historical leather bundle recipe is intentionally superseded), and check for no recipe-ID or ingredient collisions.
+- Verify each Recipe Improvements toggle disables only its Charm recipe; vanilla recipes remain available. Verify the disabled-by-default recipe-unlocking option awards all recipes on join when enabled.
+- Verify the restored normal recipes work in the 1.21.10 Crafter and on a dedicated server.

@@ -113,7 +113,7 @@ conservative: no feature is marked `PASS` solely because it compiles.
 | Player Pressure Plates | Redstone | Player-only pressure plates | `player_pressure_plates` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | Entire feature absent |
 | Potion of Radiance | Items/effects | Radiance potion/effect | `potion_of_radiance` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | Entire feature absent |
 | Raid Horns | Audio/raids | Horn feedback for raids | `raid_horns` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | Entire feature absent |
-| Recipe Improvements | Crafting | Historical recipe conveniences | `recipe_improvements` | Charmony (`conditional_recipes`, Tweaks `compact_recipes`) | PARTIAL | yes | partial | PASS | UNTESTED | NEEDS RESTORATION | reconcile scope | P1 | Current pieces do not prove full historical parity |
+| Recipe Improvements | Crafting | Historical recipe conveniences | `recipe_improvements` | Root Charm + Charmony conditional recipes | PRESENT | yes | conditional | UNTESTED | UNTESTED | NEEDS VALIDATION | runtime recipe matrix | P1 | Twelve recipes and recipe-unlocking behavior restored; leather bundle is vanilla-superseded |
 | Redstone Sand | Redstone | Redstone-triggered sand mechanic | `redstone_sand` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | Entire feature absent |
 | Repair Cost Unlimited | Anvils | Remove repair-cost ceiling | `repair_cost_unlimited` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | exploit test | Anvil safety pending |
 | Repair Cost Visible | UI/anvils | Show repair cost | `repair_cost_visible` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | UI test | Client rendering pending |
@@ -139,9 +139,9 @@ conservative: no feature is marked `PASS` solely because it compiles.
 
 ### Table totals
 
-Of 71 archived user-facing rows: **PRESENT 37**, **PARTIAL 2**, **MISSING 31**,
-and **INTENTIONALLY MODIFIED 1**. Parity is **NEEDS VALIDATION 37**,
-**NEEDS RESTORATION 33**, **INTENTIONAL MYTHAS DIVERGENCE 1**; no row is
+Of 71 archived user-facing rows: **PRESENT 38**, **PARTIAL 1**, **MISSING 31**,
+and **INTENTIONALLY MODIFIED 1**. Parity is **NEEDS VALIDATION 38**,
+**NEEDS RESTORATION 32**, **INTENTIONAL MYTHAS DIVERGENCE 1**; no row is
 marked `NEEDS FIX`, `PASS`, `OMIT`, or `UNKNOWN` at this audit gate. This is
 deliberately conservative: the absence of a `PASS` is not a claim that every
 present implementation is broken.
@@ -154,7 +154,7 @@ The 31 `MISSING` rows above are confirmed by searching feature classes,
 registrations, resources, config, mixins, translations, recipes, loot, tags,
 and assets. Highest-risk missing systems are Aerial Affinity, Animal Armor
 Enchanting, Anvils Last Longer, Arcane Purpur, Copper Pistons, Kilns,
-Lumberjacks, Recipe Improvements, Storage Blocks (remaining scope), Woodcutters,
+Lumberjacks, Storage Blocks (remaining scope), Woodcutters,
 and Woodcutting. Smaller but still user-facing omissions include Atlases, Bat
 Buckets, Beacons Heal Mobs, Beekeepers, Colored Sea Lanterns, Doors Open
 Together, Echolocation, Endermite Powder, Firing, Item Hover Sorting, Item
@@ -305,7 +305,7 @@ drop matrix still UNTESTED**. No production rates were changed in Phase 7B.
 | Priority | Count | Issues |
 |---|---:|---|
 | P0 | 1 | Suspicious Block Falling Item Persistence |
-| P1 | 12 | Missing high-impact systems (Aerial Affinity, Animal Armor Enchanting, Anvils Last Longer, Arcane Purpur, Copper Pistons, Kilns, Lumberjacks, Recipe Improvements, Storage scope, Item Stacking, Woodcutters, Woodcutting) |
+| P1 | 12 | Missing high-impact systems (Aerial Affinity, Animal Armor Enchanting, Anvils Last Longer, Arcane Purpur, Copper Pistons, Kilns, Lumberjacks, Storage scope, Item Stacking, Woodcutters, Woodcutting) plus Recipe Improvements validation |
 | P2 | 23 | Remaining missing features and present-but-unvalidated gameplay/content parity |
 | P3 | 3 | Client/audio/polish discrepancies and renamed/reorganized feature validation |
 
@@ -316,7 +316,7 @@ one issue can cover several tightly related rows.
 
 1. **P0 runtime safety:** manually validate/fix Suspicious Block Falling Item
    Persistence, then run the full death/inventory/storage exploit matrix.
-2. **P1 missing foundations:** restore Recipe Improvements/Storage remaining
+2. **P1 missing foundations:** validate Recipe Improvements and restore Storage remaining
    scope and the high-impact item/block systems (Aerial Affinity, Anvils Last
    Longer, Animal Armor Enchanting, Copper Pistons, Kilns, Item Stacking,
    Lumberjacks/Woodcutters/Woodcutting). Keep each large system in a focused
