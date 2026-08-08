@@ -1,10 +1,10 @@
-﻿{
-    "type":  "charm:woodcutting",
+{
     "ingredient":  {
                        "item":  "minecraft:acacia_planks"
                    },
     "result":  {
-                   "id":  "charm:acacia_ladder",
+                   "id":  "charmony:acacia_ladder",
                    "count":  3
-               }
+               },
+    "type":  "charm:woodcutting"
 }

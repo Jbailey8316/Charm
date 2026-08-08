@@ -104,3 +104,9 @@ blockers:
 - Place each representative Chiseled Bookshelf; insert/remove books in all six slots, reject invalid items, verify comparator output and last-interacted-slot behavior, hopper behavior, save/reload, break-with-contents, and component preservation.
 - Verify all 14 Bookshelf and 14 Chiseled Bookshelf variants appear in the creative tab and render without missing textures; verify the 28 targeted Woodcutting recipes and no Stonecutter collision.
 - Confirm vanilla Bookshelf, Chiseled Bookshelf, and Enchanting Table behavior remains unchanged; confirm custom Nether variants remain nonflammable where material semantics require it.
+
+### Phase 7L.3C Ladders (UNTESTED)
+
+- Craft and place Oak, Pale Oak, Azalea, Ebony, Crimson, Warped, and Bamboo ladders on every horizontal face; verify orientation, support loss, collision, climbing/descending, waterlogging, fluid persistence, drops, and save/reload.
+- Verify all 14 Ladder recipes and all 14 Woodcutter outputs; confirm the 11 corrected orphaned recipes and three newly added family recipes resolve to valid registered items.
+- Verify material fuel/fire behavior for overworld woods, Bamboo, Azalea, Ebony, Pale Oak, Crimson, and Warped; confirm vanilla Ladder, Scaffolding, and Vine behavior remains unchanged.

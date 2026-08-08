@@ -1,0 +1,20 @@
+{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:stick"
+                      },
+                "P":  {
+                          "item":  "minecraft:cherry_planks"
+                      }
+            },
+    "pattern":  [
+                    "# #",
+                    "#P#",
+                    "# #"
+                ],
+    "result":  {
+                   "count":  3,
+                   "id":  "charmony:cherry_ladder"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

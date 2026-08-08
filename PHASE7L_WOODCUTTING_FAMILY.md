@@ -98,3 +98,19 @@ log snapshot. Interactive placement, enchanting-power, fuel/fire, six-slot
 insertion/removal, comparator, hopper, save/reload, break-with-contents, and
 component-preservation tests are UNTESTED and remain release-backlog items.
 Lumberjacks remain unimplemented.
+
+## 7L.3C Ladders
+
+Fourteen Ladder variants are now registered through `WoodRegistry`, including
+Pale Oak semantic parity. The blocks subclass vanilla 1.21.10 `LadderBlock`,
+so placement, support, horizontal facing, waterlogging, collision, climbing,
+and neighbor behavior remain vanilla. Material fuel values are registered on
+the items; the historical ladder block did not add a custom ignition hook.
+
+Fourteen shaped recipes and loot tables are present. Fourteen targeted
+Woodcutting recipes now resolve to valid Charmony ladder items: eleven existing
+orphaned files were corrected and three missing family files were added. The
+`charmony:ladders` and shared `c:ladders` tags contain all 14 variants for the
+future Lumberjack trade implementation. Lumberjack remains unimplemented and
+the broader Wood feature remains partial pending that profession and any other
+historical subcontent.

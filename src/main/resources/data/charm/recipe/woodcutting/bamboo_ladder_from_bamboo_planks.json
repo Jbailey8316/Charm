@@ -1,0 +1,10 @@
+{
+    "ingredient":  {
+                       "item":  "minecraft:bamboo_planks"
+                   },
+    "result":  {
+                   "id":  "charmony:bamboo_ladder",
+                   "count":  3
+               },
+    "type":  "charm:woodcutting"
+}

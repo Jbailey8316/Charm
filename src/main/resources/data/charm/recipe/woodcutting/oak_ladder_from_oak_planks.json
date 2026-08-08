@@ -1,10 +1,10 @@
-﻿{
-    "type":  "charm:woodcutting",
+{
     "ingredient":  {
                        "item":  "minecraft:oak_planks"
                    },
     "result":  {
-                   "id":  "charm:oak_ladder",
+                   "id":  "charmony:oak_ladder",
                    "count":  3
-               }
+               },
+    "type":  "charm:woodcutting"
 }

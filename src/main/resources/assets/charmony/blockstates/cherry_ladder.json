@@ -1,0 +1,19 @@
+{
+    "variants": {
+      "facing=east": {
+        "model": "charmony:block/cherry_ladder",
+        "y": 90
+      },
+      "facing=north": {
+        "model": "charmony:block/cherry_ladder"
+      },
+      "facing=south": {
+        "model": "charmony:block/cherry_ladder",
+        "y": 180
+      },
+      "facing=west": {
+        "model": "charmony:block/cherry_ladder",
+        "y": 270
+      }
+    }
+  }

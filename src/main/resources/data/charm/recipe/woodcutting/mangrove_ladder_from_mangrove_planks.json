@@ -1,10 +1,10 @@
-﻿{
-    "type":  "charm:woodcutting",
+{
     "ingredient":  {
                        "item":  "minecraft:mangrove_planks"
                    },
     "result":  {
-                   "id":  "charm:mangrove_ladder",
+                   "id":  "charmony:mangrove_ladder",
                    "count":  3
-               }
+               },
+    "type":  "charm:woodcutting"
 }

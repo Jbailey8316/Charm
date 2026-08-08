@@ -1,0 +1,20 @@
+{
+    "key":  {
+                "#":  {
+                          "item":  "minecraft:stick"
+                      },
+                "P":  {
+                          "item":  "charmony:azalea_planks"
+                      }
+            },
+    "pattern":  [
+                    "# #",
+                    "#P#",
+                    "# #"
+                ],
+    "result":  {
+                   "count":  3,
+                   "id":  "charmony:azalea_ladder"
+               },
+    "type":  "minecraft:crafting_shaped"
+}

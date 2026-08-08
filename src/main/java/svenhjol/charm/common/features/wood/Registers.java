@@ -19,6 +19,7 @@ public final class Registers extends Setup<VanillaWoodVariants> {
             woodRegistry.barrel(materials[i]);
             woodRegistry.bookshelf(materials[i]);
             woodRegistry.chiseledBookshelf(materials[i]);
+            woodRegistry.ladder(materials[i]);
         }
     }
 }

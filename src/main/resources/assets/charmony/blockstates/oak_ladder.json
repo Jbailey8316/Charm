@@ -1,0 +1,19 @@
+{
+    "variants": {
+      "facing=east": {
+        "model": "charmony:block/oak_ladder",
+        "y": 90
+      },
+      "facing=north": {
+        "model": "charmony:block/oak_ladder"
+      },
+      "facing=south": {
+        "model": "charmony:block/oak_ladder",
+        "y": 180
+      },
+      "facing=west": {
+        "model": "charmony:block/oak_ladder",
+        "y": 270
+      }
+    }
+  }
