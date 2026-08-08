@@ -1,5 +1,9 @@
 {
   "block.charm.kiln": "Kiln",
   "container.charm.kiln": "Kiln",
-  "subtitles.charm.block.kiln.bake": "Kiln bakes"
+  "subtitles.charm.block.kiln.bake": "Kiln bakes",
+  "block.charm.copper_piston": "Copper Piston",
+  "block.charm.sticky_copper_piston": "Sticky Copper Piston",
+  "advancements.charm.obtained_copper_piston.title": "Subtle Piston",
+  "advancements.charm.obtained_copper_piston.description": "Copper pistons don't have quasi-connectivity"
 }

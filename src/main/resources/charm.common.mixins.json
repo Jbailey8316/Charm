@@ -10,6 +10,9 @@
     "animal_armor_enchanting.EnchantmentMixin",
     "animal_armor_enchanting.MobMixin",
     "anvils_last_longer.AnvilBlockMixin",
-    "kilns.AbstractFurnaceBlockEntityMixin"
+    "kilns.AbstractFurnaceBlockEntityMixin",
+    "copper_pistons.PistonBaseBlockMixin",
+    "copper_pistons.PistonHeadBlockMixin",
+    "copper_pistons.PistonMovingBlockEntityMixin"
   ]
 }

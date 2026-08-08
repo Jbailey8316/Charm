@@ -10,6 +10,7 @@ import svenhjol.charm.common.features.animal_armor_enchanting.AnimalArmorEnchant
 import svenhjol.charm.common.features.anvils_last_longer.AnvilsLastLonger;
 import svenhjol.charm.common.features.firing.Firing;
 import svenhjol.charm.common.features.kilns.Kilns;
+import svenhjol.charm.common.features.copper_pistons.CopperPistons;
 import svenhjol.charmony.api.core.Side;
 
 public final class CommonInitializer implements ModInitializer {
@@ -26,6 +27,7 @@ public final class CommonInitializer implements ModInitializer {
         mod.addSidedFeature(AnvilsLastLonger.class);
         mod.addSidedFeature(Firing.class);
         mod.addSidedFeature(Kilns.class);
+        mod.addSidedFeature(CopperPistons.class);
         mod.run(Side.Common);
     }
 }

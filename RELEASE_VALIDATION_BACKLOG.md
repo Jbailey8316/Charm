@@ -64,3 +64,11 @@ Interactive chest tests remain outstanding because GUI automation was unavailabl
 - In an isolated test world only, verify save/reload and ON → OFF behavior for oversized enchanted-book, potion, and stew stacks in player inventories, chests, barrels, hoppers, shulker boxes, and item entities; confirm no decode rejection, deletion, or silent overflow occurs.
 - Measure ImpulseSV-style 64-stack filters, 16-stack filters, overflow protection, comparator thresholds, hopper locking, multi-item sorters, Crafter transfers, hopper minecarts, and chest minecarts with each historically affected item.
 - Test component-rich enchanted books and potion/stew variants for correct merge separation, anvil one-at-a-time processing, eating remainders, crafting remainders, death drops, disconnect/reconnect, and server/client configuration mismatch.
+
+## Phase 7K Copper Pistons
+
+- Craft and place Copper Piston and Sticky Copper Piston; verify inventory models, all six orientations, and normal/sticky textures.
+- Verify direct redstone, side power, observers, repeaters, torches, quasi-connectivity absence, rapid pulses, extension/retraction timing, and piston-vs-piston interaction.
+- Exercise 12-block push limit, immovable blocks, fragile blocks, rails, redstone components, slime/honey structures, and normal sticky-piston chains.
+- Verify save/reload while retracted and extended, break/drop behavior, client/server synchronization, and no duplicated/deleted blocks or orphaned piston block entities.
+- Confirm the feature toggle disables Charm piston registrations/behavior while vanilla pistons remain unchanged.

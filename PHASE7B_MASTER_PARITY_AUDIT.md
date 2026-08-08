@@ -77,7 +77,7 @@ conservative: no feature is marked `PASS` solely because it compiles.
 | Colored Sea Lanterns | Building | Coral-colored sea lantern variants | `coral_sea_lanterns` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | P2 | Entire feature absent |
 | Compasses Show Position | Client/QoL | Show position on compass HUD | `compasses_show_position` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | gameplay test | P2 | Client-only behavior |
 | Cooking Pots | Food | Cooking-pot food processing | `cooking_pots` | Brew and Stew | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | gameplay test | P2 | Recipes/container persistence |
-| Copper Pistons | Redstone | Copper piston variants | `copper_pistons` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | P1 | New blocks and mechanics |
+| Copper Pistons | Redstone | Copper piston variants without quasi-connectivity | `copper_pistons` | Root Charm | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | validate movement/redstone | P1 | Normal and sticky variants restored; vanilla piston machinery reused; no oxidation/waxed variants in historical Charm |
 | Coral Squids | Mobs/worldgen | Five coral variants near warm-ocean coral | `coral_squids` | Root Charm | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | runtime matrix | P2 | Phase 7A; all gameplay tests remain backlog |
 | Crafting From Inventory | Crafting/QoL | Open 3x3 crafting while carrying a table | `crafting_from_inventory` | Tweaks | PRESENT | yes | present | PASS | PARTIAL | NEEDS VALIDATION | complete backlog | P2 | Phase 6A implementation; exploit tests pending |
 | Crop Feather Falling | Farming | Crop fall-damage protection | `crop_feather_falling` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | gameplay test | P2 | Verify crop behavior |
@@ -139,9 +139,9 @@ conservative: no feature is marked `PASS` solely because it compiles.
 
 ### Table totals
 
-Of 71 archived user-facing rows: **PRESENT 42**, **PARTIAL 1**, **MISSING 26**,
+Of 71 archived user-facing rows: **PRESENT 43**, **PARTIAL 1**, **MISSING 25**,
 **INTENTIONALLY OMITTED 1**, and **INTENTIONALLY MODIFIED 1**. Parity is
-**NEEDS VALIDATION 42**, **NEEDS RESTORATION 27**, **OMIT 1**,
+**NEEDS VALIDATION 43**, **NEEDS RESTORATION 26**, **OMIT 1**,
 **INTENTIONAL MYTHAS DIVERGENCE 1**; no row is
 marked `NEEDS FIX`, `PASS`, `OMIT`, or `UNKNOWN` at this audit gate. This is
 deliberately conservative: the absence of a `PASS` is not a claim that every
@@ -151,10 +151,9 @@ present implementation is broken.
 
 ### A. Archive features missing from the current port
 
-The 26 `MISSING` rows above are confirmed by searching feature classes,
+The 25 `MISSING` rows above are confirmed by searching feature classes,
 registrations, resources, config, mixins, translations, recipes, loot, tags,
-and assets. Highest-risk missing systems are Animal Armor Enchanting,
-Arcane Purpur and Copper Pistons,
+and assets. Highest-risk missing systems are Arcane Purpur,
 Lumberjacks, Storage Blocks (remaining scope), Woodcutters,
 and Woodcutting. Smaller but still user-facing omissions include Atlases, Bat
 Buckets, Beacons Heal Mobs, Beekeepers, Colored Sea Lanterns, Doors Open
@@ -259,7 +258,7 @@ the aggregate build. That validates JSON/resource processing, not semantic
 recipe/loot/worldgen parity. Worldgen features currently represented include
 deepslate dungeons, mineshaft improvements, Moobloom/Coral Squid spawn data,
 and wood/biome integration. Missing historical world/biome systems include
-the omitted feature rows such as Copper Pistons (block system), Colored Sea
+the omitted feature rows such as Colored Sea
 Lanterns, Redstone Sand, and other absent registrations.
 
 The resource audit found no production edits in this phase. A follow-up should
@@ -317,7 +316,7 @@ drop matrix still UNTESTED**. No production rates were changed in Phase 7B.
 | Priority | Count | Issues |
 |---|---:|---|
 | P0 | 1 | Suspicious Block Falling Item Persistence |
-| P1 | 11 | High-impact systems (Arcane Purpur and Copper Pistons, Lumberjacks, Storage scope, Woodcutters, Woodcutting) plus Aerial Affinity, Animal Armor Enchanting, Anvils Last Longer, and Recipe Improvements validation; Item Stacking is intentionally omitted |
+| P1 | 10 | High-impact systems (Arcane Purpur, Lumberjacks, Storage scope, Woodcutters, Woodcutting) plus Aerial Affinity, Animal Armor Enchanting, Anvils Last Longer, and Recipe Improvements validation; Item Stacking is intentionally omitted |
 | P2 | 23 | Remaining missing features and present-but-unvalidated gameplay/content parity |
 | P3 | 3 | Client/audio/polish discrepancies and renamed/reorganized feature validation |
 
@@ -330,7 +329,7 @@ one issue can cover several tightly related rows.
    Persistence, then run the full death/inventory/storage exploit matrix.
 2. **P1 missing foundations:** validate Recipe Improvements and restore Storage remaining
    scope and the high-impact item/block systems (Anvils Last Longer is now
-   restored and requires runtime validation; next is Copper Pistons,
+   restored and requires runtime validation; next is Arcane Purpur,
    Item Stacking is intentionally omitted for server safety; next are
    Lumberjacks/Woodcutters/Woodcutting). Keep each large system in a focused
    phase with parity audit first.
@@ -350,7 +349,7 @@ of every feature marked NEEDS VALIDATION and closure of the P0 blocker.
 
 The port is **build-ready but not feature-parity-ready**. The aggregate build,
 resource processing, and several focused runtime smoke tests are clean. The
-26 missing archived features, three partial systems, one intentional omission,
+25 missing archived features, three partial systems, one intentional omission,
 broad untested gameplay
 matrix, and one explicit P0 persistence blocker prevent a release-complete
 claim. The next milestone is a safe, runtime-validated P0/P1 baseline rather
