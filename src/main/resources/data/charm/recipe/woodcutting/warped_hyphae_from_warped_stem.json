@@ -1,13 +1,10 @@
 ﻿{
-  "template": {
-    "type": "charm:woodcutting",
-    "ingredient": {
-      "item": "minecraft:warped_stem"
-    },
-    "result": {
-      "id": "minecraft:warped_hyphae",
-      "count": 1
-    }
-  },
-  "variants": "warped"
+    "type":  "charm:woodcutting",
+    "ingredient":  {
+                       "item":  "minecraft:warped_stem"
+                   },
+    "result":  {
+                   "id":  "minecraft:warped_hyphae",
+                   "count":  1
+               }
 }

@@ -1,13 +1,10 @@
 ﻿{
-  "template": {
-    "type": "charm:woodcutting",
-    "ingredient": {
-      "item": "minecraft:birch_log"
-    },
-    "result": {
-      "id": "minecraft:stripped_birch_log",
-      "count": 1
-    }
-  },
-  "variants": "birch"
+    "type":  "charm:woodcutting",
+    "ingredient":  {
+                       "item":  "minecraft:birch_log"
+                   },
+    "result":  {
+                   "id":  "minecraft:stripped_birch_log",
+                   "count":  1
+               }
 }

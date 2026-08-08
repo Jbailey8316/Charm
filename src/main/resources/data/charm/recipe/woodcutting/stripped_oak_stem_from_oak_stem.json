@@ -1,13 +1,10 @@
 ﻿{
-  "template": {
-    "type": "charm:woodcutting",
-    "ingredient": {
-      "item": "minecraft:oak_stem"
-    },
-    "result": {
-      "id": "minecraft:stripped_oak_stem",
-      "count": 1
-    }
-  },
-  "variants": "oak"
+    "type":  "charm:woodcutting",
+    "ingredient":  {
+                       "item":  "minecraft:oak_stem"
+                   },
+    "result":  {
+                   "id":  "minecraft:stripped_oak_stem",
+                   "count":  1
+               }
 }

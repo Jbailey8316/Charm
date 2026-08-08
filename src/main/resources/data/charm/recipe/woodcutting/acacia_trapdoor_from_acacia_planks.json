@@ -1,13 +1,10 @@
 ﻿{
-  "template": {
-    "type": "charm:woodcutting",
-    "ingredient": {
-      "item": "minecraft:acacia_planks"
-    },
-    "result": {
-      "id": "minecraft:acacia_trapdoor",
-      "count": 1
-    }
-  },
-  "variants": "acacia"
+    "type":  "charm:woodcutting",
+    "ingredient":  {
+                       "item":  "minecraft:acacia_planks"
+                   },
+    "result":  {
+                   "id":  "minecraft:acacia_trapdoor",
+                   "count":  1
+               }
 }

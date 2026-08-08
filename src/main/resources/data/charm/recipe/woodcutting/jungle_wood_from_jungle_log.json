@@ -1,13 +1,10 @@
 ﻿{
-  "template": {
-    "type": "charm:woodcutting",
-    "ingredient": {
-      "item": "minecraft:jungle_log"
-    },
-    "result": {
-      "id": "minecraft:jungle_wood",
-      "count": 1
-    }
-  },
-  "variants": "jungle"
+    "type":  "charm:woodcutting",
+    "ingredient":  {
+                       "item":  "minecraft:jungle_log"
+                   },
+    "result":  {
+                   "id":  "minecraft:jungle_wood",
+                   "count":  1
+               }
 }

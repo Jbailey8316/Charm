@@ -1,13 +1,10 @@
 ﻿{
-  "template": {
-    "type": "charm:woodcutting",
-    "ingredient": {
-      "item": "minecraft:acacia_log"
-    },
-    "result": {
-      "id": "minecraft:acacia_planks",
-      "count": 4
-    }
-  },
-  "variants": "acacia"
+    "type":  "charm:woodcutting",
+    "ingredient":  {
+                       "item":  "minecraft:acacia_log"
+                   },
+    "result":  {
+                   "id":  "minecraft:acacia_planks",
+                   "count":  4
+               }
 }

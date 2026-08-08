@@ -1,13 +1,10 @@
 ﻿{
-  "template": {
-    "type": "charm:woodcutting",
-    "ingredient": {
-      "item": "minecraft:spruce_stem"
-    },
-    "result": {
-      "id": "minecraft:spruce_hyphae",
-      "count": 1
-    }
-  },
-  "variants": "spruce"
+    "type":  "charm:woodcutting",
+    "ingredient":  {
+                       "item":  "minecraft:spruce_stem"
+                   },
+    "result":  {
+                   "id":  "minecraft:spruce_hyphae",
+                   "count":  1
+               }
 }

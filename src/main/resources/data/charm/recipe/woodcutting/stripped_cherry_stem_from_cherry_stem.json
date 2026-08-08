@@ -1,13 +1,10 @@
 ﻿{
-  "template": {
-    "type": "charm:woodcutting",
-    "ingredient": {
-      "item": "minecraft:cherry_stem"
-    },
-    "result": {
-      "id": "minecraft:stripped_cherry_stem",
-      "count": 1
-    }
-  },
-  "variants": "cherry"
+    "type":  "charm:woodcutting",
+    "ingredient":  {
+                       "item":  "minecraft:cherry_stem"
+                   },
+    "result":  {
+                   "id":  "minecraft:stripped_cherry_stem",
+                   "count":  1
+               }
 }

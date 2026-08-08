@@ -72,3 +72,10 @@ Interactive chest tests remain outstanding because GUI automation was unavailabl
 - Exercise 12-block push limit, immovable blocks, fragile blocks, rails, redstone components, slime/honey structures, and normal sticky-piston chains.
 - Verify save/reload while retracted and extended, break/drop behavior, client/server synchronization, and no duplicated/deleted blocks or orphaned piston block entities.
 - Confirm the feature toggle disables Charm piston registrations/behavior while vanilla pistons remain unchanged.
+
+## Phase 7L Woodcutting family
+
+- Validate all 277 charm:woodcutting recipes in the Woodcutter menu, including Azalea, Ebony, and Pale Oak; confirm recipe-manager loading, selector behavior, output counts, input consumption, and no Stonecutter collisions.
+- Complete the Woodcutter menu safety matrix: server/client recipe synchronization, recipe changes, input replacement/removal, quick-move and shift-click, full-inventory output, close/reopen, block removal, disconnect/reconnect, save/reload, and component-bearing ItemStacks. No stale output, item loss, or duplication is acceptable.
+- Validate the Woodcutter block, orientation, loot, config-off behavior, and the absence of historical hopper/comparator automation.
+- Validate Lumberjack POI claiming, profession textures, all five trade tiers, restocking, job-site loss/reclaim, save/reload, and Azalea/Ebony/Pale Oak trade decisions after 7L.3 is implemented.

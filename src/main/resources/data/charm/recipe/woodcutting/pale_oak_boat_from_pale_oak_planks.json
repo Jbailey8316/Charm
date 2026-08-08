@@ -1,14 +1,10 @@
 ﻿{
-  "template": {
-    "type": "charm:woodcutting",
-    "ingredient": {
-      "item": "minecraft:pale_oak_planks"
-    },
-    "result": {
-      "id": "minecraft:pale_oak_boat",
-      "count": 1
-    }
-  },
-  "variants": "pale_oak"
+    "type":  "charm:woodcutting",
+    "ingredient":  {
+                       "item":  "minecraft:pale_oak_planks"
+                   },
+    "result":  {
+                   "id":  "minecraft:pale_oak_boat",
+                   "count":  1
+               }
 }
-

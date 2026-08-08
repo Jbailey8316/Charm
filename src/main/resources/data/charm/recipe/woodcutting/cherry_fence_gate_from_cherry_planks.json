@@ -1,14 +1,10 @@
 ﻿{
-  "template": {
-    "type": "charm:woodcutting",
-    "ingredient": {
-      "item": "minecraft:cherry_planks"
-    },
-    "result": {
-      "id": "minecraft:cherry_fence_gate",
-      "count": 1
-    }
-  },
-  "variants": "cherry"
+    "type":  "charm:woodcutting",
+    "ingredient":  {
+                       "item":  "minecraft:cherry_planks"
+                   },
+    "result":  {
+                   "id":  "minecraft:cherry_fence_gate",
+                   "count":  1
+               }
 }
-

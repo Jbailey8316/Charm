@@ -1,14 +1,10 @@
 ﻿{
-  "template": {
-    "type": "charm:woodcutting",
-    "ingredient": {
-      "item": "minecraft:cherry_planks"
-    },
-    "result": {
-      "id": "charm:cherry_ladder",
-      "count": 3
-    }
-  },
-  "variants": "cherry"
+    "type":  "charm:woodcutting",
+    "ingredient":  {
+                       "item":  "minecraft:cherry_planks"
+                   },
+    "result":  {
+                   "id":  "charm:cherry_ladder",
+                   "count":  3
+               }
 }
-

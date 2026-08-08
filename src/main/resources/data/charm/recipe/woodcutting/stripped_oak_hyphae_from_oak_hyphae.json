@@ -1,13 +1,10 @@
 ﻿{
-  "template": {
-    "type": "charm:woodcutting",
-    "ingredient": {
-      "item": "minecraft:oak_hyphae"
-    },
-    "result": {
-      "id": "minecraft:stripped_oak_hyphae",
-      "count": 1
-    }
-  },
-  "variants": "oak"
+    "type":  "charm:woodcutting",
+    "ingredient":  {
+                       "item":  "minecraft:oak_hyphae"
+                   },
+    "result":  {
+                   "id":  "minecraft:stripped_oak_hyphae",
+                   "count":  1
+               }
 }

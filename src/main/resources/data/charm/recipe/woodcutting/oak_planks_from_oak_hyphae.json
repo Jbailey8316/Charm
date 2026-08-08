@@ -1,13 +1,10 @@
 ﻿{
-  "template": {
-    "type": "charm:woodcutting",
-    "ingredient": {
-      "item": "minecraft:oak_hyphae"
-    },
-    "result": {
-      "id": "minecraft:oak_planks",
-      "count": 4
-    }
-  },
-  "variants": "oak"
+    "type":  "charm:woodcutting",
+    "ingredient":  {
+                       "item":  "minecraft:oak_hyphae"
+                   },
+    "result":  {
+                   "id":  "minecraft:oak_planks",
+                   "count":  4
+               }
 }

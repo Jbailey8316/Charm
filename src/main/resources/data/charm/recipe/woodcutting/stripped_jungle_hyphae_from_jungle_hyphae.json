@@ -1,13 +1,10 @@
 ﻿{
-  "template": {
-    "type": "charm:woodcutting",
-    "ingredient": {
-      "item": "minecraft:jungle_hyphae"
-    },
-    "result": {
-      "id": "minecraft:stripped_jungle_hyphae",
-      "count": 1
-    }
-  },
-  "variants": "jungle"
+    "type":  "charm:woodcutting",
+    "ingredient":  {
+                       "item":  "minecraft:jungle_hyphae"
+                   },
+    "result":  {
+                   "id":  "minecraft:stripped_jungle_hyphae",
+                   "count":  1
+               }
 }
