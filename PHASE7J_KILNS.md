@@ -10,7 +10,8 @@ covered clay balls to bricks, clay to terracotta, sand to glass, cobblestone to
 stone, cobbled deepslate to deepslate, netherrack to nether bricks, colored
 terracotta to glazed terracotta, cracked brick families, and smooth stone-like
 families. Historical fuel duration was halved as well, preserving the furnace
-fuel-per-output ratio while reducing elapsed processing time.
+fuel-per-output ratio while reducing elapsed processing time. The historical
+resource pack also declared a `kiln_bake` sound that reused smoker samples.
 
 The historical crafting recipe is four bricks around a furnace. The block uses
 furnace-style orientation, lit state, inventory persistence, sided automation,
@@ -82,5 +83,7 @@ feature configuration. Item Stacking is not involved.
 The historical custom REI integration and custom recipe-book enum are not
 reintroduced; the current screen uses the maintained smoker recipe-book layout
 and normal recipe data. Runtime verification should confirm recipe-book display
-and all 33 recipe entries. The P0 Suspicious Block Falling Item Persistence
-blocker remains open.
+and all 33 recipe entries. The historical `kiln_bake` event is not separately
+registered in this first 1.21.10 foundation; the shared furnace-family sound
+path remains active and this is a P3 polish follow-up. The P0 Suspicious Block
+Falling Item Persistence blocker remains open.
