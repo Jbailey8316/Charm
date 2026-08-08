@@ -148,3 +148,68 @@ lists unless a future approved semantic extension changes those lists.
   villager/zombie-villager textures.
 
 No files were changed by this recovery step before this document.
+
+## POI Registration API/Lifecycle Verification
+
+The interrupted production attempt was removed. The committed Woodcutter
+source is unchanged.
+
+### Existing helper
+
+`CommonRegistry.pointOfInterestBlockStates` is declared as:
+
+```java
+Registerable<Void> pointOfInterestBlockStates(
+    Supplier<Holder<PoiType>> poiType,
+    Supplier<List<BlockState>> states)
+```
+
+It creates a `Registerable` whose supplier resolves the existing POI holder,
+combines its matching states with the supplied states, and associates those
+states with the holder through Charmony's existing POI registration path. It
+does not register a new `PoiType`; the POI must already be registered.
+
+The returned `Registerable` is evaluated during the feature registration
+phase. Its constructor adds its `get()` operation to the owning feature's
+registration list.
+
+### Current call sites
+
+There is one current call site: `core/common/features/wood/types/Barrel.java`.
+It is called from the custom wood holder constructor, after the block supplier
+exists, and targets the already-registered vanilla Fisherman POI. This is a
+constructor-time registration pattern, not a feature `run()` override.
+
+### Lifecycle
+
+`Mod.run(Common)` constructs all features first, populates configuration,
+evaluates dependency checks, runs `Setup.boot()` callbacks, then evaluates the
+`Registerable` lists, calls `CommonRegistry.finishModRegistration`, and only
+then invokes each enabled feature's `run()`. `Registerable` therefore provides
+the supported registration ordering mechanism. A new `run()` override has not
+been proven necessary or supported for POI registration and is not proposed.
+
+### Historical pattern and safe current pattern
+
+Historical `Woodcutters.common.Registers` used `registry.pointOfInterestType`
+to register `woodcutter` with all Woodcutter states and `(1, 1)`. The current
+port lacks a public `pointOfInterestType` helper, so the safe migration plan is:
+
+1. Woodcutters creates/registers the `charmony:woodcutter` `PoiType` as a
+   normal `Registerable`, with all Woodcutter states and `(1, 1)`.
+2. In the same constructor-time registration setup, Woodcutters invokes the
+   existing `pointOfInterestBlockStates` helper with that already-registered
+   holder and the same state list. No private map is touched by feature code.
+3. Lumberjacks registers `charmony:lumberjack` using predicates matching the
+   Woodcutter POI holder, an empty requested-item set, and a secondary POI set
+   containing the Woodcutter block.
+4. Lumberjack trade registration runs only after the profession exists and
+   uses the current `CommonRegistry.villagerTrade` path.
+
+The helper's constructor-time `Registerable` ordering is the existing Barrel
+pattern. The only remaining implementation work is exposing/using the current
+POI registration mechanism for a newly registered POI without direct access to
+Minecraft's private state map. Confidence in the historical semantics and
+ordering is HIGH; the exact current helper exposure for step 1 must be
+implemented through an existing supported Charmony path before production
+changes resume.
