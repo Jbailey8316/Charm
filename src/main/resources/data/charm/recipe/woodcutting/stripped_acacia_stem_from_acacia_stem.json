@@ -1,0 +1,13 @@
+﻿{
+  "template": {
+    "type": "charm:woodcutting",
+    "ingredient": {
+      "item": "minecraft:acacia_stem"
+    },
+    "result": {
+      "id": "minecraft:stripped_acacia_stem",
+      "count": 1
+    }
+  },
+  "variants": "acacia"
+}

@@ -1,0 +1,14 @@
+﻿{
+  "template": {
+    "type": "charm:woodcutting",
+    "ingredient": {
+      "item": "minecraft:birch_planks"
+    },
+    "result": {
+      "id": "minecraft:birch_sign",
+      "count": 1
+    }
+  },
+  "variants": "birch"
+}
+

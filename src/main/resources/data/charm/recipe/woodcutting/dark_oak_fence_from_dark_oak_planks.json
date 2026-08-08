@@ -1,0 +1,14 @@
+﻿{
+  "template": {
+    "type": "charm:woodcutting",
+    "ingredient": {
+      "item": "minecraft:dark_oak_planks"
+    },
+    "result": {
+      "id": "minecraft:dark_oak_fence",
+      "count": 1
+    }
+  },
+  "variants": "dark_oak"
+}
+

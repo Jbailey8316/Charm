@@ -135,11 +135,11 @@ conservative: no feature is marked `PASS` solely because it compiles.
 | Waypoints | Navigation | Waypoint/position utility | `waypoints` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | Entire feature absent |
 | Wood | Building/storage | Variant wood blocks and families | `wood` | Charmony, Azalea, Ebony | PARTIAL | yes | present | PASS | PARTIAL | NEEDS VALIDATION | finish family audit | P2 | Pale Oak is intentional semantic addition |
 | Woodcutters | Villagers | Woodcutter villager/job behavior | `woodcutters` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | Entire feature absent |
-| Woodcutting | Utility | Woodcutting utility/recipes | `woodcutting` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | Distinct historical feature; do not infer from wood blocks |
+| Woodcutting | Utility | Woodcutting utility/recipes | `woodcutting` | Root Charm | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | validate recipe matrix | P1 | Custom recipe type restored; 277 concrete recipes including Pale Oak; Woodcutter menu remains Phase 7L.2 |
 
 ### Table totals
 
-Of 71 archived user-facing rows: **PRESENT 43**, **PARTIAL 1**, **MISSING 25**,
+Of 71 archived user-facing rows: **PRESENT 44**, **PARTIAL 1**, **MISSING 24**,
 **INTENTIONALLY OMITTED 1**, and **INTENTIONALLY MODIFIED 1**. Parity is
 **NEEDS VALIDATION 43**, **NEEDS RESTORATION 26**, **OMIT 1**,
 **INTENTIONAL MYTHAS DIVERGENCE 1**; no row is
@@ -316,7 +316,7 @@ drop matrix still UNTESTED**. No production rates were changed in Phase 7B.
 | Priority | Count | Issues |
 |---|---:|---|
 | P0 | 1 | Suspicious Block Falling Item Persistence |
-| P1 | 10 | High-impact systems (Arcane Purpur, Lumberjacks, Storage scope, Woodcutters, Woodcutting) plus Aerial Affinity, Animal Armor Enchanting, Anvils Last Longer, and Recipe Improvements validation; Item Stacking is intentionally omitted |
+| P1 | 9 | High-impact systems (Arcane Purpur, Lumberjacks, Storage scope, Woodcutters) plus Aerial Affinity, Animal Armor Enchanting, Anvils Last Longer, and Recipe Improvements validation; Item Stacking is intentionally omitted |
 | P2 | 23 | Remaining missing features and present-but-unvalidated gameplay/content parity |
 | P3 | 3 | Client/audio/polish discrepancies and renamed/reorganized feature validation |
 
@@ -349,7 +349,7 @@ of every feature marked NEEDS VALIDATION and closure of the P0 blocker.
 
 The port is **build-ready but not feature-parity-ready**. The aggregate build,
 resource processing, and several focused runtime smoke tests are clean. The
-25 missing archived features, three partial systems, one intentional omission,
+24 missing archived features, three partial systems, one intentional omission,
 broad untested gameplay
 matrix, and one explicit P0 persistence blocker prevent a release-complete
 claim. The next milestone is a safe, runtime-validated P0/P1 baseline rather

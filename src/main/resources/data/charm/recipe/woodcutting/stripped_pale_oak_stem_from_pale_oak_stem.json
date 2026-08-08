@@ -1,0 +1,13 @@
+﻿{
+  "template": {
+    "type": "charm:woodcutting",
+    "ingredient": {
+      "item": "minecraft:pale_oak_stem"
+    },
+    "result": {
+      "id": "minecraft:stripped_pale_oak_stem",
+      "count": 1
+    }
+  },
+  "variants": "pale_oak"
+}

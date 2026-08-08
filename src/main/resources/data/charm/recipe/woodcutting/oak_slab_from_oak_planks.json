@@ -1,0 +1,14 @@
+﻿{
+  "template": {
+    "type": "charm:woodcutting",
+    "ingredient": {
+      "item": "minecraft:oak_planks"
+    },
+    "result": {
+      "id": "minecraft:oak_slab",
+      "count": 2
+    }
+  },
+  "variants": "oak"
+}
+

@@ -1,0 +1,14 @@
+﻿{
+  "template": {
+    "type": "charm:woodcutting",
+    "ingredient": {
+      "item": "minecraft:mangrove_planks"
+    },
+    "result": {
+      "id": "minecraft:mangrove_slab",
+      "count": 2
+    }
+  },
+  "variants": "mangrove"
+}
+

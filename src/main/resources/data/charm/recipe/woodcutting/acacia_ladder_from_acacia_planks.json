@@ -1,0 +1,14 @@
+﻿{
+  "template": {
+    "type": "charm:woodcutting",
+    "ingredient": {
+      "item": "minecraft:acacia_planks"
+    },
+    "result": {
+      "id": "charm:acacia_ladder",
+      "count": 3
+    }
+  },
+  "variants": "acacia"
+}
+

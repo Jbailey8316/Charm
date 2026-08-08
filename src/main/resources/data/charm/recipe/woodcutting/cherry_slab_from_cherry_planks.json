@@ -1,0 +1,14 @@
+﻿{
+  "template": {
+    "type": "charm:woodcutting",
+    "ingredient": {
+      "item": "minecraft:cherry_planks"
+    },
+    "result": {
+      "id": "minecraft:cherry_slab",
+      "count": 2
+    }
+  },
+  "variants": "cherry"
+}
+

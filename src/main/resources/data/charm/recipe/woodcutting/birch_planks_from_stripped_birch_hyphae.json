@@ -1,0 +1,13 @@
+﻿{
+  "template": {
+    "type": "charm:woodcutting",
+    "ingredient": {
+      "item": "minecraft:stripped_birch_hyphae"
+    },
+    "result": {
+      "id": "minecraft:birch_planks",
+      "count": 4
+    }
+  },
+  "variants": "birch"
+}

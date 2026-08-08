@@ -1,0 +1,13 @@
+﻿{
+  "template": {
+    "type": "charm:woodcutting",
+    "ingredient": {
+      "item": "minecraft:jungle_planks"
+    },
+    "result": {
+      "id": "minecraft:jungle_stairs",
+      "count": 1
+    }
+  },
+  "variants": "jungle"
+}

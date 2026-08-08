@@ -1,0 +1,13 @@
+﻿{
+  "template": {
+    "type": "charm:woodcutting",
+    "ingredient": {
+      "item": "minecraft:mangrove_stem"
+    },
+    "result": {
+      "id": "minecraft:mangrove_hyphae",
+      "count": 1
+    }
+  },
+  "variants": "mangrove"
+}

@@ -1,0 +1,13 @@
+﻿{
+  "template": {
+    "type": "charm:woodcutting",
+    "ingredient": {
+      "item": "minecraft:spruce_stem"
+    },
+    "result": {
+      "id": "minecraft:spruce_planks",
+      "count": 4
+    }
+  },
+  "variants": "spruce"
+}

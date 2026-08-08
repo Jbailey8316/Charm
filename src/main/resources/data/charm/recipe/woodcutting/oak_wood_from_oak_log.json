@@ -1,0 +1,13 @@
+﻿{
+  "template": {
+    "type": "charm:woodcutting",
+    "ingredient": {
+      "item": "minecraft:oak_log"
+    },
+    "result": {
+      "id": "minecraft:oak_wood",
+      "count": 1
+    }
+  },
+  "variants": "oak"
+}
