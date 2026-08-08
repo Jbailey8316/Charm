@@ -87,7 +87,7 @@ conservative: no feature is marked `PASS` solely because it compiles.
 | Doors Open Together | Blocks | Paired doors open together | `doors_open_together` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | P2 | Entire feature absent |
 | Echolocation | Mobs/audio | Echolocation-style entity/player aid | `echolocation` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | P2 | Verify exact historical semantics |
 | Endermite Powder | Items | Endermite powder item/mechanic | `endermite_powder` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | Entire feature absent |
-| Firing | Utility | Historical firing utility mechanic | `firing` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | Source-only discrepancy; audit before implementation |
+| Firing | Utility | Historical firing recipe type/serializer | `firing` | Root Charm | PRESENT | no | present | PASS | UNTESTED | NEEDS VALIDATION | validate with Kiln | Native `charm:firing` type and 100-tick serializer are registered; gameplay remains untested |
 | Glint Color Templates | Smithing | Smithing templates for glint colors | `glint_color_templates` | Glint Colors | PRESENT | yes | present | PASS | PARTIAL | NEEDS VALIDATION | smithing matrix | P2 | Phase 4C fixed output path; runtime matrix pending |
 | Glint Coloring | Rendering | Color enchantment glints | `glint_coloring` | Glint Colors | PRESENT | yes | present | PASS | PARTIAL | NEEDS VALIDATION | rendering matrix | P2 | GUI/world/special models pending |
 | Grindstone Disenchanting | Enchanting | Disenchant with configurable behavior | `grindstone_disenchanting` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | gameplay test | P2 | Verify XP/item outcomes |
@@ -139,7 +139,7 @@ conservative: no feature is marked `PASS` solely because it compiles.
 
 ### Table totals
 
-Of 71 archived user-facing rows: **PRESENT 46**, **PARTIAL 1**, **MISSING 22**,
+Of 75 audited top-level rows: **PRESENT 52**, **PARTIAL 1**, **MISSING 21**,
 **INTENTIONALLY OMITTED 1**, and **INTENTIONALLY MODIFIED 1**. Parity is
 **NEEDS VALIDATION 43**, **NEEDS RESTORATION 26**, **OMIT 1**,
 **INTENTIONAL MYTHAS DIVERGENCE 1**; no row is

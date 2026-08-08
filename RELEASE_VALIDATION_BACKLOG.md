@@ -117,3 +117,17 @@ blockers:
 - Verify every recovered trade tier and exact prices/counts, including Tier-1 Oak/Birch/Spruce sapling selection, Tier-3 Acacia/Dark-Oak sapling selection, seven-family bark-for-logs offers, and stable randomized offers after GUI reopen and save/reload.
 - Verify custom ladder, barrel, and chiseled-bookshelf trades with each toggle ON and the exact vanilla fallback with each toggle OFF; check Azalea, Ebony, and Pale Oak only in categorical custom-tag paths.
 - Verify profession persistence, trade locking, restocking, workstation ownership with multiple villagers, and no regression to Farmer, Fisherman, Fletcher, Librarian, Shepherd, or Mason professions.
+
+### Phase 7M audit findings
+
+- Resolve and validate the 14 Chiseled Bookshelf base-model references before
+  visual release testing; current startup reports missing
+  `charmony:block/chiseled_<family>_bookshelf` models while the files use the
+  `<family>_chiseled_bookshelf` naming.
+- Add the eventual Test-JAR matrix for Endermite Powder and Arcane Purpur only
+  after their source-backed implementation phases; include End-only use,
+  structure lookup, cooldown/consumption, nearest-target selection, obstruction,
+  multiplayer, persistence, and cross-dimension failure cases.
+- Re-audit all release-critical inventory and save/load systems before a
+  Production Candidate: Suspicious Blocks, Woodcutter, Chiseled Bookshelves,
+  Kiln, Totem of Preserving, Storage Blocks, and Lumberjack offers.
