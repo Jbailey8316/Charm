@@ -13,6 +13,7 @@
     "kilns.AbstractFurnaceBlockEntityMixin",
     "copper_pistons.PistonBaseBlockMixin",
     "copper_pistons.PistonHeadBlockMixin",
-    "copper_pistons.PistonMovingBlockEntityMixin"
+    "copper_pistons.PistonMovingBlockEntityMixin",
+    "arcane_purpur.ChorusFruitItemMixin"
   ]
 }

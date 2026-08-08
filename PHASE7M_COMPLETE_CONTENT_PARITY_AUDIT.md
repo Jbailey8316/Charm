@@ -18,9 +18,9 @@ therefore the 75-row table, not the stale “71” summary.
 
 | Status | Count |
 |---|---:|
-| PRESENT | 53 |
+| PRESENT | 54 |
 | PARTIAL | 1 (`Wood`) |
-| MISSING | 20 |
+| MISSING | 19 |
 | SUPERSEDED BY VANILLA | 0 |
 | INTENTIONALLY OMITTED | 1 (`Item Stacking`) |
 | MYTHAS DIVERGENCE | 1 (`Totem of Preserving` Grave Mode) |
@@ -28,8 +28,8 @@ therefore the 75-row table, not the stale “71” summary.
 | UNKNOWN | 0 |
 | **Audited rows** | **75** |
 
-The 20 missing rows are: Arcane Purpur, Atlases, Bat Buckets, Beacons Heal
-Mobs, Beekeepers, Colored Sea Lanterns, Doors Open Together, Echolocation,
+The 19 missing rows are: Atlases, Bat Buckets, Beacons Heal Mobs, Beekeepers,
+Colored Sea Lanterns, Doors Open Together, Echolocation,
 Item Hover Sorting, Note Block Lower Pitch, Noteblocks,
 Player Pressure Plates, Potion of Radiance, Raid Horns, Redstone Sand, Silence,
 Smooth Glowstone, Suspicious Effect Improvements, Tooltip Improvements, and

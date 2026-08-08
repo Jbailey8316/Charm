@@ -13,7 +13,7 @@ Custom Barrels -------------> Lumberjack categorical trade
 Custom Chiseled Bookshelves -> Lumberjack categorical trade
 
 Firing recipe type ---------> Kiln block entity/menu/recipes
-Endermite Powder -----------> Arcane Purpur recipe (7P); locator is independent
+Endermite Powder -----------> Arcane Purpur recipes and target blocks
 ```
 
 ## Dependency classifications
@@ -24,7 +24,7 @@ Endermite Powder -----------> Arcane Purpur recipe (7P); locator is independent
 | Woodcutter -> Lumberjack | PRESENT | Native POI/profession registration; villager tests pending |
 | Custom wood tags -> Lumberjack | PRESENT | Ladder, Chiseled Bookshelf, and merged barrel tags resolve |
 | Firing -> Kiln | PRESENT | `charm:firing` is registered and consumed by Kiln |
-| Endermite Powder -> Arcane Purpur | DEFERRED | Endermite locator is present; Arcane Purpur recipes remain 7P |
+| Endermite Powder -> Arcane Purpur | PRESENT | Arcane Purpur recipes and target blocks resolve; interactive teleport tests pending |
 
 ## Orphan report
 
@@ -47,6 +47,10 @@ Endermite Powder -----------> Arcane Purpur recipe (7P); locator is independent
   drop hook, sound, and rare trader offer are registered. The historical
   advancement parent `charm:block_of_ender_pearls/convert_silverfish` remains
   a documented deferred dependency; no dangling advancement JSON was added.
+- Resolved in Phase 7P: all six Arcane Purpur blocks/items, recipes, loot,
+  models, textures, and `charmony:chorus_teleports` tag. The historical
+  advancement remains deferred because its Endermite Powder parent chain is
+  not restored.
 
 ## Cross-feature risks
 

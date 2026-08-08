@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "charmony:arcane_purpur_block"
+  },
+  "result": {
+    "id": "charmony:chiseled_arcane_purpur_glyph_block",
+    "count": 1
+  }
+}

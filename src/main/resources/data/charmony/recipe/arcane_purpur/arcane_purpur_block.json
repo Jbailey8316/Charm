@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:purpur_block"
+    },
+    "E": {
+      "item": "charmony:endermite_powder"
+    }
+  },
+  "pattern": [
+    "###",
+    "#E#",
+    "###"
+  ],
+  "result": {
+    "id": "charmony:arcane_purpur_block",
+    "count": 8
+  }
+}

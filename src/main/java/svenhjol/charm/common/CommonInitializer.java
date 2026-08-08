@@ -15,6 +15,7 @@ import svenhjol.charm.common.features.woodcutting.Woodcutting;
 import svenhjol.charm.common.features.woodcutting.Woodcutters;
 import svenhjol.charm.common.features.lumberjacks.Lumberjacks;
 import svenhjol.charm.common.features.endermite_powder.EndermitePowder;
+import svenhjol.charm.common.features.arcane_purpur.ArcanePurpur;
 import svenhjol.charmony.api.core.Side;
 
 public final class CommonInitializer implements ModInitializer {
@@ -36,6 +37,7 @@ public final class CommonInitializer implements ModInitializer {
         mod.addSidedFeature(Woodcutters.class);
         mod.addSidedFeature(Lumberjacks.class);
         mod.addSidedFeature(EndermitePowder.class);
+        mod.addSidedFeature(ArcanePurpur.class);
         mod.run(Side.Common);
     }
 }

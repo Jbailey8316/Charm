@@ -1,5 +1,11 @@
 ﻿{
-    "item.charmony.endermite_powder": "Endermite Powder",
+  "item.charmony.endermite_powder": "Endermite Powder",
+  "block.charmony.arcane_purpur_block": "Arcane Purpur Block",
+  "block.charmony.arcane_purpur_slab": "Arcane Purpur Slab",
+  "block.charmony.arcane_purpur_stairs": "Arcane Purpur Stairs",
+  "block.charmony.arcane_purpur_glyph_block": "Arcane Purpur Glyph Block",
+  "block.charmony.chiseled_arcane_purpur_block": "Chiseled Arcane Purpur",
+  "block.charmony.chiseled_arcane_purpur_glyph_block": "Chiseled Arcane Purpur Glyph",
     "subtitles.charmony.item.endermite_powder.launch": "Endermite powder launches",
     "block.charmony.acacia_barrel":  "Acacia Barrel",
     "block.charmony.bamboo_barrel":  "Bamboo Barrel",

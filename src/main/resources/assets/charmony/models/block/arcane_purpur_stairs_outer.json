@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "charmony:block/arcane_purpur_block",
+    "top": "charmony:block/arcane_purpur_block",
+    "side": "charmony:block/arcane_purpur_block"
+  }
+}

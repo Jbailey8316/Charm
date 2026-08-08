@@ -35,7 +35,7 @@ and the approved Totem of Preserving Mythas divergence remain excluded.
 |---|---|---|---|---|---|
 | 7N | Resolve Chiseled Bookshelf resource gap | current Wood content | Medium | Yes | Yes |
 | 7O | Endermite Powder | source audit complete; End structures | High | Implemented; manual tests pending | Yes |
-| 7P | Arcane Purpur | Endermite Powder | High | Yes | Yes |
+| 7P | Arcane Purpur | Endermite Powder | High | Implemented; manual tests pending | Yes |
 | 7Q | P0 Suspicious Blocks validation closure | dedicated/runtime harness | Critical | Yes | Yes |
 | 7R | Release-critical restored-system matrix | 7Q, current backlog | Critical | Yes | Yes |
 | 8A+ | Remaining P2/P3 systems | per-feature audits | Low–Medium | No | No |
