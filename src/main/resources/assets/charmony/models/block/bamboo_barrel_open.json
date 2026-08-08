@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "charmony:block/bamboo_barrel_top_open",
+    "side": "charmony:block/bamboo_barrel_side",
+    "bottom": "charmony:block/bamboo_barrel_bottom"
+  }
+}

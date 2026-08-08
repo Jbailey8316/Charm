@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "charmony:acacia_barrel",
+    "charmony:bamboo_barrel",
+    "charmony:birch_barrel",
+    "charmony:cherry_barrel",
+    "charmony:crimson_barrel",
+    "charmony:dark_oak_barrel",
+    "charmony:jungle_barrel",
+    "charmony:mangrove_barrel",
+    "charmony:oak_barrel",
+    "charmony:pale_oak_barrel",
+    "charmony:spruce_barrel",
+    "charmony:warped_barrel"
+  ]
+}

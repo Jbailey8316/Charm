@@ -16,8 +16,11 @@
   "icon": "assets/charmony/textures/gui/sprites/charm.png",
   "license": "MIT",
   "environment": "*",
-  
-  
+  "entrypoints": {
+    "main": [
+      "svenhjol.charm.common.CommonInitializer"
+    ]
+  },
 
   "mixins": [],
 

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "PSP",
+    "P P",
+    "PSP"
+  ],
+  "key": {
+    "P": "minecraft:pale_oak_planks",
+    "S": "minecraft:pale_oak_slab"
+  },
+  "result": {
+    "count": 1,
+    "id": "charmony:pale_oak_barrel"
+  }
+}
