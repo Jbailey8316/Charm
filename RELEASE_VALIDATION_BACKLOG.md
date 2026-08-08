@@ -57,3 +57,9 @@ Interactive chest tests remain outstanding because GUI automation was unavailabl
 - Run a large controlled sequence of successful anvil operations with the feature enabled; compare observed degradation against the configured 0.50 damage chance (historical/vanilla baseline 0.12), covering anvil, chipped, and damaged transitions and destruction.
 - Repeat with the feature disabled and verify the exact vanilla 0.12 probability; confirm creative/infinite-material players remain unaffected.
 - Verify XP/output/repair/enchantment/name behavior is unchanged, damaged-anvil destruction events and sounds remain correct, no ghost blocks occur, falling-anvil damage/state is unaffected, and dedicated-server synchronization is clean.
+
+## Phase 7I Item Stacking approval tests (feature not implemented)
+
+- In an isolated test world only, verify save/reload and ON → OFF behavior for oversized enchanted-book, potion, and stew stacks in player inventories, chests, barrels, hoppers, shulker boxes, and item entities; confirm no decode rejection, deletion, or silent overflow occurs.
+- Measure ImpulseSV-style 64-stack filters, 16-stack filters, overflow protection, comparator thresholds, hopper locking, multi-item sorters, Crafter transfers, hopper minecarts, and chest minecarts with each historically affected item.
+- Test component-rich enchanted books and potion/stew variants for correct merge separation, anvil one-at-a-time processing, eating remainders, crafting remainders, death drops, disconnect/reconnect, and server/client configuration mismatch.
