@@ -151,11 +151,11 @@ present implementation is broken.
 
 ### A. Archive features missing from the current port
 
-The 25 `MISSING` rows above are confirmed by searching feature classes,
+The 24 `MISSING` rows above are confirmed by searching feature classes,
 registrations, resources, config, mixins, translations, recipes, loot, tags,
 and assets. Highest-risk missing systems are Arcane Purpur,
-Lumberjacks, Storage Blocks (remaining scope), Woodcutters,
-and Woodcutting. Smaller but still user-facing omissions include Atlases, Bat
+Lumberjacks, Storage Blocks (remaining scope), and Woodcutters. Smaller but
+still user-facing omissions include Atlases, Bat
 Buckets, Beacons Heal Mobs, Beekeepers, Colored Sea Lanterns, Doors Open
 Together, Echolocation, Endermite Powder, Firing, Item Hover Sorting, Item
 Stacking, Note Blocks, Player Pressure Plates, Potion of Radiance, Raid Horns,
