@@ -213,3 +213,50 @@ Minecraft's private state map. Confidence in the historical semantics and
 ordering is HIGH; the exact current helper exposure for step 1 must be
 implemented through an existing supported Charmony path before production
 changes resume.
+
+## Final implementation
+
+The implementation uses no private POI state and makes no shared-core changes.
+Woodcutters registers `charmony:woodcutter` with all Woodcutter states and
+`PoiType(states, 1, 1)`, then associates those states through the existing
+constructor-time `CommonRegistry.pointOfInterestBlockStates` helper. Lumberjacks
+registers `charmony:lumberjack` with the Woodcutter POI predicates, empty
+requested-item set, Woodcutter secondary POI block set, and the registered
+`charmony:lumberjack` work sound. The dependency is a `BooleanSupplier` check
+on the Woodcutters feature.
+
+The missing `charmony:overworld_stripped_logs` tag contains exactly Acacia,
+Birch, Dark Oak, Jungle, Mangrove, Oak, and Spruce stripped logs. The restored
+trade classes generate randomized offers server-side at MerchantOffer creation:
+Tier-1 saplings are Oak/Birch/Spruce for one Emerald; Tier-3 saplings are
+Acacia/Dark Oak for 2--3 Emeralds; BarkForLogs chooses one of the seven exact
+log/wood pairs and outputs 10--22 matching wood for one Emerald plus one
+matching log. Generated offers then use vanilla persistence and are not
+rerolled by transactions or GUI reopening.
+
+The complete five-tier registration follows the recovered historical values:
+
+| Tier | Listings |
+|---:|---|
+| 1 | 8 stripped logs -> 1 Emerald; 8 natural logs -> 1 Emerald; Oak/Birch/Spruce sapling for 1 Emerald; custom ladder for 1 Emerald (or vanilla Ladder when disabled) |
+| 2 | 23 Bone -> 2 Emeralds; 3 Emeralds -> 2 random Beds; 2 Emeralds -> 1 random wooden Fence; 2 Emeralds -> 1 random Fence Gate |
+| 3 | 7 Warped Stems -> 1 Emerald; 7 Crimson Stems -> 1 Emerald; Acacia/Dark Oak sapling for 2--3 Emeralds; BarkForLogs; 2 Emeralds -> 1 random wooden Door |
+| 4 | 4 Emeralds -> custom Barrel (or vanilla Barrel); 4 Emeralds -> custom Chiseled Bookshelf (or vanilla Bookshelf); 7 Emeralds -> Note Block |
+| 5 | 11 Emeralds -> 3 Jukeboxes; 5 Emeralds -> Cartography Table; 4 Emeralds -> Loom; 3 Emeralds -> Composter |
+
+Generic listings use multiplier `.05`, custom sapling and bark listings use
+`.2`; uses and XP are the values recovered in the source-recovery table.
+Custom categorical tags are `charmony:ladders`,
+`charmony:chiseled_bookshelves`, and the verified merged `c:block/barrels`.
+Pale Oak participates only where those categorical tags contain it; it is not
+added to explicit sapling or bark pools. Azalea and Ebony likewise participate
+only through the recovered categorical custom-block tags.
+
+Static validation: compileJava and aggregate build PASS; all trade suppliers,
+tag IDs, counts, ranges, and config branches compile and resolve to registered
+items/tags. Interactive villager acquisition, offer persistence, restocking,
+and config-toggle gameplay remain UNTESTED and are release-backlog items.
+Dev-client initialization reached resource reload. The observed unrelated
+warnings are the existing Chiseled Bookshelf model warnings, Moobloom texture
+warnings, and Realms network certificate failure; no Lumberjack registry,
+profession, tag, or trade exception was observed after the namespace correction.

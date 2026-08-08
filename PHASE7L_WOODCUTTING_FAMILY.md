@@ -97,7 +97,35 @@ available environment; no bookshelf-specific error was observed in the latest
 log snapshot. Interactive placement, enchanting-power, fuel/fire, six-slot
 insertion/removal, comparator, hopper, save/reload, break-with-contents, and
 component-preservation tests are UNTESTED and remain release-backlog items.
-Lumberjacks remain unimplemented.
+Lumberjack is now implemented as a native Charmony profession using the Woodcutter POI; interactive villager validation remains outstanding.
+
+## 7L.3D Lumberjack
+
+The profession is registered as `charmony:lumberjack` and uses the
+`charmony:woodcutter` POI owned by Woodcutters. The POI contains every
+Woodcutter block state with ticket count 1 and search distance 1. Profession
+predicates use that POI for held and acquirable job sites, with an empty
+requested-item set and the Woodcutter block as the secondary POI set.
+
+The five-tier trade table is source-backed. It includes the seven-family
+stripped-log and natural-log purchases, explicit Oak/Birch/Spruce and
+Acacia/Dark-Oak sapling listings, the seven-family bark-for-logs listing
+(10--22 matching wood for one Emerald plus one matching log), ladder/barrel/
+chiseled-bookshelf categorical trades with historical vanilla fallbacks, and
+the recovered bone, beds, fences, gates, stems, doors, note block, jukebox,
+cartography table, loom, and composter listings. Random values are generated
+when MerchantOffers are created and then persist through normal vanilla offer
+serialization; they are not rerolled at transaction time.
+
+Custom ladder, barrel, and bookshelf toggles default ON. OFF selects the
+historical vanilla fallback (`minecraft:ladder`, `minecraft:barrel`, and
+`minecraft:bookshelf`). The bark trade uses the exact current
+`charmony:overworld_stripped_logs` seven-family tag. No Pale Oak, Azalea, or
+Ebony was added to the explicit sapling or bark pools; categorical restored
+wood tags provide their approved semantic-parity participation where present.
+
+Villager acquisition, progression, restocking, save/reload, and config ON/OFF
+trade behavior remain release-backlog UNTESTED.
 
 ## 7L.3C Ladders
 

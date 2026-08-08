@@ -110,3 +110,10 @@ blockers:
 - Craft and place Oak, Pale Oak, Azalea, Ebony, Crimson, Warped, and Bamboo ladders on every horizontal face; verify orientation, support loss, collision, climbing/descending, waterlogging, fluid persistence, drops, and save/reload.
 - Verify all 14 Ladder recipes and all 14 Woodcutter outputs; confirm the 11 corrected orphaned recipes and three newly added family recipes resolve to valid registered items.
 - Verify material fuel/fire behavior for overworld woods, Bamboo, Azalea, Ebony, Pale Oak, Crimson, and Warped; confirm vanilla Ladder, Scaffolding, and Vine behavior remains unchanged.
+
+### Phase 7L.3D Lumberjack (UNTESTED)
+
+- Place a Woodcutter near an unemployed adult villager; verify Woodcutter POI claiming, Lumberjack profession appearance, job-site ownership, normal work schedule, restocking, leveling through all five tiers, and job-site loss/reclaim.
+- Verify every recovered trade tier and exact prices/counts, including Tier-1 Oak/Birch/Spruce sapling selection, Tier-3 Acacia/Dark-Oak sapling selection, seven-family bark-for-logs offers, and stable randomized offers after GUI reopen and save/reload.
+- Verify custom ladder, barrel, and chiseled-bookshelf trades with each toggle ON and the exact vanilla fallback with each toggle OFF; check Azalea, Ebony, and Pale Oak only in categorical custom-tag paths.
+- Verify profession persistence, trade locking, restocking, workstation ownership with multiple villagers, and no regression to Farmer, Fisherman, Fletcher, Librarian, Shepherd, or Mason professions.

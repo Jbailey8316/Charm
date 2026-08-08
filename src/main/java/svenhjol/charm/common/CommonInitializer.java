@@ -13,6 +13,7 @@ import svenhjol.charm.common.features.kilns.Kilns;
 import svenhjol.charm.common.features.copper_pistons.CopperPistons;
 import svenhjol.charm.common.features.woodcutting.Woodcutting;
 import svenhjol.charm.common.features.woodcutting.Woodcutters;
+import svenhjol.charm.common.features.lumberjacks.Lumberjacks;
 import svenhjol.charmony.api.core.Side;
 
 public final class CommonInitializer implements ModInitializer {
@@ -32,6 +33,7 @@ public final class CommonInitializer implements ModInitializer {
         mod.addSidedFeature(CopperPistons.class);
         mod.addSidedFeature(Woodcutting.class);
         mod.addSidedFeature(Woodcutters.class);
+        mod.addSidedFeature(Lumberjacks.class);
         mod.run(Side.Common);
     }
 }
