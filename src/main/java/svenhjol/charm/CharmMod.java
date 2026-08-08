@@ -6,7 +6,7 @@ import svenhjol.charmony.core.base.Mod;
 
 @ModDefinition(
     id = CharmMod.ID,
-    sides = {Side.Common},
+    sides = {Side.Client, Side.Common},
     name = "Charm",
     description = "Adds tweaks and features in keeping with vanilla Minecraft.")
 public final class CharmMod extends Mod {

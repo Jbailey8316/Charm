@@ -60,5 +60,19 @@
     "block.charmony.trapped_spruce_chest":  "Spruce Trapped Chest",
     "item.charmony.trapped_spruce_chest":  "Spruce Trapped Chest",
     "block.charmony.trapped_warped_chest":  "Warped Trapped Chest",
-    "item.charmony.trapped_warped_chest":  "Warped Trapped Chest"
+    "item.charmony.trapped_warped_chest":  "Warped Trapped Chest",
+    "entity.charmony.coral_squid": "Coral Squid",
+    "item.charmony.coral_squid_bucket": "Coral Squid in a Bucket",
+    "item.charmony.coral_squid_spawn_egg": "Coral Squid Spawn Egg",
+    "subtitles.charmony.item.bucket.fill_coral_squid": "Coral Squid scooped"
+    ,"block.charmony.tube_coral_squid_head": "Tube Coral Squid Head"
+    ,"item.charmony.tube_coral_squid_head": "Tube Coral Squid Head"
+    ,"block.charmony.brain_coral_squid_head": "Brain Coral Squid Head"
+    ,"item.charmony.brain_coral_squid_head": "Brain Coral Squid Head"
+    ,"block.charmony.bubble_coral_squid_head": "Bubble Coral Squid Head"
+    ,"item.charmony.bubble_coral_squid_head": "Bubble Coral Squid Head"
+    ,"block.charmony.fire_coral_squid_head": "Fire Coral Squid Head"
+    ,"item.charmony.fire_coral_squid_head": "Fire Coral Squid Head"
+    ,"block.charmony.horn_coral_squid_head": "Horn Coral Squid Head"
+    ,"item.charmony.horn_coral_squid_head": "Horn Coral Squid Head"
 }

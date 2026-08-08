@@ -1,0 +1,1 @@
+{ "variants": { "facing=north": { "model": "charmony:block/horn_coral_squid_head" }, "facing=east": { "model": "charmony:block/horn_coral_squid_head", "y": 90 }, "facing=south": { "model": "charmony:block/horn_coral_squid_head", "y": 180 }, "facing=west": { "model": "charmony:block/horn_coral_squid_head", "y": 270 } } }

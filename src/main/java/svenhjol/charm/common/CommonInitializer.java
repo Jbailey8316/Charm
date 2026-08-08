@@ -3,6 +3,7 @@ package svenhjol.charm.common;
 import net.fabricmc.api.ModInitializer;
 import svenhjol.charm.CharmMod;
 import svenhjol.charm.common.features.wood.VanillaWoodVariants;
+import svenhjol.charm.common.features.coral_squids.CoralSquids;
 import svenhjol.charmony.api.core.Side;
 
 public final class CommonInitializer implements ModInitializer {
@@ -12,6 +13,7 @@ public final class CommonInitializer implements ModInitializer {
 
         var mod = CharmMod.instance();
         mod.addSidedFeature(VanillaWoodVariants.class);
+        mod.addSidedFeature(CoralSquids.class);
         mod.run(Side.Common);
     }
 }
