@@ -25,7 +25,9 @@
     ]
   },
 
-  "mixins": [],
+  "mixins": [
+    "charm.common.mixins.json"
+  ],
 
   "depends": {
     "fabricloader": ">=${loader_version}",

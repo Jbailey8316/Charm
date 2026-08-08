@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "svenhjol.charm.common.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "aerial_affinity.PlayerMixin"
+  ]
+}

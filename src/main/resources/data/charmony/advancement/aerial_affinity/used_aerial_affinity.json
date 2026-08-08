@@ -1,0 +1,19 @@
+{
+  "parent": "charmony:root",
+  "display": {
+    "icon": { "id": "minecraft:iron_boots" },
+    "title": { "translate": "advancements.charmony.used_aerial_affinity.title" },
+    "description": { "translate": "advancements.charmony.used_aerial_affinity.description" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "used_aerial_affinity": {
+      "trigger": "charmony_action_performed",
+      "conditions": { "action": "charmony:used_aerial_affinity" }
+    }
+  },
+  "requirements": [["used_aerial_affinity"]]
+}

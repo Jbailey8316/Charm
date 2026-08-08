@@ -37,3 +37,10 @@ Interactive chest tests remain outstanding because GUI automation was unavailabl
 - Verify the vanilla 1.21.10 Bundle recipe remains authoritative (the historical leather bundle recipe is intentionally superseded), and check for no recipe-ID or ingredient collisions.
 - Verify each Recipe Improvements toggle disables only its Charm recipe; vanilla recipes remain available. Verify the disabled-by-default recipe-unlocking option awards all recipes on join when enabled.
 - Verify the restored normal recipes work in the 1.21.10 Crafter and on a dedicated server.
+
+## Phase 7F Aerial Affinity
+
+- Apply Aerial Affinity I to boots using the normal enchanting table, an enchanted book, and an anvil; verify foot-armor-only applicability and tooltip translation.
+- Compare mining speed with no enchantment versus Aerial Affinity while airborne, on the ground, submerged, and airborne while submerged; verify only the historical airborne condition is changed.
+- Verify the enchantment is not offered above level I, persists through save/reload, and does not create unintended Aqua Affinity/Efficiency incompatibilities.
+- Disable the feature and verify the vanilla airborne penalty returns without affecting other players; test command acquisition and dedicated-server synchronization.

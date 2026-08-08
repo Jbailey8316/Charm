@@ -59,7 +59,7 @@ conservative: no feature is marked `PASS` solely because it compiles.
 
 | Feature | Archived category | Original behavior summary | Historical source | Current module | Current status | Config toggle? | Assets/resources | Build | Runtime | Parity | Recommended action | Priority | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Aerial Affinity | Enchanting | Mine blocks faster while airborne | `feature/aerial_affinity` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | P1 | Entire feature absent |
+| Aerial Affinity | Enchanting | Restore full mining speed while airborne | `feature/aerial_affinity` | Root Charm | PRESENT | yes | present | UNTESTED | UNTESTED | NEEDS VALIDATION | runtime enchantment matrix | P1 | Boots enchantment, level I; historical airborne speed hook restored |
 | Animal Armor Enchanting | Enchanting | Enchant animal armor | `animal_armor_enchanting` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | P1 | Entire feature absent |
 | Animal Armor Grinding | Enchanting | Grind animal armor | `animal_armor_grinding` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | gameplay test | P2 | Runtime evidence absent |
 | Animal Damage Immunity | Mobs | Prevent configured animal damage | `animal_damage_immunity` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | gameplay test | P2 | Verify exact exclusions |
@@ -139,9 +139,9 @@ conservative: no feature is marked `PASS` solely because it compiles.
 
 ### Table totals
 
-Of 71 archived user-facing rows: **PRESENT 38**, **PARTIAL 1**, **MISSING 31**,
-and **INTENTIONALLY MODIFIED 1**. Parity is **NEEDS VALIDATION 38**,
-**NEEDS RESTORATION 32**, **INTENTIONAL MYTHAS DIVERGENCE 1**; no row is
+Of 71 archived user-facing rows: **PRESENT 39**, **PARTIAL 1**, **MISSING 30**,
+and **INTENTIONALLY MODIFIED 1**. Parity is **NEEDS VALIDATION 39**,
+**NEEDS RESTORATION 31**, **INTENTIONAL MYTHAS DIVERGENCE 1**; no row is
 marked `NEEDS FIX`, `PASS`, `OMIT`, or `UNKNOWN` at this audit gate. This is
 deliberately conservative: the absence of a `PASS` is not a claim that every
 present implementation is broken.
@@ -150,10 +150,10 @@ present implementation is broken.
 
 ### A. Archive features missing from the current port
 
-The 31 `MISSING` rows above are confirmed by searching feature classes,
+The 30 `MISSING` rows above are confirmed by searching feature classes,
 registrations, resources, config, mixins, translations, recipes, loot, tags,
-and assets. Highest-risk missing systems are Aerial Affinity, Animal Armor
-Enchanting, Anvils Last Longer, Arcane Purpur, Copper Pistons, Kilns,
+and assets. Highest-risk missing systems are Animal Armor Enchanting,
+Anvils Last Longer, Arcane Purpur, Copper Pistons, Kilns,
 Lumberjacks, Storage Blocks (remaining scope), Woodcutters,
 and Woodcutting. Smaller but still user-facing omissions include Atlases, Bat
 Buckets, Beacons Heal Mobs, Beekeepers, Colored Sea Lanterns, Doors Open
@@ -167,8 +167,9 @@ Tooltip Improvements, and Waypoints.
 `core`, `firing`, `woodcutting`, and several client/helper directories are
 source-level registrations or implementation groupings rather than additional
 site rows. They are retained in the discrepancy inventory so they are not
-silently lost. `storage_blocks` and `recipe_improvements` are source features
-whose current partial implementations need a dedicated scope decision.
+silently lost. `storage_blocks` is a source feature whose implementation was
+restored in Phase 7D; `recipe_improvements` is now implemented through the
+root feature and Charmony conditional recipes.
 
 ### C. Current-port features not represented as exact historical names
 
@@ -305,7 +306,7 @@ drop matrix still UNTESTED**. No production rates were changed in Phase 7B.
 | Priority | Count | Issues |
 |---|---:|---|
 | P0 | 1 | Suspicious Block Falling Item Persistence |
-| P1 | 12 | Missing high-impact systems (Aerial Affinity, Animal Armor Enchanting, Anvils Last Longer, Arcane Purpur, Copper Pistons, Kilns, Lumberjacks, Storage scope, Item Stacking, Woodcutters, Woodcutting) plus Recipe Improvements validation |
+| P1 | 12 | High-impact systems (Animal Armor Enchanting, Anvils Last Longer, Arcane Purpur, Copper Pistons, Kilns, Lumberjacks, Storage scope, Item Stacking, Woodcutters, Woodcutting) plus Aerial Affinity and Recipe Improvements validation |
 | P2 | 23 | Remaining missing features and present-but-unvalidated gameplay/content parity |
 | P3 | 3 | Client/audio/polish discrepancies and renamed/reorganized feature validation |
 
@@ -317,7 +318,7 @@ one issue can cover several tightly related rows.
 1. **P0 runtime safety:** manually validate/fix Suspicious Block Falling Item
    Persistence, then run the full death/inventory/storage exploit matrix.
 2. **P1 missing foundations:** validate Recipe Improvements and restore Storage remaining
-   scope and the high-impact item/block systems (Aerial Affinity, Anvils Last
+   scope and the high-impact item/block systems (Animal Armor Enchanting, Anvils Last
    Longer, Animal Armor Enchanting, Copper Pistons, Kilns, Item Stacking,
    Lumberjacks/Woodcutters/Woodcutting). Keep each large system in a focused
    phase with parity audit first.
