@@ -7,6 +7,7 @@ import svenhjol.charm.common.features.coral_squids.CoralSquids;
 import svenhjol.charm.common.features.recipe_improvements.RecipeImprovements;
 import svenhjol.charm.common.features.aerial_affinity.AerialAffinity;
 import svenhjol.charm.common.features.animal_armor_enchanting.AnimalArmorEnchanting;
+import svenhjol.charm.common.features.anvils_last_longer.AnvilsLastLonger;
 import svenhjol.charmony.api.core.Side;
 
 public final class CommonInitializer implements ModInitializer {
@@ -20,6 +21,7 @@ public final class CommonInitializer implements ModInitializer {
         mod.addSidedFeature(RecipeImprovements.class);
         mod.addSidedFeature(AerialAffinity.class);
         mod.addSidedFeature(AnimalArmorEnchanting.class);
+        mod.addSidedFeature(AnvilsLastLonger.class);
         mod.run(Side.Common);
     }
 }

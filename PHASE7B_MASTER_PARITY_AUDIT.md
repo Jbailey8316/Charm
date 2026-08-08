@@ -7,7 +7,7 @@ resource, registry, mixin, build, or configuration files were changed. The
 archived Charm feature index describes more than 70 user-facing features; the
 historical 1.21.1 source contains 78 feature directories. The current port
 contains a substantial, buildable subset, but compilation is not evidence of
-gameplay parity. Thirty-one archived features are absent, three are only
+gameplay parity. Twenty-eight archived features are absent, three are only
 partial, and the remaining present features require runtime validation unless
 an existing phase supplied sufficient evidence.
 
@@ -64,7 +64,7 @@ conservative: no feature is marked `PASS` solely because it compiles.
 | Animal Armor Grinding | Enchanting | Grind animal armor | `animal_armor_grinding` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | gameplay test | P2 | Runtime evidence absent |
 | Animal Damage Immunity | Mobs | Prevent configured animal damage | `animal_damage_immunity` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | gameplay test | P2 | Verify exact exclusions |
 | Animal Reviving | Mobs | Revive animals with the Charm mechanic | `animal_reviving` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | gameplay test | P2 | Verify death/event edge cases |
-| Anvils Last Longer | Anvils | Increase anvil durability | `anvils_last_longer` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | P1 | Entire feature absent |
+| Anvils Last Longer | Anvils | Increase anvil durability | `anvils_last_longer` | Root Charm | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | runtime/statistical anvil matrix | P1 | 1.21.10 hook changes the vanilla 12% damage roll to configurable 50% by default; state transitions remain vanilla |
 | Arcane Purpur | Blocks | Arcane Purpur block behavior | `arcane_purpur` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | P1 | Entire feature absent |
 | Atlases | Client/rendering | Atlas/map-style client utility | `atlases` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | P2 | Historical client feature |
 | Bat Buckets | Items/mobs | Capture bats in buckets | `bat_buckets` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | P2 | Entire feature absent |
@@ -139,9 +139,9 @@ conservative: no feature is marked `PASS` solely because it compiles.
 
 ### Table totals
 
-Of 71 archived user-facing rows: **PRESENT 40**, **PARTIAL 1**, **MISSING 29**,
-and **INTENTIONALLY MODIFIED 1**. Parity is **NEEDS VALIDATION 40**,
-**NEEDS RESTORATION 30**, **INTENTIONAL MYTHAS DIVERGENCE 1**; no row is
+Of 71 archived user-facing rows: **PRESENT 41**, **PARTIAL 1**, **MISSING 28**,
+and **INTENTIONALLY MODIFIED 1**. Parity is **NEEDS VALIDATION 41**,
+**NEEDS RESTORATION 29**, **INTENTIONAL MYTHAS DIVERGENCE 1**; no row is
 marked `NEEDS FIX`, `PASS`, `OMIT`, or `UNKNOWN` at this audit gate. This is
 deliberately conservative: the absence of a `PASS` is not a claim that every
 present implementation is broken.
@@ -150,10 +150,10 @@ present implementation is broken.
 
 ### A. Archive features missing from the current port
 
-The 29 `MISSING` rows above are confirmed by searching feature classes,
+The 28 `MISSING` rows above are confirmed by searching feature classes,
 registrations, resources, config, mixins, translations, recipes, loot, tags,
 and assets. Highest-risk missing systems are Animal Armor Enchanting,
-Anvils Last Longer, Arcane Purpur, Copper Pistons, Kilns,
+Arcane Purpur, Copper Pistons, Kilns,
 Lumberjacks, Storage Blocks (remaining scope), Woodcutters,
 and Woodcutting. Smaller but still user-facing omissions include Atlases, Bat
 Buckets, Beacons Heal Mobs, Beekeepers, Colored Sea Lanterns, Doors Open
@@ -306,7 +306,7 @@ drop matrix still UNTESTED**. No production rates were changed in Phase 7B.
 | Priority | Count | Issues |
 |---|---:|---|
 | P0 | 1 | Suspicious Block Falling Item Persistence |
-| P1 | 12 | High-impact systems (Animal Armor Enchanting, Anvils Last Longer, Arcane Purpur, Copper Pistons, Kilns, Lumberjacks, Storage scope, Item Stacking, Woodcutters, Woodcutting) plus Aerial Affinity and Recipe Improvements validation |
+| P1 | 12 | High-impact systems (Arcane Purpur, Copper Pistons, Kilns, Lumberjacks, Storage scope, Item Stacking, Woodcutters, Woodcutting) plus Aerial Affinity, Animal Armor Enchanting, Anvils Last Longer, and Recipe Improvements validation |
 | P2 | 23 | Remaining missing features and present-but-unvalidated gameplay/content parity |
 | P3 | 3 | Client/audio/polish discrepancies and renamed/reorganized feature validation |
 
@@ -318,8 +318,9 @@ one issue can cover several tightly related rows.
 1. **P0 runtime safety:** manually validate/fix Suspicious Block Falling Item
    Persistence, then run the full death/inventory/storage exploit matrix.
 2. **P1 missing foundations:** validate Recipe Improvements and restore Storage remaining
-   scope and the high-impact item/block systems (Anvils Last Longer,
-   Copper Pistons, Kilns, Item Stacking,
+   scope and the high-impact item/block systems (Anvils Last Longer is now
+   restored and requires runtime validation; next are Copper Pistons, Kilns,
+   Item Stacking,
    Lumberjacks/Woodcutters/Woodcutting). Keep each large system in a focused
    phase with parity audit first.
 3. **P2 gameplay matrix:** validate existing modules and entities (storage,
@@ -338,7 +339,7 @@ of every feature marked NEEDS VALIDATION and closure of the P0 blocker.
 
 The port is **build-ready but not feature-parity-ready**. The aggregate build,
 resource processing, and several focused runtime smoke tests are clean. The
-31 missing archived features, three partial systems, broad untested gameplay
+28 missing archived features, three partial systems, broad untested gameplay
 matrix, and one explicit P0 persistence blocker prevent a release-complete
 claim. The next milestone is a safe, runtime-validated P0/P1 baseline rather
 than another broad mechanical rewrite.

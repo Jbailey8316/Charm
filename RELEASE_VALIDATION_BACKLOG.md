@@ -51,3 +51,9 @@ Interactive chest tests remain outstanding because GUI automation was unavailabl
 - Equip enchanted armor on horses and wolves; verify protection, fire/blast/projectile protection, thorns, Frost Walker, Feather Falling, Respiration, and Soul Speed behavior where applicable rather than tooltip-only enchantment storage.
 - Test durability, damage, save/reload, and server synchronization. Confirm Mending and Unbreaking behavior matches the current animal-equipment implementation and that curses/unsupported enchantments remain rejected.
 - Disable Animal Armor Enchanting and verify vanilla applicability returns. Verify enchanted animal armor rendering/glint and the animal-armor advancement.
+
+## Phase 7H Anvils Last Longer
+
+- Run a large controlled sequence of successful anvil operations with the feature enabled; compare observed degradation against the configured 0.50 damage chance (historical/vanilla baseline 0.12), covering anvil, chipped, and damaged transitions and destruction.
+- Repeat with the feature disabled and verify the exact vanilla 0.12 probability; confirm creative/infinite-material players remain unaffected.
+- Verify XP/output/repair/enchantment/name behavior is unchanged, damaged-anvil destruction events and sounds remain correct, no ghost blocks occur, falling-anvil damage/state is unaffected, and dedicated-server synchronization is clean.
