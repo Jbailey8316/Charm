@@ -21,7 +21,7 @@ def bundledProjects = [
 
 dependencies {
     bundledProjects.each { path ->
-        implementation project(path)
+        implementation project(path: path, configuration: 'namedElements')
         include project(path)
     }
 
