@@ -123,7 +123,7 @@ conservative: no feature is marked `PASS` solely because it compiles.
 | Smooth Glowstone | Blocks | Smooth glowstone variant/recipe | `smooth_glowstone` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | Entire feature absent |
 | Spawners Drop Items | Blocks | Spawners drop themselves/items | `spawners_drop_items` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | survival test | High-value block behavior |
 | Spyglass Scope Hiding | Client/rendering | Hide/reduce spyglass scope overlay | `spyglass_scope_hiding` | Tweaks | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | client test | Rendering pending |
-| Storage Blocks | Storage/building | Wood storage families | `storage_blocks` | Charmony wood | PARTIAL | yes | present | PASS | PARTIAL | NEEDS RESTORATION | finish original scope | P1 | 14-family barrels/chests/trapped chests are added; historical storage scope remains broader |
+| Storage Blocks | Storage/building | Wood storage families plus compact Ender Pearl, Gunpowder, and Sugar blocks | `storage_blocks` | Charmony | PRESENT | yes | present | PASS | UNTESTED | NEEDS VALIDATION | validate restored blocks | P1 | 14-family barrels/chests/trapped chests and the three historical compact blocks are now registered; gameplay remains untested |
 | Suspicious Block Creating | Archaeology | Piston inserts an ItemStack into suspicious sand/gravel | `suspicious_block_creating` | Tweaks | PRESENT | yes | present | PASS | PARTIAL | NEEDS VALIDATION | resolve blocker | P0 | `Suspicious Block Falling Item Persistence` remains a release blocker |
 | Suspicious Effect Improvements | Archaeology | Improve suspicious-effect interactions | `suspicious_effect_improvements` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | Entire feature absent |
 | Tooltip Improvements | UI/QoL | Improve item tooltips | `tooltip_improvements` | — | MISSING | historical | absent | n/a | UNTESTED | NEEDS RESTORATION | restore | Entire feature absent |
@@ -139,9 +139,9 @@ conservative: no feature is marked `PASS` solely because it compiles.
 
 ### Table totals
 
-Of 71 archived user-facing rows: **PRESENT 36**, **PARTIAL 3**, **MISSING 31**,
-and **INTENTIONALLY MODIFIED 1**. Parity is **NEEDS VALIDATION 36**,
-**NEEDS RESTORATION 34**, **INTENTIONAL MYTHAS DIVERGENCE 1**; no row is
+Of 71 archived user-facing rows: **PRESENT 37**, **PARTIAL 2**, **MISSING 31**,
+and **INTENTIONALLY MODIFIED 1**. Parity is **NEEDS VALIDATION 37**,
+**NEEDS RESTORATION 33**, **INTENTIONAL MYTHAS DIVERGENCE 1**; no row is
 marked `NEEDS FIX`, `PASS`, `OMIT`, or `UNKNOWN` at this audit gate. This is
 deliberately conservative: the absence of a `PASS` is not a claim that every
 present implementation is broken.

@@ -23,3 +23,10 @@ Interactive chest tests remain outstanding because GUI automation was unavailabl
 
 - The master parity audit records 31 archived Charm features as missing and three as partial; each must receive a scoped parity phase before release. Build success is not runtime validation.
 - Keep **RELEASE BLOCKER — Suspicious Block Falling Item Persistence** open until an item-filled falling Suspicious Sand and Suspicious Gravel block are brushed after landing and the exact ItemStack/components are verified.
+
+## Phase 7D Storage Blocks
+
+- Ender Pearl, Gunpowder, and Sugar compact blocks: craft/place/break, exact item counts, models/textures, save/reload, and creative-tab access.
+- Ender Pearl Block: portal particles, Silverfish-to-Endermite conversion, config toggle, and dedicated-server behavior.
+- Gunpowder Block: falling, lava dissolution, TNT recipe/config toggle, and explosion/Silk Touch behavior.
+- Sugar Block: falling, water dissolution, config behavior, and Silk Touch/explosion behavior.
