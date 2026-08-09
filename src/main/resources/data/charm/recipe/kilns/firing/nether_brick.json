@@ -1,8 +1,6 @@
 {
   "type": "charm:firing",
-  "ingredient": {
-    "item": "minecraft:netherrack"
-  },
+  "ingredient": "minecraft:netherrack",
   "result": {
     "id": "minecraft:nether_brick"
   },

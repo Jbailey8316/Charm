@@ -1,6 +1,6 @@
 {
   "type": "charm:firing",
-  "ingredient": { "item": "minecraft:sandstone" },
+  "ingredient": "minecraft:sandstone",
   "result": { "id": "minecraft:smooth_sandstone" },
   "experience": 0.1,
   "cooking_time": 100

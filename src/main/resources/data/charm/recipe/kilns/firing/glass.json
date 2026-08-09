@@ -1,8 +1,6 @@
 {
   "type": "charm:firing",
-  "ingredient": {
-    "tag": "minecraft:sand"
-  },
+  "ingredient": "#minecraft:sand",
   "result": {
     "id": "minecraft:glass"
   },

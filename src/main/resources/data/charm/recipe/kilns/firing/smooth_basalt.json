@@ -1,6 +1,6 @@
 {
   "type": "charm:firing",
-  "ingredient": { "item": "minecraft:basalt" },
+  "ingredient": "minecraft:basalt",
   "result": { "id": "minecraft:smooth_basalt" },
   "experience": 0.1,
   "cooking_time": 100

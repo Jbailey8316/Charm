@@ -1,8 +1,6 @@
 {
   "type": "charm:firing",
-  "ingredient": {
-    "item": "minecraft:clay"
-  },
+  "ingredient": "minecraft:clay",
   "result": {
     "id": "minecraft:terracotta"
   },

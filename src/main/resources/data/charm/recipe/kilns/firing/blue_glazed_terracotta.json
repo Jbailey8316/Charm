@@ -1,6 +1,6 @@
 {
   "type": "charm:firing",
-  "ingredient": { "item": "minecraft:blue_terracotta" },
+  "ingredient": "minecraft:blue_terracotta",
   "result": { "id": "minecraft:blue_glazed_terracotta" },
   "experience": 0.1,
   "cooking_time": 100

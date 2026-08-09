@@ -1,6 +1,6 @@
 {
   "type": "charm:firing",
-  "ingredient": { "item": "minecraft:nether_bricks" },
+  "ingredient": "minecraft:nether_bricks",
   "result": { "id": "minecraft:cracked_nether_bricks" },
   "experience": 0.1,
   "cooking_time": 100
