@@ -26,7 +26,8 @@
   },
 
   "mixins": [
-    "charm.common.mixins.json"
+    "charm.common.mixins.json",
+    "charm.client.mixins.json"
   ],
 
   "depends": {
