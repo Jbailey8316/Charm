@@ -20,10 +20,5 @@ public final class Registers extends Setup<CoralSquids> {
         var registry = ClientRegistry.forFeature(feature());
         registry.itemTab(feature().common.registers.bucketItem.get(), CreativeModeTabs.TOOLS_AND_UTILITIES, Items.AXOLOTL_BUCKET);
         registry.itemTab(feature().common.registers.spawnEggItem.get(), CreativeModeTabs.SPAWN_EGGS, Items.AXOLOTL_SPAWN_EGG);
-        var previous = Items.PLAYER_HEAD;
-        for (var item : feature().common.registers.headItems.values()) {
-            registry.itemTab(item.get(), CreativeModeTabs.FUNCTIONAL_BLOCKS, previous);
-            previous = item.get();
-        }
     }; }
 }
