@@ -2,9 +2,9 @@
     "model":  {
                   "model":  {
                                 "type":  "minecraft:chest",
-                                "texture":  "minecraft:normal"
+                                "texture": "charmony:dark_oak_normal"
                             },
                   "type":  "minecraft:special",
-                  "base":  "charmony:item/dark_oak_chest"
+                  "base": "minecraft:item/chest"
               }
 }

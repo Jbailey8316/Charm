@@ -2,9 +2,9 @@
     "model":  {
                   "model":  {
                                 "type":  "minecraft:chest",
-                                "texture":  "minecraft:trapped"
+                                "texture": "charmony:cherry_trapped"
                             },
                   "type":  "minecraft:special",
-                  "base":  "charmony:item/trapped_cherry_chest"
+                  "base": "minecraft:item/trapped_chest"
               }
 }
