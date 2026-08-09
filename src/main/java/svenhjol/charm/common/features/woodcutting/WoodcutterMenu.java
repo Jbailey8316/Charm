@@ -19,13 +19,19 @@ import java.util.List;
 
 public final class WoodcutterMenu extends AbstractContainerMenu {
     private final ContainerLevelAccess access;
-    private final Container input = new SimpleContainer(1);
+    private final Container input = new SimpleContainer(1) {
+        @Override public void setChanged() {
+            super.setChanged();
+            WoodcutterMenu.this.slotsChanged(this);
+        }
+    };
     private final ResultContainer result = new ResultContainer();
     private final DataSlot selected = DataSlot.standalone();
     private final Inventory inventory;
     private int generation;
     private int clientGeneration = -1;
     private List<ResourceLocation> clientRecipeIds = List.of();
+    private List<ItemStack> clientRecipeOutputs = List.of();
     private List<RecipeHolder<WoodcuttingRecipe>> recipes = List.of();
 
     public WoodcutterMenu(int id, Inventory inv) { this(id, inv, ContainerLevelAccess.NULL); }
@@ -35,8 +41,9 @@ public final class WoodcutterMenu extends AbstractContainerMenu {
         this.access = access;
         addDataSlot(selected);
         addSlot(new Slot(input, 0, 20, 33) {
-            @Override public boolean mayPlace(ItemStack stack) { return !stack.isEmpty(); }
-            @Override public void setChanged() { super.setChanged(); slotsChanged(input); }
+            @Override public boolean mayPlace(ItemStack stack) {
+                return !stack.isEmpty();
+            }
         });
         addSlot(new Slot(result, 0, 143, 33) {
             @Override public boolean mayPlace(ItemStack stack) { return false; }
@@ -48,7 +55,8 @@ public final class WoodcutterMenu extends AbstractContainerMenu {
     private List<RecipeHolder<WoodcuttingRecipe>> findRecipes(ItemStack stack) {
         if (stack.isEmpty() || !(inventory.player instanceof ServerPlayer server)) return List.of();
         List<RecipeHolder<WoodcuttingRecipe>> found = new ArrayList<>();
-        server.level().getServer().getRecipeManager().getRecipes().forEach(holder -> {
+        var allRecipes = server.level().getServer().getRecipeManager().getRecipes();
+        allRecipes.forEach(holder -> {
             if (holder.value() instanceof WoodcuttingRecipe recipe && recipe.input().test(stack)) {
                 @SuppressWarnings("unchecked") RecipeHolder<WoodcuttingRecipe> wood = (RecipeHolder<WoodcuttingRecipe>)(RecipeHolder<?>) holder;
                 found.add(wood);
@@ -62,6 +70,7 @@ public final class WoodcutterMenu extends AbstractContainerMenu {
     }
 
     private void refresh() {
+        if (inventory.player.level().isClientSide()) return;
         ResourceLocation previous = selectedRecipe() == null ? null : selectedRecipe().id().location();
         recipes = findRecipes(input.getItem(0));
         int index = 0;
@@ -92,8 +101,17 @@ public final class WoodcutterMenu extends AbstractContainerMenu {
     public List<ResourceLocation> recipeIds() { return recipes.stream().map(holder -> holder.id().location()).toList(); }
     public int clientGeneration() { return clientGeneration; }
     public List<ResourceLocation> clientRecipeIds() { return clientRecipeIds; }
-    public void acceptClientRecipes(int token, List<ResourceLocation> ids) {
-        if (token >= clientGeneration) { clientGeneration = token; clientRecipeIds = List.copyOf(ids); }
+    public List<ItemStack> recipeOutputs() {
+        var registryAccess = inventory.player.level().registryAccess();
+        return recipes.stream().map(holder -> holder.value().assemble(new SingleRecipeInput(input.getItem(0)), registryAccess).copy()).toList();
+    }
+    public ItemStack clientRecipeOutput(int index) { return index >= 0 && index < clientRecipeOutputs.size() ? clientRecipeOutputs.get(index) : ItemStack.EMPTY; }
+    public void acceptClientRecipes(int token, List<ResourceLocation> ids, List<ItemStack> outputs) {
+        if (token >= clientGeneration) {
+            clientGeneration = token;
+            clientRecipeIds = List.copyOf(ids);
+            clientRecipeOutputs = outputs.size() == ids.size() ? outputs.stream().map(ItemStack::copy).toList() : List.of();
+        }
     }
 
     public void select(int token, ResourceLocation id) {
@@ -102,6 +120,7 @@ public final class WoodcutterMenu extends AbstractContainerMenu {
     }
 
     private void takeResult(Player player) {
+        if (player.level().isClientSide()) return;
         if (!stillValid(player) || !reconcileRecipes()) return;
         RecipeHolder<WoodcuttingRecipe> holder = selectedRecipe();
         if (holder == null || !holder.value().input().test(input.getItem(0))) return;
@@ -109,7 +128,13 @@ public final class WoodcutterMenu extends AbstractContainerMenu {
         refresh();
     }
 
-    @Override public void slotsChanged(Container container) { super.slotsChanged(container); refresh(); }
+    @Override public void slotsChanged(Container container) {
+        super.slotsChanged(container);
+        if (inventory.player.level().isClientSide()) {
+            return;
+        }
+        refresh();
+    }
     @Override public boolean stillValid(Player player) { return stillValid(access, player, Woodcutters.feature().block.get()); }
 
     private boolean canAccept(ItemStack stack) {
@@ -143,5 +168,8 @@ public final class WoodcutterMenu extends AbstractContainerMenu {
         return copy;
     }
 
-    @Override public void removed(Player player) { super.removed(player); clearContainer(player, input); }
+    @Override public void removed(Player player) {
+        super.removed(player);
+        if (!player.level().isClientSide()) clearContainer(player, input);
+    }
 }

@@ -44,6 +44,9 @@ public final class Woodcutters extends SidedFeature {
     public static Woodcutters feature(){return INSTANCE;}
     public static final class WoodcutterBlock extends StonecutterBlock {
         public WoodcutterBlock(Properties p){super(p);}
-        @Override protected InteractionResult useWithoutItem(BlockState s,Level l,BlockPos p,Player pl,BlockHitResult h){if(!l.isClientSide())pl.openMenu(new SimpleMenuProvider((id,i,o)->new WoodcutterMenu(id,i,net.minecraft.world.inventory.ContainerLevelAccess.create(l,p)),Component.translatable("container.charm.woodcutter")));return InteractionResult.SUCCESS;}
+        @Override protected InteractionResult useWithoutItem(BlockState s,Level l,BlockPos p,Player pl,BlockHitResult h){
+            if(!l.isClientSide())pl.openMenu(new SimpleMenuProvider((id,i,o)->new WoodcutterMenu(id,i,net.minecraft.world.inventory.ContainerLevelAccess.create(l,p)),Component.translatable("container.charm.woodcutter")));
+            return InteractionResult.SUCCESS;
+        }
     }
 }
