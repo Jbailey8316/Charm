@@ -23,11 +23,11 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "charmony:chiseled_ebony_bookshelf"
+            "name": "charmony:ebony_chiseled_bookshelf"
           }
         ],
         "rolls": 1.0
       }
     ],
-    "random_sequence": "charmony:blocks/chiseled_ebony_bookshelf"
+    "random_sequence": "charmony:blocks/ebony_chiseled_bookshelf"
   }

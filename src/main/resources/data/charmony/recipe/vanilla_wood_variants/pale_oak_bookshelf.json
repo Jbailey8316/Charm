@@ -1,11 +1,7 @@
 {
     "key":  {
-                "#":  {
-                          "item":  "charmony:pale_oak_planks"
-                      },
-                "X":  {
-                          "item":  "minecraft:book"
-                      }
+                "#":  "minecraft:pale_oak_planks",
+                "X":  "minecraft:book"
             },
     "pattern":  [
                     "###",

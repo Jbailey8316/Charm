@@ -23,11 +23,11 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "charmony:chiseled_bamboo_bookshelf"
+            "name": "charmony:bamboo_chiseled_bookshelf"
           }
         ],
         "rolls": 1.0
       }
     ],
-    "random_sequence": "charmony:blocks/chiseled_bamboo_bookshelf"
+    "random_sequence": "charmony:blocks/bamboo_chiseled_bookshelf"
   }

@@ -23,11 +23,11 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "charmony:chiseled_jungle_bookshelf"
+            "name": "charmony:jungle_chiseled_bookshelf"
           }
         ],
         "rolls": 1.0
       }
     ],
-    "random_sequence": "charmony:blocks/chiseled_jungle_bookshelf"
+    "random_sequence": "charmony:blocks/jungle_chiseled_bookshelf"
   }

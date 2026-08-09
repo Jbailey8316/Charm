@@ -23,11 +23,11 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "charmony:chiseled_acacia_bookshelf"
+            "name": "charmony:acacia_chiseled_bookshelf"
           }
         ],
         "rolls": 1.0
       }
     ],
-    "random_sequence": "charmony:blocks/chiseled_acacia_bookshelf"
+    "random_sequence": "charmony:blocks/acacia_chiseled_bookshelf"
   }

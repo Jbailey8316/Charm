@@ -1,6 +1,3 @@
-﻿{
-    "textures":  {
-                     "particle":  "minecraft:block/cherry_planks"
-                 },
-    "parent":  "builtin/entity"
+{
+    "parent": "item/chest"
 }

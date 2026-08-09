@@ -1,7 +1,5 @@
 {
-    "ingredient":  {
-                       "item":  "minecraft:mangrove_planks"
-                   },
+    "ingredient":  "minecraft:mangrove_planks",
     "result":  {
                    "id":  "charmony:mangrove_bookshelf",
                    "count":  1

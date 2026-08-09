@@ -1,8 +1,6 @@
-﻿{
+{
     "type":  "charm:woodcutting",
-    "ingredient":  {
-                       "item":  "minecraft:oak_planks"
-                   },
+    "ingredient":  "minecraft:oak_planks",
     "result":  {
                    "id":  "minecraft:oak_trapdoor",
                    "count":  1

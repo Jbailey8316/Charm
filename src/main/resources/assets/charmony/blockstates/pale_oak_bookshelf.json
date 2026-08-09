@@ -1,7 +1,7 @@
 {
-    "variants": {
-      "": {
-        "model": "charmony:block/pale_oak_bookshelf"
-      }
+  "variants": {
+    "": {
+      "model": "charmony:block/pale_oak_bookshelf"
     }
   }
+}

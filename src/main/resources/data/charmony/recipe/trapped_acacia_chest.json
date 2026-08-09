@@ -1,11 +1,7 @@
-﻿{
+{
     "ingredients":  [
-                        {
-                            "item":  "charmony:acacia_chest"
-                        },
-                        {
-                            "item":  "minecraft:tripwire_hook"
-                        }
+                        "charmony:acacia_chest",
+                        "minecraft:tripwire_hook"
                     ],
     "category":  "misc",
     "result":  {

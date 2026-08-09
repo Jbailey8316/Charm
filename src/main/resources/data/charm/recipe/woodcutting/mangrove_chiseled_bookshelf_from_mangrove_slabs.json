@@ -1,7 +1,5 @@
 {
-    "ingredient":  {
-                       "item":  "minecraft:mangrove_slab"
-                   },
+    "ingredient":  "minecraft:mangrove_slab",
     "result":  {
                    "id":  "charmony:mangrove_chiseled_bookshelf",
                    "count":  1

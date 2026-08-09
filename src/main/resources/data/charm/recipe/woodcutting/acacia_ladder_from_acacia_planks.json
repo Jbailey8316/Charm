@@ -1,7 +1,5 @@
 {
-    "ingredient":  {
-                       "item":  "minecraft:acacia_planks"
-                   },
+    "ingredient":  "minecraft:acacia_planks",
     "result":  {
                    "id":  "charmony:acacia_ladder",
                    "count":  3

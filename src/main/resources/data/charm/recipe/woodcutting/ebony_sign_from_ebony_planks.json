@@ -1,10 +1,8 @@
 {
   "type": "charm:woodcutting",
-  "ingredient": {
-    "item": "charm:ebony_planks"
-  },
+  "ingredient": "charmony:ebony_planks",
   "result": {
-    "id": "charm:ebony_sign",
+    "id": "charmony:ebony_sign",
     "count": 1
   }
 }

@@ -22,7 +22,7 @@ Interactive chest tests remain outstanding because GUI automation was unavailabl
 - RELEASE BLOCKER — Suspicious Block Falling Item Persistence (Phase 7C fix implemented; still OPEN pending runtime proof): create item-filled Suspicious Sand and Suspicious Gravel, allow each to fall, save/reload, then brush and verify the exact stored ItemStack/components survive without duplication.
 - Villager Attracting: main-hand Emerald Block attraction, stop/removal, offhand versus inventory-only behavior, range, obstacles, multiple villagers/players, work/sleep/panic priority, baby/nitwit/employed/unemployed eligibility, feature-disabled behavior, and dedicated-server synchronization.
 - Coral Squids: summon/rendering, swimming/flee/ink behavior, bucket pickup and variant persistence, natural warm-ocean/coral spawning plus negative cases, save/reload, dedicated-server synchronization, normal coral drops, five head icons/placement/break persistence, player-kill head drops, Looting scaling, and Mob Drops toggle-off behavior.
-- Kilns: resource loading is repaired (all 33 `charm:firing` JSON files now parse; gameplay remains release-critical UNTESTED). Craft/place/orientation, GUI and recipe-book behavior, clay/glass/brick/terracotta/stone processing, 100-tick cook time, fuel use, XP, hopper input/fuel/output, comparator fullness, save/reload, break-with-inventory, config disable, and dedicated-server synchronization.
+- Kilns: recipe migration repaired (all remaining 32 `charm:firing` JSON files parse and use the 1.21.10 ingredient schema; obsolete cracked-mud-bricks output removed). Gameplay remains release-critical UNTESTED. Craft/place/orientation, GUI and recipe-book behavior, clay/glass/brick/terracotta/stone processing, 100-tick cook time, fuel use, XP, hopper input/fuel/output, comparator fullness, save/reload, break-with-inventory, config disable, and dedicated-server synchronization.
 - Endermite Powder — RELEASE-CRITICAL: Endermite player/non-player/environmental drops, Looting 0–3 distribution, normal End-only use, Overworld/Nether rejection, survival/creative consumption, 40-tick cooldown, failed search consumption, tagged End City search, locator direction/portal particles/expiry, save/reload, chunk unload/reload, multiplayer observation, rare Wandering Trader offer, and invalid-target cleanup. Historical advancements remain deferred pending the Block of Ender Pearls parent.
 - Arcane Purpur — RELEASE-CRITICAL: place all six blocks, craft all shaped/stonecutting recipes, verify Endermite Powder cost, Chorus Fruit with feature disabled/no target/valid target/multiple targets/obstructed targets, 12-block boundary and beyond, nearest selection, fallback behavior, 20-tick cooldown, survival/creative consumption, particles/sounds, save/reload, and multiplayer authority. Historical advancement remains deferred with its parent dependency.
 
@@ -148,3 +148,65 @@ blockers:
 - Re-audit all release-critical inventory and save/load systems before a
   Production Candidate: Suspicious Blocks, Woodcutter, Chiseled Bookshelves,
   Kiln, Totem of Preserving, Storage Blocks, and Lumberjack offers.
+
+### Phase 7Q.5 client resource audit
+
+- Verify the 14 corrected Chiseled Bookshelf loot outputs drop registered
+  `charmony:<wood>_chiseled_bookshelf` items.
+- Verify all 42 wood-variant item definitions, both Copper Piston definitions,
+  and the three storage-block definitions resolve in the client registry.
+- Runtime visual checks remain required for Woodcutter, ladders, Bookshelves,
+  Chiseled Bookshelves, chest special-item rendering, Copper Pistons, Coral
+  Squid spawn egg, Moobloom heads, and Gunpowder Block.
+- Treat `minecraft:builtin/entity` and
+  `minecraft:item/template_spawn_egg` as expected special paths unless a
+  fresh log proves a custom-resource failure.
+
+### Phase 7Q.6 visual parity
+
+- Re-test all 14 Moobloom heads in inventory and placed form after the
+  main-resource texture copy.
+- Verify Woodcutter artwork, all custom ladders/bookshelves/chiseled
+  bookshelves, chest special-item rendering, Copper Pistons, Coral Squid
+  spawn egg, Coral Squid heads, and Gunpowder Block visuals.
+- Keep Shelf content and Mud/Cracked Mud Bricks as audit findings; no
+  implementation is authorized without historical source evidence.
+
+### Phase 7Q.7 original asset reconciliation
+
+- Verify restored historical Woodcutter geometry/textures in block and item
+  views.
+- Verify historical chest/trapped-chest item transforms for all supported
+  families, including Pale Oak adaptation.
+- Verify the five Coral Squid entity textures and all 14 Moobloom textures
+  load from the current Charmony resource paths.
+- Verify the Coral Squid spawn egg through the vanilla special
+  `template_spawn_egg` renderer.
+- Keep Shelf and Mud/Cracked Mud Bricks classified as absent from the
+  historical Charm JAR.
+
+### Phase 7Q.8 final visual repairs
+
+- Verify Pale Oak Ladder transparency in inventory and placed views.
+- Verify Pale Oak Bookshelf book pixels and Pale Oak Chiseled Bookshelf
+  appearance in all occupancy states.
+- Verify Cherry Ladder against the original Charm texture (no replacement was
+  necessary).
+- Verify Moobloom heads, Coral Squid heads, spawn egg, and chest special-item
+  rendering in-game; these remain runtime validation items.
+
+### Phase 7Q.7 original asset reconciliation
+
+- Verify restored historical Woodcutter geometry/textures in block and item
+  views.
+- Verify historical chest/trapped-chest item transforms for all supported
+  families, including Pale Oak adaptation.
+- Verify Bookshelf/Chiseled Bookshelf models against the historical asset set.
+- Keep Coral Squid and Moobloom visuals classified as port/Mythas content,
+  not historical Charm asset parity.
+## Phase 7Q.9 visual renderer follow-up
+
+- [ ] Moobloom head inventory/placed rendering across all 14 variants after block-atlas texture-path repair.
+- [ ] Pale Oak chiseled bookshelf visual confirmation (empty/occupied states).
+- [ ] Custom chest placed and inventory rendering; verify normal/trapped and all wood families. The dedicated renderer/material path remains unconfirmed without a live client.
+- [ ] Coral Squid head model/UV rendering across all five variants.

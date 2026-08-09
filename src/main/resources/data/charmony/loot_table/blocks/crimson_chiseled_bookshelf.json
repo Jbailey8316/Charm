@@ -23,11 +23,11 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "charmony:chiseled_crimson_bookshelf"
+            "name": "charmony:crimson_chiseled_bookshelf"
           }
         ],
         "rolls": 1.0
       }
     ],
-    "random_sequence": "charmony:blocks/chiseled_crimson_bookshelf"
+    "random_sequence": "charmony:blocks/crimson_chiseled_bookshelf"
   }

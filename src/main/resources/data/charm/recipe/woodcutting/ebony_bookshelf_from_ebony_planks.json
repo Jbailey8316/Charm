@@ -1,7 +1,5 @@
 {
-    "ingredient":  {
-                       "item":  "charmony:ebony_planks"
-                   },
+    "ingredient":  "charmony:ebony_planks",
     "result":  {
                    "id":  "charmony:ebony_bookshelf",
                    "count":  1

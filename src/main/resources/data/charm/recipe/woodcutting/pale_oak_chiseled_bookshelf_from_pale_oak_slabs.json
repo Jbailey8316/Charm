@@ -1,7 +1,5 @@
 {
-    "ingredient":  {
-                       "item":  "charmony:pale_oak_slab"
-                   },
+    "ingredient":  "minecraft:pale_oak_slab",
     "result":  {
                    "id":  "charmony:pale_oak_chiseled_bookshelf",
                    "count":  1

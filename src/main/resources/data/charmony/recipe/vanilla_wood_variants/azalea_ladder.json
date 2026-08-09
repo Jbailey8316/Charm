@@ -1,11 +1,7 @@
 {
     "key":  {
-                "#":  {
-                          "item":  "minecraft:stick"
-                      },
-                "P":  {
-                          "item":  "charmony:azalea_planks"
-                      }
+                "#":  "minecraft:stick",
+                "P":  "charmony:azalea_planks"
             },
     "pattern":  [
                     "# #",

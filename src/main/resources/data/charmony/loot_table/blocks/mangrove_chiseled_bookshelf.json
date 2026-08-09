@@ -23,11 +23,11 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "charmony:chiseled_mangrove_bookshelf"
+            "name": "charmony:mangrove_chiseled_bookshelf"
           }
         ],
         "rolls": 1.0
       }
     ],
-    "random_sequence": "charmony:blocks/chiseled_mangrove_bookshelf"
+    "random_sequence": "charmony:blocks/mangrove_chiseled_bookshelf"
   }

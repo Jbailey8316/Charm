@@ -1,7 +1,5 @@
 {
-    "ingredient":  {
-                       "item":  "minecraft:spruce_planks"
-                   },
+    "ingredient":  "minecraft:spruce_planks",
     "result":  {
                    "id":  "charmony:spruce_ladder",
                    "count":  3

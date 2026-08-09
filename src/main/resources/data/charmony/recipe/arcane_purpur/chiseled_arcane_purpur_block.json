@@ -1,9 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "#": {
-      "item": "charmony:arcane_purpur_slab"
-    }
+    "#": "charmony:arcane_purpur_slab"
   },
   "pattern": [
     "#",

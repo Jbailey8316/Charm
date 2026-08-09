@@ -1,11 +1,7 @@
 {
     "key":  {
-                "#":  {
-                          "item":  "minecraft:acacia_planks"
-                      },
-                "X":  {
-                          "item":  "minecraft:acacia_slab"
-                      }
+                "#":  "minecraft:acacia_planks",
+                "X":  "minecraft:acacia_slab"
             },
     "pattern":  [
                     "###",

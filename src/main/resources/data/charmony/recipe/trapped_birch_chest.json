@@ -1,11 +1,7 @@
-﻿{
+{
     "ingredients":  [
-                        {
-                            "item":  "charmony:birch_chest"
-                        },
-                        {
-                            "item":  "minecraft:tripwire_hook"
-                        }
+                        "charmony:birch_chest",
+                        "minecraft:tripwire_hook"
                     ],
     "category":  "misc",
     "result":  {

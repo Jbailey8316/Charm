@@ -1,11 +1,7 @@
 {
     "key":  {
-                "#":  {
-                          "item":  "charmony:ebony_planks"
-                      },
-                "X":  {
-                          "item":  "charmony:ebony_slab"
-                      }
+                "#":  "charmony:ebony_planks",
+                "X":  "charmony:ebony_slab"
             },
     "pattern":  [
                     "###",

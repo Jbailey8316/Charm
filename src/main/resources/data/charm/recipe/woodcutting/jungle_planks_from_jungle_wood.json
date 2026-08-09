@@ -1,8 +1,6 @@
-﻿{
+{
     "type":  "charm:woodcutting",
-    "ingredient":  {
-                       "item":  "minecraft:jungle_wood"
-                   },
+    "ingredient":  "minecraft:jungle_wood",
     "result":  {
                    "id":  "minecraft:jungle_planks",
                    "count":  4

@@ -1,11 +1,7 @@
 {
     "key":  {
-                "#":  {
-                          "item":  "minecraft:mangrove_planks"
-                      },
-                "X":  {
-                          "item":  "minecraft:mangrove_slab"
-                      }
+                "#":  "minecraft:mangrove_planks",
+                "X":  "minecraft:mangrove_slab"
             },
     "pattern":  [
                     "###",

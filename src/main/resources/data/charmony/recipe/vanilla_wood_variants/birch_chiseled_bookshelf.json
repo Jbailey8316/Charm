@@ -1,11 +1,7 @@
 {
     "key":  {
-                "#":  {
-                          "item":  "minecraft:birch_planks"
-                      },
-                "X":  {
-                          "item":  "minecraft:birch_slab"
-                      }
+                "#":  "minecraft:birch_planks",
+                "X":  "minecraft:birch_slab"
             },
     "pattern":  [
                     "###",

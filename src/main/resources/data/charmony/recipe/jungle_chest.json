@@ -1,8 +1,6 @@
-﻿{
+{
     "key":  {
-                "#":  {
-                          "item":  "minecraft:jungle_planks"
-                      }
+                "#":  "minecraft:jungle_planks"
             },
     "category":  "misc",
     "pattern":  [

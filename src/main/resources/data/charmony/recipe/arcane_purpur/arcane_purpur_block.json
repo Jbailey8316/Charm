@@ -1,12 +1,8 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "#": {
-      "item": "minecraft:purpur_block"
-    },
-    "E": {
-      "item": "charmony:endermite_powder"
-    }
+    "#": "minecraft:purpur_block",
+    "E": "charmony:endermite_powder"
   },
   "pattern": [
     "###",

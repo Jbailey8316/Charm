@@ -23,11 +23,11 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "charmony:chiseled_pale_oak_bookshelf"
+            "name": "charmony:pale_oak_chiseled_bookshelf"
           }
         ],
         "rolls": 1.0
       }
     ],
-    "random_sequence": "charmony:blocks/chiseled_pale_oak_bookshelf"
+    "random_sequence": "charmony:blocks/pale_oak_chiseled_bookshelf"
   }

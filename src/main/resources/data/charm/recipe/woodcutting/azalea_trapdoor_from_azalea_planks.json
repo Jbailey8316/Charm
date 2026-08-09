@@ -1,10 +1,8 @@
 {
   "type": "charm:woodcutting",
-  "ingredient": {
-    "item": "charm:azalea_planks"
-  },
+  "ingredient": "charmony:azalea_planks",
   "result": {
-    "id": "charm:azalea_trapdoor",
+    "id": "charmony:azalea_trapdoor",
     "count": 1
   }
 }

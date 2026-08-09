@@ -1,9 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "#": {
-      "item": "charmony:chiseled_arcane_purpur_block"
-    }
+    "#": "charmony:chiseled_arcane_purpur_block"
   },
   "pattern": [
     "##",

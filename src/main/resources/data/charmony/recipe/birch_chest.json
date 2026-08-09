@@ -1,8 +1,6 @@
-﻿{
+{
     "key":  {
-                "#":  {
-                          "item":  "minecraft:birch_planks"
-                      }
+                "#":  "minecraft:birch_planks"
             },
     "category":  "misc",
     "pattern":  [

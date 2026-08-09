@@ -1,7 +1,5 @@
 {
-    "ingredient":  {
-                       "item":  "charmony:pale_oak_planks"
-                   },
+    "ingredient":  "minecraft:pale_oak_planks",
     "result":  {
                    "id":  "charmony:pale_oak_ladder",
                    "count":  3

@@ -1,11 +1,7 @@
 {
     "key":  {
-                "#":  {
-                          "item":  "minecraft:crimson_planks"
-                      },
-                "X":  {
-                          "item":  "minecraft:crimson_slab"
-                      }
+                "#":  "minecraft:crimson_planks",
+                "X":  "minecraft:crimson_slab"
             },
     "pattern":  [
                     "###",

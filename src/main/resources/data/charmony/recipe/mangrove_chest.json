@@ -1,8 +1,6 @@
-﻿{
+{
     "key":  {
-                "#":  {
-                          "item":  "minecraft:mangrove_planks"
-                      }
+                "#":  "minecraft:mangrove_planks"
             },
     "category":  "misc",
     "pattern":  [

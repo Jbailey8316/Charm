@@ -1,10 +1,8 @@
 {
   "type": "charm:woodcutting",
-  "ingredient": {
-    "item": "charm:azalea_log"
-  },
+  "ingredient": "charmony:azalea_log",
   "result": {
-    "id": "charm:stripped_azalea_log",
+    "id": "charmony:stripped_azalea_log",
     "count": 1
   }
 }

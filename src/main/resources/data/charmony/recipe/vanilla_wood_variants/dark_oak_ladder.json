@@ -1,11 +1,7 @@
 {
     "key":  {
-                "#":  {
-                          "item":  "minecraft:stick"
-                      },
-                "P":  {
-                          "item":  "minecraft:dark_oak_planks"
-                      }
+                "#":  "minecraft:stick",
+                "P":  "minecraft:dark_oak_planks"
             },
     "pattern":  [
                     "# #",

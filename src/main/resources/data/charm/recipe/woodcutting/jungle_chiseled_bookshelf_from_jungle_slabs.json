@@ -1,7 +1,5 @@
 {
-    "ingredient":  {
-                       "item":  "minecraft:jungle_slab"
-                   },
+    "ingredient":  "minecraft:jungle_slab",
     "result":  {
                    "id":  "charmony:jungle_chiseled_bookshelf",
                    "count":  1

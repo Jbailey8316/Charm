@@ -1,7 +1,5 @@
 {
-    "ingredient":  {
-                       "item":  "charmony:azalea_planks"
-                   },
+    "ingredient":  "charmony:azalea_planks",
     "result":  {
                    "id":  "charmony:azalea_bookshelf",
                    "count":  1

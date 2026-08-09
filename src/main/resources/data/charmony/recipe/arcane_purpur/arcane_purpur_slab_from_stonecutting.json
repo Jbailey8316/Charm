@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "charmony:arcane_purpur_block"
-  },
+  "ingredient": "charmony:arcane_purpur_block",
   "result": {
     "id": "charmony:arcane_purpur_slab",
     "count": 2

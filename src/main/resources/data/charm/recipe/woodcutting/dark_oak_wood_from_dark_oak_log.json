@@ -1,8 +1,6 @@
-﻿{
+{
     "type":  "charm:woodcutting",
-    "ingredient":  {
-                       "item":  "minecraft:dark_oak_log"
-                   },
+    "ingredient":  "minecraft:dark_oak_log",
     "result":  {
                    "id":  "minecraft:dark_oak_wood",
                    "count":  1

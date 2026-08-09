@@ -124,6 +124,56 @@ blocked by a transient Loom dependency-resolution failure (`fabric-loom:1.11.8`
 could not be downloaded after retries); the prior client log therefore remains
 historical evidence only and is not counted as a post-repair runtime PASS.
 
+## Recipe migration audit — validation blocked
+
+Runtime validation exposed a repository-wide 1.21.10 recipe migration issue.
+An audit of root and bundled Charmony module resources found 482 recipe JSON
+files (434 root resources and 48 nested-module resources). All are strict JSON,
+but codec compatibility is not yet complete:
+
+* 308 `charm:woodcutting` recipes and 5 Charmony stonecutting recipes use
+  legacy object-form single ingredients (`{"item": ...}` / `{"tag": ...}`).
+* 70 shaped recipes use legacy object-form entries in `key`; 17 shapeless
+  recipes use legacy object-form entries in `ingredients`. These include
+  Charmony chest/storage, Arcane Purpur, Ender Pearl Block, Gunpowder Block,
+  Sugar Block, Azalea/Ebony content, Copper Pistons, Kiln, and Woodcutter
+  recipes.
+* 63 Woodcutting files contain semantically invalid overworld substitutions:
+  seven bad files each for Acacia, Birch, Cherry, Dark Oak, Jungle, Mangrove,
+  Oak, Pale Oak, and Spruce. Overworld families must use log/wood forms;
+  stem/hyphae terminology is limited to Crimson/Warped-style families.
+* `charm:kilns/firing/cracked_mud_bricks.json` references the nonexistent
+  `minecraft:cracked_mud_bricks`; its historical intended output requires
+  source verification before changing or removing the recipe.
+* 34 Woodcutting files use `charm:` Azalea/Ebony IDs even though the current
+  registrations are `charmony:`; Pale Oak references to `charmony:pale_oak_*`
+  likewise require migration to the actual vanilla IDs.
+
+No repairs were applied in this audit. Kiln, Woodcutting, Arcane Purpur,
+storage-block, and related recipe gameplay validation is `BLOCKED BY AUDIT`.
+
+## Phase 7Q.4 — recipe migration repair
+
+The complete migration was applied after the audit. Legacy object-form
+ingredients were converted to the 1.21.10 string/tag representation across
+400 files. The 63 generated overworld stem/hyphae templates were obsolete
+duplicates once corrected to valid log/wood semantics, so they were removed;
+the valid log/wood and stripped-log/wood recipes remain. Azalea and Ebony
+Woodcutting IDs now use their verified `charmony:` registrations, and Pale Oak
+uses vanilla `minecraft:pale_oak_*` IDs.
+
+Historical source recovery found no current or repository registration for
+`minecraft:cracked_mud_bricks` and no source-backed equivalent. Its Firing
+recipe was therefore classified obsolete/superseded and removed rather than
+inventing a Charm block or output.
+
+Final static result: 418 remaining recipe files, all strict JSON-valid, with
+zero legacy ingredient objects, zero invalid overworld stem/hyphae IDs, zero
+stale Azalea/Ebony namespaces, zero incorrect Pale Oak plank/slab IDs, and no
+cracked-mud-bricks references. This is a resource migration result only;
+runtime recipe loading and gameplay remain pending external build/client
+validation.
+
 ## P0 — data integrity and item persistence
 
 | ID | Feature | Setup and exact steps | Expected | Actual / Result / Log | Blocking |
@@ -187,3 +237,158 @@ repair during the first pass. After each group, archive the world and inspect
 `latest.log`. Rows remain NOT TESTED until manually executed in the isolated
 Prism instance. This artifact is a **Phase 7Q Test Build**, not production
 ready.
+
+## Phase 7Q.8 — final visual defect repair
+
+High-confidence repairs:
+
+* Pale Oak Ladder alpha was restored using the established ladder transparency
+  mask; it now has 112 transparent pixels like the other ladder variants.
+* Pale Oak Bookshelf now retains the Pale Oak base palette with visible book
+  pixels derived from the established Charm bookshelf structure.
+* Historical chest/trapped-chest item transforms and the original Woodcutter
+  assets remain in place from 7Q.7.
+
+Source comparison confirmed Cherry Ladder is byte-identical to the original
+Charm ladder texture, so it was not replaced. Coral Squid head geometry and
+Moobloom head presentation remain port/runtime items requiring visual proof;
+no historical head model exists to substitute. The Coral Squid spawn egg
+continues to use the historical vanilla special spawn-egg model.
+
+Six-slot Chiseled Bookshelf behavior and all gameplay systems were untouched.
+Runtime visual verification remains required.
+
+## Phase 7Q.7 — original Charm asset recovery audit
+
+The uploaded `charm-fabric-1.21-7.0.28.jar` was inspected as the historical
+visual source.
+
+Source-backed repairs:
+
+* restored the historical Woodcutter block geometry and original
+  `woodcutter_bottom`, `woodcutter_side`, and `woodcutter_top` textures;
+* restored historical chest and trapped-chest item display transforms for the
+  13 historical wood families;
+* adapted the same transforms to the approved Pale Oak variants;
+* restored the five historical Coral Squid entity textures at the current
+  renderer path `assets/charmony/textures/entity/coral_squid/*`;
+* reconciled all 14 historical Moobloom textures with the current
+  `charmony` namespace.
+
+The historical JAR contains Bookshelf and Chiseled Bookshelf assets matching
+the current port's model families. It contains no Shelf family and no Mud or
+Cracked Mud Bricks content. Coral Squid and Moobloom are historical Charm
+content; their current port namespace/path adaptation is now source-backed.
+The Coral Squid spawn egg uses the historical vanilla
+`minecraft:item/template_spawn_egg` model and has no standalone texture.
+
+No entity, gameplay, recipe, networking, trade, POI, or Suspicious Block
+behavior was changed. Runtime visual verification remains required.
+
+## Phase 7Q.7 — original Charm asset recovery audit
+
+The uploaded `charm-fabric-1.21-7.0.28.jar` was inspected as the historical
+visual source.
+
+Source-backed repairs:
+
+* restored the historical Woodcutter block model geometry and its original
+  `woodcutter_bottom`, `woodcutter_side`, and `woodcutter_top` textures;
+* restored the historical chest and trapped-chest item model display
+  transforms for the 13 historical wood families;
+* adapted those transforms to the approved Pale Oak variants using the
+  existing Pale Oak plank texture.
+
+The historical JAR contains Bookshelf and Chiseled Bookshelf assets matching
+the current port's model families. It contains no Shelf family. It contains no
+Mud or Cracked Mud Bricks content. Coral Squid and Moobloom visual assets are
+not historical Charm assets in this artifact and remain Mythas/port content.
+
+No entity, gameplay, recipe, networking, trade, POI, or Suspicious Block
+behavior was changed. Runtime visual verification remains required.
+
+## Phase 7Q.6 — visual parity and resource repair
+
+Confirmed high-confidence repair:
+
+* Moobloom head texture assets were present only in the bundled module
+  resource tree. The 14 original `assets/charmony/textures/entity/moobloom/*`
+  textures are now also available in the main resource tree, matching the
+  existing head-model references without changing entity code or drop logic.
+
+The audit also confirmed:
+
+* Woodcutter currently uses Stonecutter textures and has no recoverable
+  original artwork in the repository; artwork remains runtime-uncertain.
+* Chest inventory definitions intentionally use Minecraft's special
+  `builtin/entity` chest path; incorrect flat rendering needs client proof
+  and was not changed speculatively.
+* Coral Squid spawn egg uses the vanilla `template_spawn_egg` special path;
+  its appearance remains runtime-uncertain.
+* No Shelf family is present in current or bundled source/resources; this
+  remains an audit-only missing-content question.
+* No current `cracked_mud_bricks` or Mud/Cracked Mud Bricks registration,
+  recipe, model, or texture exists. No replacement content was added.
+
+Visual gameplay validation remains UNTESTED. Suspicious Sand/Gravel falling
+behavior remains the independent P0 and was not modified.
+
+## Phase 7Q.5 — client resource and item-registry audit
+
+The audit confirmed canonical wood registration names use `<wood>_chiseled_bookshelf`.
+High-confidence repairs corrected all 14 Chiseled Bookshelf loot outputs and
+random-sequence IDs, added 42 current 1.21.10 wood-variant item definitions,
+added Copper Piston item definitions, and added item definitions for the
+bundled Ender Pearl, Gunpowder, and Sugar storage blocks.
+
+All changed JSON parses strictly. Model, blockstate, and texture references
+were checked against root and bundled-module assets.
+
+Classification: A (fixed) for the loot IDs and missing item-definition layer;
+C (expected special paths) for `minecraft:builtin/entity` and
+`minecraft:item/template_spawn_egg`; E (runtime proof required) for
+Woodcutter artwork, chest special-item presentation, Coral Squid spawn-egg
+appearance, and Moobloom-head texture warnings. Suspicious falling persistence
+remains the independent P0 and was not changed.
+
+Gameplay and visual validation remain UNTESTED; external compile/build and
+client resource-reload validation are still required.
+## Phase 7Q.9 — Runtime visual renderer repair (audit/update)
+
+The current visual audit compared the port against the original Charm 1.21 artifact.
+
+Confirmed resource repairs in this pass:
+
+- Moobloom head block models now use block-atlas textures (`charmony:block/moobloom/*`) rather than entity-only texture paths. The 14 source textures are mirrored into the block texture directory; entity rendering remains unchanged.
+- Pale Oak chiseled bookshelf side/top artwork was structurally corrected from blank plank-like textures to the chiseled bookshelf pattern, with a Pale Oak-tinted palette.
+
+The following remain runtime-gated and were not changed speculatively:
+
+- Custom chest block-entity rendering/inventory presentation (the port has a dedicated `CustomChestRenderer`; a live client check is still required to determine whether the material atlas/renderer path is failing).
+- Coral Squid head geometry/rendering (port-created content; no historical head asset exists).
+- Pale Oak bookshelf appearance and other previously validated wood-family resources.
+
+Historical renderer comparison: Charm 1.21 used a dedicated chest block-entity renderer with per-material `Sheets.CHEST_SHEET` materials, not a flat block/item model. The port has the corresponding `CustomChestRenderer` and normal/trapped material registrations; placed-chest invisibility therefore remains a live-client/runtime item to isolate (no speculative renderer rewrite was made).
+
+Historical Charm has no Coral Squid head assets; those heads are port-created content. Historical Moobloom assets are entity textures, while the port's head blocks require block-atlas textures; the repaired models now use a dedicated block-atlas copy to avoid black item/placed rendering.
+
+No gameplay, recipe, entity, AI, trade, networking, or Suspicious Block behavior was modified.
+## Phase 7Q.10 — Client renderer/model path audit
+
+Static comparison against the historical Charm 1.21 artifact found no safe mapping-only rewrite to apply:
+
+- Coral Squid spawn egg already resolves through Minecraft's `template_spawn_egg`; colors are supplied by the native `SpawnEggItem` path.
+- Bookshelf and Chiseled Bookshelf item definitions resolve through their corresponding block models, matching the historical hierarchy.
+- Custom chests use a dedicated `CustomChestRenderer` and `Sheets.CHEST_SHEET` materials, the same renderer/material architecture as historical Charm.
+- Moobloom head models now use block-atlas texture paths; historical Charm did not contain a separate Moobloom-head model family.
+
+Runtime screenshots/resource-reload logs are still required before changing any of these mappings. No gameplay or renderer code was changed in this audit step.
+## Temporary Q10 client diagnostics
+
+Client-only diagnostics were added (no assets or gameplay changes):
+
+- custom chest renderer registration and first invocation log the block-entity type, chest type, material texture (via reflective API probe), and block;
+- Charmony wood client boot logs the expected bookshelf/chiseled-bookshelf model paths for all 14 families;
+- Moobloom client boot logs the block-atlas texture convention used by head models.
+
+Remove these diagnostics after collecting the dev-client log/screenshots.

@@ -1,11 +1,7 @@
 {
     "key":  {
-                "#":  {
-                          "item":  "minecraft:oak_planks"
-                      },
-                "X":  {
-                          "item":  "minecraft:oak_slab"
-                      }
+                "#":  "minecraft:oak_planks",
+                "X":  "minecraft:oak_slab"
             },
     "pattern":  [
                     "###",

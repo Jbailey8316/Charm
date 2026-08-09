@@ -1,7 +1,5 @@
 {
-    "ingredient":  {
-                       "item":  "minecraft:oak_planks"
-                   },
+    "ingredient":  "minecraft:oak_planks",
     "result":  {
                    "id":  "charmony:oak_bookshelf",
                    "count":  1

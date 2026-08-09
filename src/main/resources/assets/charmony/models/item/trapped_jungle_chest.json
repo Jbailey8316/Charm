@@ -1,6 +1,3 @@
-﻿{
-    "textures":  {
-                     "particle":  "minecraft:block/jungle_planks"
-                 },
-    "parent":  "builtin/entity"
+{
+    "parent": "item/chest"
 }

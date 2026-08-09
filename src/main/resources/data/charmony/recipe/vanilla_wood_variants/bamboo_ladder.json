@@ -1,11 +1,7 @@
 {
     "key":  {
-                "#":  {
-                          "item":  "minecraft:stick"
-                      },
-                "P":  {
-                          "item":  "minecraft:bamboo_planks"
-                      }
+                "#":  "minecraft:stick",
+                "P":  "minecraft:bamboo_planks"
             },
     "pattern":  [
                     "# #",

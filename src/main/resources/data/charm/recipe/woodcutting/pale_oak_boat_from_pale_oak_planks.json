@@ -1,8 +1,6 @@
-﻿{
+{
     "type":  "charm:woodcutting",
-    "ingredient":  {
-                       "item":  "minecraft:pale_oak_planks"
-                   },
+    "ingredient":  "minecraft:pale_oak_planks",
     "result":  {
                    "id":  "minecraft:pale_oak_boat",
                    "count":  1

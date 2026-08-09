@@ -6,12 +6,8 @@
     " # "
   ],
   "key": {
-    "#": {
-      "item": "minecraft:bricks"
-    },
-    "X": {
-      "item": "minecraft:furnace"
-    }
+    "#": "minecraft:bricks",
+    "X": "minecraft:furnace"
   },
   "result": {
     "id": "charm:kiln"
