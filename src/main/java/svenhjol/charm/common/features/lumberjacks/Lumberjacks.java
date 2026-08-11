@@ -44,7 +44,7 @@ public final class Lumberjacks extends SidedFeature {
         var professionKey = ResourceKey.create(Registries.VILLAGER_PROFESSION, registryId("lumberjack"));
         profession = new Registerable<>(this, () -> {
             var poi = Woodcutters.feature().poi.get();
-            Predicate<Holder<PoiType>> matches = holder -> holder.value() == poi.value();
+            Predicate<Holder<PoiType>> matches = holder -> holder.unwrapKey().equals(poi.unwrapKey());
             var result = Registry.registerForHolder(BuiltInRegistries.VILLAGER_PROFESSION, professionKey,
                 new VillagerProfession(Component.translatable("entity.minecraft.villager.charmony.lumberjack"),
                     matches, matches, ImmutableSet.of(), ImmutableSet.of(Woodcutters.feature().block.get()), workSound.get()));
