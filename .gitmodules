@@ -21,7 +21,7 @@
 	url = https://github.com/svenhjol/charmony-ebony-wood.git
 [submodule "modules/charmony-glint-colors"]
 	path = modules/charmony-glint-colors
-	url = https://github.com/svenhjol/charmony-glint-colors.git
+	url = https://github.com/Jbailey8316/charmony-glint-colors.git
 [submodule "modules/charmony-mooblooms"]
 	path = modules/charmony-mooblooms
 	url = https://github.com/svenhjol/charmony-mooblooms.git
