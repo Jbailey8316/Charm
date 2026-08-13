@@ -3,6 +3,7 @@ package svenhjol.charm.common.features.endermite_powder.common;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
@@ -34,6 +35,9 @@ public final class EndermitePowderItem extends Item {
         var entity = new EndermitePowderEntity(EndermitePowder.feature().entity.get(), serverLevel, target.getX(), target.getZ());
         entity.setPos(player.getX() + look.x * 2.0, player.getBlockY() + 0.5, player.getZ() + look.z * 2.0);
         serverLevel.addFreshEntity(entity);
+        if (player instanceof ServerPlayer serverPlayer) {
+            EndermitePowder.feature().advancements.usedEndermitePowder(serverPlayer);
+        }
         return InteractionResult.SUCCESS;
     }
 }

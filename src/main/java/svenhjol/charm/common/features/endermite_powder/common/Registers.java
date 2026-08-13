@@ -23,8 +23,7 @@ public final class Registers extends Setup<EndermitePowder> {
             svenhjol.charmony.api.events.EntityKilledDropCallback.EVENT.register((entity, source) -> {
             if (entity.getType() != EntityType.ENDERMITE) return InteractionResult.PASS;
             var looting = EnchantmentsHelper.lootingLevel(source);
-            var count = entity.getRandom().nextInt(Math.max(1, looting + 1));
-            if (entity.getRandom().nextFloat() < 0.3f * feature().maxDrops()) count++;
+            var count = entity.getRandom().nextInt(Math.max(1, looting + feature().maxDrops()));
             if (entity.level() instanceof net.minecraft.server.level.ServerLevel serverLevel) {
                 entity.spawnAtLocation(serverLevel, new ItemStack(feature().item.get(), count));
             }
