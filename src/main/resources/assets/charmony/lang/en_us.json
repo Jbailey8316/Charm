@@ -1,5 +1,11 @@
 ﻿{
   "item.charmony.endermite_powder": "Endermite Powder",
+  "advancements.charmony.obtained_endermite_powder.title": "Endermite Powder",
+  "advancements.charmony.obtained_endermite_powder.description": "Kill an endermite to get endermite powder",
+  "advancements.charmony.used_endermite_powder.title": "To The City",
+  "advancements.charmony.used_endermite_powder.description": "Use endermite powder in the End to help locate an End City",
+  "advancements.charmony.teleported_to_block.title": "Blink Of An Eye",
+  "advancements.charmony.teleported_to_block.description": "Teleport to a nearby chiseled arcane purpur block.",
   "block.charmony.arcane_purpur_block": "Arcane Purpur Block",
   "block.charmony.arcane_purpur_slab": "Arcane Purpur Slab",
   "block.charmony.arcane_purpur_stairs": "Arcane Purpur Stairs",

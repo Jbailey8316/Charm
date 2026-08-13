@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import svenhjol.charm.common.features.arcane_purpur.common.Handlers;
 import svenhjol.charm.common.features.arcane_purpur.common.Registers;
+import svenhjol.charm.common.features.arcane_purpur.common.Advancements;
 import svenhjol.charm.common.features.arcane_purpur.common.Tags;
 import svenhjol.charmony.api.core.Configurable;
 import svenhjol.charmony.api.core.FeatureDefinition;
@@ -29,11 +30,13 @@ public final class ArcanePurpur extends SidedFeature {
     private static int teleportRange = 12;
     public final Registers registers;
     public final Handlers handlers;
+    public final Advancements advancements;
 
     public ArcanePurpur(Mod mod) {
         super(mod);
         registers = new Registers(this);
         handlers = new Handlers(this);
+        advancements = new Advancements(this);
     }
 
     public int teleportRange() { return Mth.clamp(teleportRange, 0, 64); }

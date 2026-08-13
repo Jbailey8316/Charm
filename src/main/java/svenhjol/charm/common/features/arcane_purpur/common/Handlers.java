@@ -37,6 +37,9 @@ public final class Handlers extends Setup<ArcanePurpur> {
         if (!entity.randomTeleport(x, y, z, true)) return false;
         level.playSound(null, x, y, z, net.minecraft.sounds.SoundEvents.CHORUS_FRUIT_TELEPORT, net.minecraft.sounds.SoundSource.PLAYERS, 1.0f, 1.0f);
         entity.playSound(net.minecraft.sounds.SoundEvents.CHORUS_FRUIT_TELEPORT, 1.0f, 1.0f);
+        if (entity instanceof net.minecraft.server.level.ServerPlayer player) {
+            feature().advancements.teleportedToBlock(player);
+        }
         return true;
     }
 
