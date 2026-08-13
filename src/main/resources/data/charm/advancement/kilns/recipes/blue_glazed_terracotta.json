@@ -1,0 +1,6 @@
+{
+  "parent":"minecraft:recipes/root",
+  "criteria":{"has_the_recipe":{"conditions":{"recipe":"charm:kilns/firing/blue_glazed_terracotta"},"trigger":"minecraft:recipe_unlocked"},"has_blue_glazed_terracotta":{"conditions":{"items":[{"items":["minecraft:blue_terracotta"]}]},"trigger":"minecraft:inventory_changed"}},
+  "requirements":[["has_blue_glazed_terracotta","has_the_recipe"]],
+  "rewards":{"recipes":["charm:kilns/firing/blue_glazed_terracotta"]}
+}

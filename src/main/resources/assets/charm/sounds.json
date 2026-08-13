@@ -1,0 +1,12 @@
+{
+  "kiln_bake": {
+    "sounds": [
+      "minecraft:block/smoker/smoker1",
+      "minecraft:block/smoker/smoker2",
+      "minecraft:block/smoker/smoker3",
+      "minecraft:block/smoker/smoker4",
+      "minecraft:block/smoker/smoker5"
+    ],
+    "subtitle": "subtitles.charm.block.kiln.bake"
+  }
+}

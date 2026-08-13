@@ -21,6 +21,8 @@ import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityT
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.util.RandomSource;
+import net.minecraft.core.particles.ParticleTypes;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.world.item.crafting.RecipePropertySet;
 import svenhjol.charm.common.features.firing.Firing;
@@ -36,6 +38,8 @@ public final class Kilns extends SidedFeature {
     public final Registerable<Item> item;
     public final Registerable<BlockEntityType<KilnBlockEntity>> blockEntity;
     public final Registerable<MenuType<KilnMenu>> menu;
+    public final Advancements advancements;
+    public final Registerable<net.minecraft.sounds.SoundEvent> bakeSound;
 
     public Kilns(Mod mod) {
         super(mod);
@@ -49,6 +53,8 @@ public final class Kilns extends SidedFeature {
             FabricBlockEntityTypeBuilder.create(KilnBlockEntity::new, block.get()).build()));
         menu = new Registerable<>(this, () -> Registry.register(BuiltInRegistries.MENU, id("kiln"),
             new MenuType<>(KilnMenu::new, net.minecraft.world.flag.FeatureFlags.VANILLA_SET)));
+        bakeSound = new Registerable<>(this, () -> Registry.register(BuiltInRegistries.SOUND_EVENT, id("kiln_bake"), net.minecraft.sounds.SoundEvent.createVariableRangeEvent(id("kiln_bake"))));
+        advancements = new Advancements(this);
     }
 
     public static final class KilnBlock extends AbstractFurnaceBlock {
@@ -58,6 +64,13 @@ public final class Kilns extends SidedFeature {
         @Override public net.minecraft.world.level.block.entity.BlockEntity newBlockEntity(net.minecraft.core.BlockPos pos, BlockState state) { return new KilnBlockEntity(pos, state); }
         @Override public <T extends BlockEntity> net.minecraft.world.level.block.entity.BlockEntityTicker<T> getTicker(net.minecraft.world.level.Level level, BlockState state, BlockEntityType<T> type) { return createFurnaceTicker(level, type, Mod.getSidedFeature(Kilns.class).blockEntity.get()); }
         @Override protected void openContainer(net.minecraft.world.level.Level level, net.minecraft.core.BlockPos pos, net.minecraft.world.entity.player.Player player) { if (level.getBlockEntity(pos) instanceof KilnBlockEntity kiln) player.openMenu(kiln); }
+        @Override public void animateTick(BlockState state, net.minecraft.world.level.Level level, net.minecraft.core.BlockPos pos, RandomSource random) {
+            if (!state.getValue(BlockStateProperties.LIT)) return;
+            double x = pos.getX() + 0.5d, y = pos.getY(), z = pos.getZ() + 0.5d;
+            if (random.nextDouble() < 0.1d) level.playLocalSound(x, y, z, Mod.getSidedFeature(Kilns.class).bakeSound.get(), net.minecraft.sounds.SoundSource.BLOCKS, 1.0f, 1.0f, false);
+            level.addParticle(ParticleTypes.FLAME, x, y + 1.0d, z, 0.0d, 0.0d, 0.0d);
+            level.addParticle(ParticleTypes.SMOKE, x, y + 1.0d, z, 0.0d, 0.0d, 0.0d);
+        }
     }
 
     public static final class KilnBlockEntity extends AbstractFurnaceBlockEntity {
@@ -67,8 +80,12 @@ public final class Kilns extends SidedFeature {
     }
 
     public static final class KilnMenu extends AbstractFurnaceMenu {
-        private static final ResourceKey<RecipePropertySet> FIRING_KEY = ResourceKey.create(RecipePropertySet.TYPE_KEY, Mod.getSidedFeature(Firing.class).id("firing"));
-        public KilnMenu(int id, Inventory inventory) { super(Mod.getSidedFeature(Kilns.class).menu.get(), Mod.getSidedFeature(Firing.class).recipeType.get(), FIRING_KEY, RecipeBookType.SMOKER, id, inventory); }
-        public KilnMenu(int id, Inventory inventory, net.minecraft.world.Container container, net.minecraft.world.inventory.ContainerData data) { super(Mod.getSidedFeature(Kilns.class).menu.get(), Mod.getSidedFeature(Firing.class).recipeType.get(), FIRING_KEY, RecipeBookType.SMOKER, id, inventory, container, data); }
+        public KilnMenu(int id, Inventory inventory) { super(Mod.getSidedFeature(Kilns.class).menu.get(), Mod.getSidedFeature(Firing.class).recipeType.get(), RecipePropertySet.FURNACE_INPUT, RecipeBookType.FURNACE, id, inventory); }
+        public KilnMenu(int id, Inventory inventory, net.minecraft.world.Container container, net.minecraft.world.inventory.ContainerData data) { super(Mod.getSidedFeature(Kilns.class).menu.get(), Mod.getSidedFeature(Firing.class).recipeType.get(), RecipePropertySet.FURNACE_INPUT, RecipeBookType.FURNACE, id, inventory, container, data); }
+        @Override public net.minecraft.world.item.ItemStack quickMoveStack(net.minecraft.world.entity.player.Player player, int slot) {
+            var result = super.quickMoveStack(player, slot);
+            if (!player.level().isClientSide() && slot == 2 && !result.isEmpty()) Mod.getSidedFeature(Kilns.class).advancements.firedItem(player);
+            return result;
+        }
     }
 }

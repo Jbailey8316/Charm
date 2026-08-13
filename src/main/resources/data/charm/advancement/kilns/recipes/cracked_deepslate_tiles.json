@@ -1,0 +1,6 @@
+{
+  "parent":"minecraft:recipes/root",
+  "criteria":{"has_the_recipe":{"conditions":{"recipe":"charm:kilns/firing/cracked_deepslate_tiles"},"trigger":"minecraft:recipe_unlocked"},"has_cracked_deepslate_tiles":{"conditions":{"items":[{"items":["minecraft:deepslate_tiles"]}]},"trigger":"minecraft:inventory_changed"}},
+  "requirements":[["has_cracked_deepslate_tiles","has_the_recipe"]],
+  "rewards":{"recipes":["charm:kilns/firing/cracked_deepslate_tiles"]}
+}

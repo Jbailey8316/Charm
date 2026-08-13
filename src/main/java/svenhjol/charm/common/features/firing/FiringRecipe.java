@@ -13,7 +13,7 @@ import svenhjol.charmony.core.base.Mod;
 
 public class FiringRecipe extends AbstractCookingRecipe {
     private static final Firing FIRING = Mod.getSidedFeature(Firing.class);
-    public Item icon = Items.AIR;
+    public Item icon = Items.FURNACE;
 
     public FiringRecipe(String group, CookingBookCategory category, Ingredient input, ItemStack output, float experience, int cookTime) {
         super(group, category, input, output, experience, cookTime);
@@ -23,5 +23,5 @@ public class FiringRecipe extends AbstractCookingRecipe {
 
     @Override public RecipeSerializer<? extends AbstractCookingRecipe> getSerializer() { return FIRING.recipeSerializer.get(); }
     @Override public net.minecraft.world.item.crafting.RecipeType<FiringRecipe> getType() { return FIRING.recipeType.get(); }
-    @Override public RecipeBookCategory recipeBookCategory() { return RecipeBookCategories.SMOKER_FOOD; }
+    @Override public RecipeBookCategory recipeBookCategory() { return FIRING.recipeBookCategory.get(); }
 }
