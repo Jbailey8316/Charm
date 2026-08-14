@@ -18,13 +18,29 @@ public abstract class EnchantmentMixin {
         var feature = Mod.tryGetSidedFeature(AnimalArmorEnchanting.class).orElse(null);
         if (feature == null || !feature.enabled()) return;
 
-        var contents = ((Enchantment)(Object)this).description().getContents();
+        if (isAllowedAnimalArmor((Enchantment)(Object)this, stack)) cir.setReturnValue(true);
+    }
+
+    @Inject(method = "isSupportedItem", at = @At("RETURN"), cancellable = true)
+    private void charm$allowAnimalArmorAsSupportedItem(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
+        var feature = Mod.tryGetSidedFeature(AnimalArmorEnchanting.class).orElse(null);
+        if (feature == null || !feature.enabled()) return;
+
+        if (isAllowedAnimalArmor((Enchantment)(Object)this, stack)) cir.setReturnValue(true);
+    }
+
+    @Inject(method = "isPrimaryItem", at = @At("RETURN"), cancellable = true)
+    private void charm$allowAnimalArmorAsPrimaryItem(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
+        var feature = Mod.tryGetSidedFeature(AnimalArmorEnchanting.class).orElse(null);
+        if (feature == null || !feature.enabled()) return;
+
+        if (isAllowedAnimalArmor((Enchantment)(Object)this, stack)) cir.setReturnValue(true);
+    }
+
+    private static boolean isAllowedAnimalArmor(Enchantment enchantment, ItemStack stack) {
+        var contents = enchantment.description().getContents();
         var key = contents instanceof TranslatableContents translated ? translated.getKey() : "";
-        if (stack.is(Tags.HORSE_ARMOR) && isAllowed(key)) {
-            cir.setReturnValue(true);
-        } else if (stack.is(Tags.WOLF_ARMOR) && isAllowed(key)) {
-            cir.setReturnValue(true);
-        }
+        return (stack.is(Tags.HORSE_ARMOR) || stack.is(Tags.WOLF_ARMOR)) && isAllowed(key);
     }
 
     private static boolean isAllowed(String key) {

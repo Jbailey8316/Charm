@@ -8,6 +8,7 @@
   "mixins": [
     "aerial_affinity.PlayerMixin",
     "animal_armor_enchanting.EnchantmentMixin",
+    "animal_armor_enchanting.ItemPropertiesMixin",
     "animal_armor_enchanting.MobMixin",
     "anvils_last_longer.AnvilBlockMixin",
     "kilns.AbstractFurnaceBlockEntityMixin",
