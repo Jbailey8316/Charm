@@ -17,6 +17,7 @@ import svenhjol.charm.common.features.lumberjacks.Lumberjacks;
 import svenhjol.charm.common.features.endermite_powder.EndermitePowder;
 import svenhjol.charm.common.features.arcane_purpur.ArcanePurpur;
 import svenhjol.charm.common.features.player_pressure_plates.PlayerPressurePlates;
+import svenhjol.charm.common.features.doors_open_together.DoorsOpenTogether;
 import svenhjol.charmony.api.core.Side;
 
 public final class CommonInitializer implements ModInitializer {
@@ -40,6 +41,7 @@ public final class CommonInitializer implements ModInitializer {
         mod.addSidedFeature(EndermitePowder.class);
         mod.addSidedFeature(ArcanePurpur.class);
         mod.addSidedFeature(PlayerPressurePlates.class);
+        mod.addSidedFeature(DoorsOpenTogether.class);
         mod.run(Side.Common);
     }
 }
