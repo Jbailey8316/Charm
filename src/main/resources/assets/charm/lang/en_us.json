@@ -12,4 +12,5 @@
   "advancements.charm.obtained_copper_piston.description": "Copper pistons don't have quasi-connectivity",
   "block.charm.woodcutter": "Woodcutter",
   "container.charm.woodcutter": "Woodcutter"
+  ,"block.charm.player_pressure_plate": "Player Pressure Plate"
 }

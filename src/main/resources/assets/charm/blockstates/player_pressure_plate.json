@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "power=0": { "model": "charm:block/player_pressure_plate_up" },
+    "power=15": { "model": "charm:block/player_pressure_plate_down" }
+  }
+}
