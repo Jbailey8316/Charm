@@ -1,0 +1,15 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {"recipe": "charm:suspicious_stew_from_pitcher_plant"}
+    },
+    "has_pitcher_plant": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {"items": [{"items": ["minecraft:pitcher_plant"]}]}
+    }
+  },
+  "requirements": [["has_the_recipe", "has_pitcher_plant"]],
+  "rewards": {"recipes": ["charm:suspicious_stew_from_pitcher_plant"]}
+}

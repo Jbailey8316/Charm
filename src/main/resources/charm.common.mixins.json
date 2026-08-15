@@ -21,6 +21,10 @@
     "silence.YggdrasilMinecraftSessionServiceMixin",
     "silence.YggdrasilServicesKeyInfoMixin",
     "silence.YggdrasilUserApiServiceMixin",
-    "note_blocks.NoteBlockMixin"
+    "note_blocks.NoteBlockMixin",
+    "suspicious_effect_improvements.FlowerBlockMixin",
+    "suspicious_effect_improvements.DoublePlantBlockMixin",
+    "suspicious_effect_improvements.TallFlowerBlockMixin",
+    "suspicious_effect_improvements.ShapelessRecipeMixin"
   ]
 }
