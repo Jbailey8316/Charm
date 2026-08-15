@@ -19,4 +19,11 @@
   ,"block.charm.redstone_sand": "Redstone Sand"
   ,"advancements.charm.obtain_redstone_sand.title": "Redstone Sand"
   ,"advancements.charm.obtain_redstone_sand.description": "Obtain Redstone Sand"
+  ,"advancements.charm.obtain_coral_sea_lantern.title": "Colored Lights"
+  ,"advancements.charm.obtain_coral_sea_lantern.description": "Craft a coral sea lantern"
+  ,"block.charm.tube_sea_lantern": "Tube Sea Lantern"
+  ,"block.charm.brain_sea_lantern": "Brain Sea Lantern"
+  ,"block.charm.bubble_sea_lantern": "Bubble Sea Lantern"
+  ,"block.charm.fire_sea_lantern": "Fire Sea Lantern"
+  ,"block.charm.horn_sea_lantern": "Horn Sea Lantern"
 }
