@@ -19,6 +19,7 @@ import svenhjol.charm.common.features.arcane_purpur.ArcanePurpur;
 import svenhjol.charm.common.features.player_pressure_plates.PlayerPressurePlates;
 import svenhjol.charm.common.features.doors_open_together.DoorsOpenTogether;
 import svenhjol.charm.common.features.smooth_glowstone.SmoothGlowstone;
+import svenhjol.charm.common.features.redstone_sand.RedstoneSand;
 import svenhjol.charmony.api.core.Side;
 
 public final class CommonInitializer implements ModInitializer {
@@ -44,6 +45,7 @@ public final class CommonInitializer implements ModInitializer {
         mod.addSidedFeature(PlayerPressurePlates.class);
         mod.addSidedFeature(DoorsOpenTogether.class);
         mod.addSidedFeature(SmoothGlowstone.class);
+        mod.addSidedFeature(RedstoneSand.class);
         mod.run(Side.Common);
     }
 }
