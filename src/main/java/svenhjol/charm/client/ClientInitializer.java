@@ -9,6 +9,7 @@ import svenhjol.charm.client.features.copper_pistons.CopperPistons;
 import svenhjol.charm.client.features.woodcutting.WoodcuttersClient;
 import svenhjol.charm.client.features.endermite_powder.EndermitePowderClient;
 import svenhjol.charm.client.features.player_pressure_plates.PlayerPressurePlatesClient;
+import svenhjol.charm.client.features.smooth_glowstone.SmoothGlowstoneClient;
 
 public final class ClientInitializer implements ClientModInitializer {
     @Override
@@ -21,6 +22,7 @@ public final class ClientInitializer implements ClientModInitializer {
         mod.addSidedFeature(WoodcuttersClient.class);
         mod.addSidedFeature(EndermitePowderClient.class);
         mod.addSidedFeature(PlayerPressurePlatesClient.class);
+        mod.addSidedFeature(SmoothGlowstoneClient.class);
         mod.run(Side.Client);
     }
 }

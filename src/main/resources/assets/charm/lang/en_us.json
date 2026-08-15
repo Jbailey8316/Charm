@@ -13,4 +13,7 @@
   "block.charm.woodcutter": "Woodcutter",
   "container.charm.woodcutter": "Woodcutter"
   ,"block.charm.player_pressure_plate": "Player Pressure Plate"
+  ,"block.charm.smooth_glowstone": "Smooth Glowstone"
+  ,"advancements.charm.obtain_smooth_glowstone.title": "Smoother Than Butter"
+  ,"advancements.charm.obtain_smooth_glowstone.description": "Obtain Smooth Glowstone"
 }
