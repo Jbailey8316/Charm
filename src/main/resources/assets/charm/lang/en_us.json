@@ -1,4 +1,12 @@
 {
+  "item.minecraft.potion.effect.radiance": "Potion of Radiance",
+  "item.minecraft.potion.effect.long_radiance": "Potion of Radiance",
+  "item.minecraft.splash_potion.effect.radiance": "Splash Potion of Radiance",
+  "item.minecraft.splash_potion.effect.long_radiance": "Splash Potion of Radiance",
+  "item.minecraft.lingering_potion.effect.radiance": "Lingering Potion of Radiance",
+  "item.minecraft.lingering_potion.effect.long_radiance": "Lingering Potion of Radiance",
+  "item.minecraft.tipped_arrow.effect.radiance": "Potion of Radiance",
+  "item.minecraft.tipped_arrow.effect.long_radiance": "Arrow of Radiance",
   "block.charm.kiln": "Kiln",
   "container.charm.kiln": "Kiln",
   "subtitles.charm.block.kiln.bake": "Kiln bakes",
