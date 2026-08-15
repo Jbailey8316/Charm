@@ -20,6 +20,7 @@
     "silence.UtilMixin",
     "silence.YggdrasilMinecraftSessionServiceMixin",
     "silence.YggdrasilServicesKeyInfoMixin",
-    "silence.YggdrasilUserApiServiceMixin"
+    "silence.YggdrasilUserApiServiceMixin",
+    "note_blocks.NoteBlockMixin"
   ]
 }

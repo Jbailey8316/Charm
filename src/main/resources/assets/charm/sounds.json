@@ -1,4 +1,7 @@
 {
+  "amethyst": {
+    "sounds": [{"name": "charm:amethyst", "volume": 0.35}]
+  },
   "kiln_bake": {
     "sounds": [
       "minecraft:block/smoker/smoker1",
