@@ -1,6 +1,20 @@
 {
   "variants": {
     "power=0": { "model": "charm:block/player_pressure_plate_up" },
+    "power=1": { "model": "charm:block/player_pressure_plate_down" },
+    "power=2": { "model": "charm:block/player_pressure_plate_down" },
+    "power=3": { "model": "charm:block/player_pressure_plate_down" },
+    "power=4": { "model": "charm:block/player_pressure_plate_down" },
+    "power=5": { "model": "charm:block/player_pressure_plate_down" },
+    "power=6": { "model": "charm:block/player_pressure_plate_down" },
+    "power=7": { "model": "charm:block/player_pressure_plate_down" },
+    "power=8": { "model": "charm:block/player_pressure_plate_down" },
+    "power=9": { "model": "charm:block/player_pressure_plate_down" },
+    "power=10": { "model": "charm:block/player_pressure_plate_down" },
+    "power=11": { "model": "charm:block/player_pressure_plate_down" },
+    "power=12": { "model": "charm:block/player_pressure_plate_down" },
+    "power=13": { "model": "charm:block/player_pressure_plate_down" },
+    "power=14": { "model": "charm:block/player_pressure_plate_down" },
     "power=15": { "model": "charm:block/player_pressure_plate_down" }
   }
 }
