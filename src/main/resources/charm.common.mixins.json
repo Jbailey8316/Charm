@@ -16,6 +16,10 @@
     "copper_pistons.PistonHeadBlockMixin",
     "copper_pistons.PistonMovingBlockEntityMixin",
     "arcane_purpur.ChorusFruitItemMixin",
-    "doors_open_together.DoorBlockMixin"
+    "doors_open_together.DoorBlockMixin",
+    "silence.UtilMixin",
+    "silence.YggdrasilMinecraftSessionServiceMixin",
+    "silence.YggdrasilServicesKeyInfoMixin",
+    "silence.YggdrasilUserApiServiceMixin"
   ]
 }

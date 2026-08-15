@@ -6,6 +6,10 @@
     "defaultRequire": 1
   },
   "client": [
-    "copper_pistons.PistonHeadRendererMixin"
+    "copper_pistons.PistonHeadRendererMixin",
+    "silence.ClientTelemetryManagerMixin",
+    "silence.DisableToastMixin",
+    "silence.RealmsAvailabilityMixin",
+    "silence.WorldOpenFlowsMixin"
   ]
 }

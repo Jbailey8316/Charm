@@ -22,6 +22,7 @@ import svenhjol.charm.common.features.smooth_glowstone.SmoothGlowstone;
 import svenhjol.charm.common.features.redstone_sand.RedstoneSand;
 import svenhjol.charm.common.features.coral_sea_lanterns.CoralSeaLanterns;
 import svenhjol.charm.common.features.potion_of_radiance.PotionOfRadiance;
+import svenhjol.charm.common.features.silence.Silence;
 import svenhjol.charmony.api.core.Side;
 
 public final class CommonInitializer implements ModInitializer {
@@ -50,6 +51,7 @@ public final class CommonInitializer implements ModInitializer {
         mod.addSidedFeature(RedstoneSand.class);
         mod.addSidedFeature(CoralSeaLanterns.class);
         mod.addSidedFeature(PotionOfRadiance.class);
+        mod.addSidedFeature(Silence.class);
         mod.run(Side.Common);
     }
 }
