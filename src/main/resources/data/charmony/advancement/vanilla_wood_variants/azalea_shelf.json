@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_stripped_azalea_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": "charmony:stripped_azalea_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "charmony:vanilla_wood_variants/azalea_shelf"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stripped_azalea_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "charmony:vanilla_wood_variants/azalea_shelf"
+    ]
+  }
+}
