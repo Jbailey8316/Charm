@@ -42,4 +42,6 @@
   ,"advancements.charm.traded_with_beekeeper.title": "Meant to Bee"
   ,"advancements.charm.traded_with_beekeeper.description": "Open a trade with a Beekeeper villager"
   ,"tag.item.charm.beekeepers_sell_flowers": "Flowers sold by beekeepers"
+  ,"advancements.charm.sorted_items_while_hovering.title": "Sorted"
+  ,"advancements.charm.sorted_items_while_hovering.description": "Sort an item container by scrolling when hovering over the item"
 }
