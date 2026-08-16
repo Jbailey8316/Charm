@@ -12,6 +12,7 @@ import svenhjol.charm.client.features.player_pressure_plates.PlayerPressurePlate
 import svenhjol.charm.client.features.smooth_glowstone.SmoothGlowstoneClient;
 import svenhjol.charm.client.features.redstone_sand.RedstoneSandClient;
 import svenhjol.charm.client.features.coral_sea_lanterns.CoralSeaLanternsClient;
+import svenhjol.charm.client.features.raid_horns.RaidHornsClient;
 
 public final class ClientInitializer implements ClientModInitializer {
     @Override
@@ -27,6 +28,7 @@ public final class ClientInitializer implements ClientModInitializer {
         mod.addSidedFeature(SmoothGlowstoneClient.class);
         mod.addSidedFeature(RedstoneSandClient.class);
         mod.addSidedFeature(CoralSeaLanternsClient.class);
+        mod.addSidedFeature(RaidHornsClient.class);
         mod.run(Side.Client);
     }
 }
