@@ -26,6 +26,7 @@ import svenhjol.charm.common.features.silence.Silence;
 import svenhjol.charm.common.features.note_blocks.NoteBlocks;
 import svenhjol.charm.common.features.suspicious_effect_improvements.SuspiciousEffectImprovements;
 import svenhjol.charm.common.features.raid_horns.RaidHorns;
+import svenhjol.charm.common.features.beekeepers.Beekeepers;
 import svenhjol.charmony.api.core.Side;
 
 public final class CommonInitializer implements ModInitializer {
@@ -58,6 +59,7 @@ public final class CommonInitializer implements ModInitializer {
         mod.addSidedFeature(NoteBlocks.class);
         mod.addSidedFeature(SuspiciousEffectImprovements.class);
         mod.addSidedFeature(RaidHorns.class);
+        mod.addSidedFeature(Beekeepers.class);
         mod.run(Side.Common);
     }
 }

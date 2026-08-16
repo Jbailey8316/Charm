@@ -38,4 +38,8 @@
   ,"subtitles.charm.item.raid_horn.squeak": "Horn fails"
   ,"subtitles.charm.item.raid_horn.call_patrol": "Horn calls patrol"
   ,"subtitles.charm.item.raid_horn.call_off_raid": "Horn calls off raid"
+  ,"entity.minecraft.villager.charm.beekeeper": "Beekeeper"
+  ,"advancements.charm.traded_with_beekeeper.title": "Meant to Bee"
+  ,"advancements.charm.traded_with_beekeeper.description": "Open a trade with a Beekeeper villager"
+  ,"tag.item.charm.beekeepers_sell_flowers": "Flowers sold by beekeepers"
 }

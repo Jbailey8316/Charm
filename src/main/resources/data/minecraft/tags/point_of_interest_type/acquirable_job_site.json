@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "charmony:woodcutter"
+    "charmony:woodcutter",
+    "minecraft:beehive"
   ]
 }
