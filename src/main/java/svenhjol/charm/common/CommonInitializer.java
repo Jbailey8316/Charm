@@ -28,6 +28,7 @@ import svenhjol.charm.common.features.suspicious_effect_improvements.SuspiciousE
 import svenhjol.charm.common.features.raid_horns.RaidHorns;
 import svenhjol.charm.common.features.beekeepers.Beekeepers;
 import svenhjol.charm.common.features.item_hover_sorting.ItemHoverSorting;
+import svenhjol.charm.common.features.atlases.Atlases;
 import svenhjol.charmony.api.core.Side;
 
 public final class CommonInitializer implements ModInitializer {
@@ -62,6 +63,7 @@ public final class CommonInitializer implements ModInitializer {
         mod.addSidedFeature(RaidHorns.class);
         mod.addSidedFeature(Beekeepers.class);
         mod.addSidedFeature(ItemHoverSorting.class);
+        mod.addSidedFeature(Atlases.class);
         mod.run(Side.Common);
     }
 }
