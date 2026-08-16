@@ -9,8 +9,21 @@ import net.minecraft.world.item.MapItem;
 import net.minecraft.world.level.saveddata.maps.MapId;
 import svenhjol.charmony.api.events.PlayerTickCallback;
 
-final class AtlasHandlers {
+import java.util.function.Predicate;
+
+public final class AtlasHandlers {
     static void register() { PlayerTickCallback.EVENT.register(AtlasHandlers::tick); }
+
+    public static boolean atlasContainsMap(Player player, Predicate<ItemStack> matcher) {
+        return containsMap(player.getMainHandItem(), matcher) || containsMap(player.getOffhandItem(), matcher);
+    }
+
+    private static boolean containsMap(ItemStack stack, Predicate<ItemStack> matcher) {
+        var feature = Atlases.feature();
+        if (feature == null || !stack.is(feature.item.get())) return false;
+        var data = stack.get(feature.data.get());
+        return data != null && data.maps().stream().anyMatch(entry -> matcher.test(entry.map()));
+    }
 
     private static void tick(Player player) {
         if (!(player instanceof ServerPlayer server) || !(server.level() instanceof ServerLevel)) return;
@@ -42,19 +55,38 @@ final class AtlasHandlers {
             updateVanillaMap(player, data.maps().get(found));
             return;
         }
-        if (data.emptyMaps() <= 0) return;
-        int centerX = cellX * diameter + half;
-        int centerZ = cellZ * diameter + half;
-        ItemStack map = MapItem.create((ServerLevel) player.level(), centerX, centerZ, (byte)data.scale(), false, false);
+        if (data.emptyMaps() <= 0) {
+            // The Atlas is full, but the last active map must continue to
+            // receive vanilla tracking/decorations updates. Do not allocate
+            // or retarget a map for this unmapped grid cell.
+            if (data.activeMap() >= 0 && data.activeMap() < data.maps().size()) {
+                updateVanillaMap(player, data.maps().get(data.activeMap()));
+            }
+            return;
+        }
+        // MapItem.create expects the player's world position and performs the
+        // vanilla grid-centering calculation itself. Passing our already
+        // centered coordinate would apply that calculation a second time and
+        // shift the saved map center, which also shifts PLAYER decorations.
+        ItemStack map = MapItem.create((ServerLevel) player.level(),
+            player.blockPosition().getX(), player.blockPosition().getZ(),
+            (byte)data.scale(), true, true);
         MapId id = map.get(DataComponents.MAP_ID);
         if (id == null) return;
-        var next = data.add(new AtlasMapEntry(map, id, centerX, centerZ, dimension));
+        var saved = MapItem.getSavedData(id, (ServerLevel) player.level());
+        if (saved == null) return;
+        var next = data.add(new AtlasMapEntry(map, id, saved.centerX, saved.centerZ, dimension));
         stack.set(component, next);
         updateVanillaMap(player, next.maps().get(next.activeMap()));
     }
 
     private static void updateVanillaMap(ServerPlayer player, AtlasMapEntry entry) {
         var saved = MapItem.getSavedData(entry.mapId(), player.level());
-        if (saved != null) ((MapItem) net.minecraft.world.item.Items.FILLED_MAP).update(player.level(), player, saved);
+        if (saved != null) {
+            saved.tickCarriedBy(player, entry.map());
+            ((MapItem) net.minecraft.world.item.Items.FILLED_MAP).update(player.level(), player, saved);
+            var packet = saved.getUpdatePacket(entry.mapId(), player);
+            if (packet != null) player.connection.send(packet);
+        }
     }
 }
