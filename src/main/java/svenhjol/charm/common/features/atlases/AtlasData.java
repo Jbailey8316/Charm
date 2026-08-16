@@ -27,10 +27,36 @@ public record AtlasData(int scale, int activeMap, int emptyMaps, List<AtlasMapEn
     public static AtlasData initial() { return new AtlasData(DEFAULT_SCALE, -1, INITIAL_EMPTY_MAPS, List.of()); }
 
     public AtlasData withActive(int index) { return new AtlasData(scale, index, emptyMaps, maps); }
+    public AtlasData withEmptyMaps(int count) {
+        return new AtlasData(scale, activeMap, Math.max(0, Math.min(INITIAL_EMPTY_MAPS, count)), maps);
+    }
     public AtlasData add(AtlasMapEntry entry) {
         var result = new java.util.ArrayList<>(maps);
         result.add(entry);
         return new AtlasData(scale, result.size() - 1, emptyMaps - 1, List.copyOf(result));
+    }
+
+    public AtlasData addImported(AtlasMapEntry entry) {
+        var result = new java.util.ArrayList<>(maps);
+        result.add(entry);
+        return new AtlasData(scale, activeMap, emptyMaps, List.copyOf(result));
+    }
+
+    public AtlasData removeMap(int index) {
+        if (index < 0 || index >= maps.size()) return this;
+        var result = new java.util.ArrayList<>(maps);
+        result.remove(index);
+        int nextActive = activeMap;
+        if (nextActive == index) nextActive = result.isEmpty() ? -1 : Math.min(index, result.size() - 1);
+        else if (nextActive > index) nextActive--;
+        return new AtlasData(scale, nextActive, emptyMaps, List.copyOf(result));
+    }
+
+    public AtlasData replaceMap(int index, AtlasMapEntry entry) {
+        if (index < 0 || index >= maps.size()) return addImported(entry);
+        var result = new java.util.ArrayList<>(maps);
+        result.set(index, entry);
+        return new AtlasData(scale, activeMap, emptyMaps, List.copyOf(result));
     }
 
 }

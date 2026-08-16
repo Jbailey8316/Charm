@@ -64,6 +64,9 @@ public final class AtlasHandlers {
             }
             return;
         }
+        // Historical Charm did not allocate a map while the Atlas menu was open;
+        // replenished supplies take effect on the next normal held-item tick.
+        if (player.containerMenu instanceof AtlasMenu) return;
         // MapItem.create expects the player's world position and performs the
         // vanilla grid-centering calculation itself. Passing our already
         // centered coordinate would apply that calculation a second time and
