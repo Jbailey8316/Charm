@@ -1,5 +1,5 @@
 {
-  "parent": "charm:core/mobs",
+  "parent": "charmony:root",
   "display": {
     "icon": { "id": "minecraft:beehive" },
     "title": { "translate": "advancements.charm.traded_with_beekeeper.title" },
@@ -10,6 +10,12 @@
     "hidden": false
   },
   "criteria": {
-    "traded_with_beekeeper": { "trigger": "minecraft:trade" }
-  }
+    "traded_with_beekeeper": {
+      "trigger": "charmony_action_performed",
+      "conditions": { "action": "charmony:traded_with_beekeeper" }
+    }
+  },
+  "requirements": [
+    ["traded_with_beekeeper"]
+  ]
 }

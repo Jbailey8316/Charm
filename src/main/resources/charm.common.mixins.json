@@ -23,6 +23,8 @@
     "silence.YggdrasilUserApiServiceMixin",
     "note_blocks.NoteBlockMixin",
     "beekeepers.PoiTypesMixin",
+    "beekeepers.GiveGiftToHeroMixin",
+    "beekeepers.VillagerMixin",
     "suspicious_effect_improvements.FlowerBlockMixin",
     "suspicious_effect_improvements.DoublePlantBlockMixin",
     "suspicious_effect_improvements.TallFlowerBlockMixin",
