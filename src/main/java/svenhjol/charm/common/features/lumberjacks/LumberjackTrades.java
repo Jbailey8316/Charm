@@ -64,10 +64,12 @@ public final class LumberjackTrades {
             Map<Block, Block> map = new HashMap<>();
             map.put(Blocks.ACACIA_LOG, Blocks.ACACIA_WOOD);
             map.put(Blocks.BIRCH_LOG, Blocks.BIRCH_WOOD);
+            map.put(Blocks.CHERRY_LOG, Blocks.CHERRY_WOOD);
             map.put(Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_WOOD);
             map.put(Blocks.JUNGLE_LOG, Blocks.JUNGLE_WOOD);
             map.put(Blocks.MANGROVE_LOG, Blocks.MANGROVE_WOOD);
             map.put(Blocks.OAK_LOG, Blocks.OAK_WOOD);
+            map.put(Blocks.PALE_OAK_LOG, Blocks.PALE_OAK_WOOD);
             map.put(Blocks.SPRUCE_LOG, Blocks.SPRUCE_WOOD);
             var logs = new ArrayList<>(map.keySet());
             var log = logs.get(random.nextInt(logs.size()));

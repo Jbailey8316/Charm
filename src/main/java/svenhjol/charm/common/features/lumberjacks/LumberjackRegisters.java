@@ -27,7 +27,7 @@ public final class LumberjackRegisters extends Setup<Lumberjacks> {
         registry.villagerTrade(profession, 2, () -> new GenericTrades.TagForEmeralds<>(BlockTags.FENCE_GATES, 2, 0, 1, 0, 6, 20));
         registry.villagerTrade(profession, 3, () -> new GenericTrades.EmeraldsForTag<>(BlockTags.WARPED_STEMS, 7, 0, 1, 0, 1, 10));
         registry.villagerTrade(profession, 3, () -> new GenericTrades.EmeraldsForTag<>(BlockTags.CRIMSON_STEMS, 7, 0, 1, 0, 1, 10));
-        registry.villagerTrade(profession, 3, () -> new LumberjackTrades.SaplingsForEmeralds(List.of(Items.ACACIA_SAPLING, Items.DARK_OAK_SAPLING), 2, 1, 10, 20));
+        registry.villagerTrade(profession, 3, () -> new LumberjackTrades.SaplingsForEmeralds(List.of(Items.ACACIA_SAPLING, Items.DARK_OAK_SAPLING, Items.CHERRY_SAPLING, Items.MANGROVE_PROPAGULE, Items.PALE_OAK_SAPLING), 2, 1, 10, 20));
         registry.villagerTrade(profession, 3, () -> new LumberjackTrades.BarkForLogs(10, 12, 10, 10));
         registry.villagerTrade(profession, 3, () -> new GenericTrades.TagForEmeralds<>(BlockTags.WOODEN_DOORS, 2, 0, 1, 0, 1, 10));
         registry.villagerTrade(profession, 4, () -> feature.customBarrels() ? new GenericTrades.TagForEmeralds<>(LumberjackTags.BARRELS, 4, 0, 1, 0, 1, 15) : new GenericTrades.ItemsForEmeralds(Items.BARREL, 4, 1, 15, 20));
