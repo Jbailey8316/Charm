@@ -1,33 +1,33 @@
 [submodule "modules/charmony"]
 	path = modules/charmony
-	url = https://github.com/svenhjol/charmony.git
+	url = https://github.com/Mythas-Network/charmony.git
 [submodule "modules/charmony-api"]
 	path = modules/charmony-api
-	url = https://github.com/svenhjol/charmony-api.git
+	url = https://github.com/Mythas-Network/charmony-api.git
 [submodule "modules/charmony-azalea-wood"]
 	path = modules/charmony-azalea-wood
-	url = https://github.com/svenhjol/charmony-azalea-wood.git
+	url = https://github.com/Mythas-Network/charmony-azalea-wood.git
 [submodule "modules/charmony-brew-and-stew"]
 	path = modules/charmony-brew-and-stew
-	url = https://github.com/svenhjol/charmony-brew-and-stew.git
+	url = https://github.com/Mythas-Network/charmony-brew-and-stew.git
 [submodule "modules/charmony-collection"]
 	path = modules/charmony-collection
-	url = https://github.com/svenhjol/charmony-collection.git
+	url = https://github.com/Mythas-Network/charmony-collection.git
 [submodule "modules/charmony-decor"]
 	path = modules/charmony-decor
-	url = https://github.com/svenhjol/charmony-decor.git
+	url = https://github.com/Mythas-Network/charmony-decor.git
 [submodule "modules/charmony-ebony-wood"]
 	path = modules/charmony-ebony-wood
-	url = https://github.com/svenhjol/charmony-ebony-wood.git
+	url = https://github.com/Mythas-Network/charmony-ebony-wood.git
 [submodule "modules/charmony-glint-colors"]
 	path = modules/charmony-glint-colors
-	url = https://github.com/Jbailey8316/charmony-glint-colors.git
+	url = https://github.com/Mythas-Network/charmony-glint-colors.git
 [submodule "modules/charmony-mooblooms"]
 	path = modules/charmony-mooblooms
-	url = https://github.com/svenhjol/charmony-mooblooms.git
+	url = https://github.com/Mythas-Network/charmony-mooblooms.git
 [submodule "modules/charmony-totem-of-preserving"]
 	path = modules/charmony-totem-of-preserving
-	url = https://github.com/svenhjol/charmony-totem-of-preserving.git
+	url = https://github.com/Mythas-Network/charmony-totem-of-preserving.git
 [submodule "modules/charmony-tweaks"]
 	path = modules/charmony-tweaks
-	url = https://github.com/Jbailey8316/charmony-tweaks.git
+	url = https://github.com/Mythas-Network/charmony-tweaks.git
